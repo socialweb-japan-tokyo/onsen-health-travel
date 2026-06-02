@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>草津温泉の強酸性硫黄泉で肌をリセットする | 温泉・医療ツーリズムガイド</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">温泉・医療ツーリズム</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 群馬県 &gt; 草津温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Skin Reset</div>
+    <h1 class="hero-title">草津温泉で<br>肌をリセットする</h1>
+    <p class="hero-lead">
+      群馬県、日本三大名泉の一つ。pH2.1という日本屈指の強酸性硫黄泉が、
+      肌表面の雑菌を10分で除去し、古い角質を分解する。
+      慢性的な肌荒れ・ニキビ・乾燥に悩む方に向けた、週末1泊2日の温泉プランをご紹介します。
+    </p>
+    <div class="hero-meta">群馬県 / 酸性・含硫黄-アルミニウム-硫酸塩・塩化物温泉</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">PH</div>
+        <div class="fact-value">2.1</div>
+        <div class="fact-unit">強酸性</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">TEMP</div>
+        <div class="fact-value">45<small>℃</small></div>
+        <div class="fact-unit">源泉50〜90℃</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">肌荒れ</div>
+        <div class="fact-unit">殺菌・冷え性</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">週末プラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる草津温泉</div>
+    <ul class="tldr-list">
+      <li>pH2.1の強酸性が雑菌をわずか10分で除去、肌表面を清潔にリセット</li>
+      <li>含硫黄成分が古い角質と毛穴の皮脂を分解、ターンオーバーを促進</li>
+      <li>1泊2日でも短時間×複数回の入浴で「湯あたり」を避けつつ、肌の変化を実感しやすい</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ強酸性温泉が肌をリセットするのか</h2>
+    </div>
+    <p>草津温泉のpH2.1は、レモン果汁(pH2.0〜2.5)とほぼ同じ酸性度です。「1円玉が1週間で溶ける」と言われるほどの強い酸性が、肌表面に潜む細菌の細胞膜を変性させ、わずか10分の入浴で大半を死滅させます。これが古来「お医者様でも草津の湯でも」と歌われた殺菌力の正体です。</p>
+
+    <p>さらに、湯に含まれる硫化水素やアルミニウム硫酸塩が、皮脂と古い角質を分解。肌のターンオーバーが促進され、慢性的な皮膚トラブルが落ち着いていきます。下呂のアルカリ性が「やさしくほぐす」のに対し、草津の強酸性は「リセットして再生させる」温泉だと言えます。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 強酸性温泉が肌をリセットするまで —</div>
+      <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="280" fill="#fafaf6"/>
+
+        <!-- 肌の断面図 -->
+        <g transform="translate(40,40)">
+          <!-- 表皮 -->
+          <rect x="0" y="0" width="200" height="30" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="20" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">表皮</text>
+          <!-- 古い角質と雑菌 -->
+          <g>
+            <rect x="2" y="2" width="14" height="6" fill="#a89888" stroke="#1a2a25" stroke-width="0.5"/>
+            <rect x="20" y="2" width="14" height="6" fill="#a89888" stroke="#1a2a25" stroke-width="0.5"/>
+            <rect x="38" y="2" width="14" height="6" fill="#a89888" stroke="#1a2a25" stroke-width="0.5"/>
+            <rect x="56" y="2" width="14" height="6" fill="#a89888" stroke="#1a2a25" stroke-width="0.5"/>
+            <!-- 雑菌マーク(×) -->
+            <text x="9" y="6" font-family="Arial" font-size="6" fill="#aa3a3a" text-anchor="middle" font-weight="700">×</text>
+            <text x="27" y="6" font-family="Arial" font-size="6" fill="#aa3a3a" text-anchor="middle" font-weight="700">×</text>
+            <text x="45" y="6" font-family="Arial" font-size="6" fill="#aa3a3a" text-anchor="middle" font-weight="700">×</text>
+            <text x="63" y="6" font-family="Arial" font-size="6" fill="#aa3a3a" text-anchor="middle" font-weight="700">×</text>
+          </g>
+          <!-- 毛穴(皮脂詰まり) -->
+          <ellipse cx="100" cy="15" rx="3" ry="8" fill="#8a6a4a"/>
+          <ellipse cx="140" cy="15" rx="3" ry="8" fill="#8a6a4a"/>
+          <ellipse cx="180" cy="15" rx="3" ry="8" fill="#8a6a4a"/>
+          <!-- 真皮 -->
+          <rect x="0" y="30" width="200" height="40" fill="#f0c0a8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="55" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">真皮</text>
+          <!-- 新しい細胞 -->
+          <g fill="#5caa8a">
+            <circle cx="30" cy="45" r="2"/>
+            <circle cx="60" cy="50" r="2"/>
+            <circle cx="100" cy="45" r="2"/>
+            <circle cx="140" cy="50" r="2"/>
+            <circle cx="170" cy="45" r="2"/>
+          </g>
+          <!-- 凡例 -->
+          <text x="100" y="95" font-family="Noto Sans JP" font-size="9" fill="#aa3a3a" text-anchor="middle">× = 雑菌  ● = 新しい細胞</text>
+          <text x="100" y="110" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">縦線 = 詰まった毛穴</text>
+        </g>
+
+        <!-- 説明ステップ -->
+        <g transform="translate(280,30)">
+          <!-- ステップ1 -->
+          <circle cx="15" cy="15" r="12" fill="#5caa8a"/>
+          <text x="15" y="19" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+          <text x="35" y="14" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">強酸性が雑菌を殺菌</text>
+          <text x="35" y="28" font-family="Noto Sans JP" font-size="10" fill="#555">pH2.1で10分以内に雑菌が死滅</text>
+
+          <!-- ステップ2 -->
+          <circle cx="15" cy="65" r="12" fill="#5caa8a"/>
+          <text x="15" y="69" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+          <text x="35" y="64" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">硫黄が皮脂を分解</text>
+          <text x="35" y="78" font-family="Noto Sans JP" font-size="10" fill="#555">毛穴の詰まりが洗い流される</text>
+
+          <!-- ステップ3 -->
+          <circle cx="15" cy="115" r="12" fill="#5caa8a"/>
+          <text x="15" y="119" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+          <text x="35" y="114" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">古い角質が剥がれ落ちる</text>
+          <text x="35" y="128" font-family="Noto Sans JP" font-size="10" fill="#555">硫酸塩がターンオーバーを促進</text>
+
+          <!-- ステップ4 -->
+          <circle cx="15" cy="165" r="12" fill="#1a3a35"/>
+          <text x="15" y="169" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">4</text>
+          <text x="35" y="164" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">新しい肌が表面に</text>
+          <text x="35" y="178" font-family="Noto Sans JP" font-size="10" fill="#555">数日で肌の質感が変わる</text>
+        </g>
+
+        <g stroke="#5caa8a" stroke-width="2" fill="none" marker-end="url(#arrow)">
+          <path d="M 245 60 Q 265 60 275 50"/>
+        </g>
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <polygon points="0,0 8,3 0,6" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">3つの作用が肌を再生させる</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">殺菌作用</div>
+        <div class="effect-desc">
+          pH2.1の強酸性が、ニキビ・吹き出物の原因となるアクネ菌や雑菌を10分以内に死滅させます。慢性的な肌の炎症が落ち着く土台を作ります。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">硫黄成分</div>
+        <div class="effect-desc">
+          含硫黄成分が皮脂を乳化分解し、毛穴の奥まで洗浄。古い角質をやわらかくして剥がれやすくします。クレンジング効果は化学的洗剤を超えるほど。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">ターンオーバー</div>
+        <div class="effect-desc">
+          硫酸塩とアルミニウムが新陳代謝を促進。28日周期の肌の生まれ変わりが加速され、滞在後に肌の質感の変化を実感する方が多いです。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、湯畑散策と慣らし入浴</strong><br>
+          午前中に到着、まずは湯畑を散策して草津の名物「湯もみショー」を熱乃湯で見学。チェックイン後は3〜5分の短時間入浴で身体を湯に慣らします。夕食後にもう一度5〜8分の入浴。1日で計2〜3回、短く分けるのが鉄則です。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝風呂と仕上げの入浴</strong><br>
+          朝風呂で本格的に5〜10分浸かり、午前中に西の河原露天風呂や共同浴場をはしご。チェックアウト前に最後の入浴で仕上げ。短期でも肌の手触りやトーンの変化を感じやすく、帰宅後1週間ほどで実感はさらに深まります。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴の注意点</div>
+      草津のお湯は刺激が強いため、1回3〜10分を厳守。長湯は「湯あたり」(めまい・倦怠感)の原因に。アトピー性皮膚炎や敏感肌の方は、初日に必ず腕の内側でパッチテストを。入浴後は真水で軽くすすぐと刺激が和らぎます。心臓・血圧・呼吸器に持病のある方、妊娠中の方は必ずかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>群馬県吾妻郡草津町</td></tr>
+        <tr><th>東京から(電車)</th><td>上野駅から特急「草津・四万」で長野原草津口駅(約2時間35分)→ JRバス関東で草津温泉バスターミナル(約25分)。合計約3時間</td></tr>
+        <tr><th>東京から(高速バス)</th><td>バスタ新宿から直行バスで草津温泉バスターミナル(約4時間)。乗換なしで楽</td></tr>
+        <tr><th>軽井沢経由</th><td>北陸新幹線で軽井沢駅(東京から約1時間)→ 草軽交通バスで草津温泉(約1時間30分)。観光と組み合わせやすい</td></tr>
+        <tr><th>名古屋・大阪から</th><td>東海道新幹線で東京経由、合計約4〜5時間</td></tr>
+        <tr><th>車</th><td>関越自動車道・渋川伊香保ICから国道経由で約60km(約1時間20分)</td></tr>
+        <tr><th>泉質</th><td>酸性・含硫黄-アルミニウム-硫酸塩・塩化物温泉(pH2.1)</td></tr>
+        <tr><th>効能</th><td>慢性皮膚病・神経痛・筋肉痛・冷え性・疲労回復・糖尿病など</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      草津温泉の強酸性硫黄泉は、日本で最も「効く」と語り継がれてきた湯です。
+      pH2.1の酸性が肌表面の雑菌を除去し、含硫黄成分が古い角質と皮脂を分解、
+      硫酸塩がターンオーバーを加速させる——
+      この3つの作用が組み合わさることで、慢性的な肌荒れ・ニキビ・乾燥といった、
+      化粧品では届かない深部の肌トラブルにアプローチします。
+      刺激が強いぶん入浴ルールを守る必要はありますが、3泊4日の湯治を終える頃には、
+      肌の手触りが変わっていることに気づくはずです。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

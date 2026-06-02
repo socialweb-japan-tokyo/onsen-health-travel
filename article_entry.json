@@ -1,1 +1,100 @@
-{"title": "下呂温泉のアルカリ性単純温泉と筋肉痛", "file": "articles/2026-06-02-23.html", "date": "2026-06-02"}
+import anthropic
+import os
+import datetime
+import json
+
+client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+
+themes = [
+    "草津温泉と関節炎・リウマチへの効果",
+    "箱根温泉の美肌効果と皮膚疾患への働き",
+    "別府温泉の泥湯と慢性疲労への効果",
+    "有馬温泉の金泉・銀泉と神経痛への効果",
+    "登別温泉の硫黄泉とアトピー性皮膚炎",
+    "指宿温泉の砂むし湯と腰痛・冷え性改善",
+    "玉造温泉と婦人科系疾患への温泉療法",
+    "下呂温泉のアルカリ性単純温泉と筋肉痛",
+]
+
+week_number = datetime.date.today().isocalendar()[1]
+theme = themes[week_number % len(themes)]
+
+message = client.messages.create(
+    model="claude-haiku-4-5-20251001",
+    max_tokens=2000,
+    messages=[
+        {
+            "role": "user",
+            "content": f"""以下のテーマで、温泉・医療ツーリズムの情報記事をHTML形式で書いてください。
+
+テーマ：{theme}
+
+条件：
+- 文字数は800〜1200字程度
+- 見出し（h2）を3つ使う
+- 具体的な効能・アクセス・おすすめ滞在期間を含める
+- <article>タグで全体を囲む
+- bodyタグやhtmlタグは不要、articleタグの中身だけ出力
+- コードブロック（```）は絶対に使わない、HTMLタグのみ出力
+- 読者は健康に関心がある30〜60代の日本人"""
+        }
+    ]
+)
+
+article_content = message.content[0].text
+article_content = article_content.replace("```html", "").replace("```", "").strip()
+
+today = datetime.date.today().strftime("%Y-%m-%d")
+filename = f"articles/{today}-{week_number}.html"
+
+html = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{theme} | 温泉・医療ツーリズムガイド</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *{{box-sizing:border-box;margin:0;padding:0}}
+    body{{font-family:'Noto Sans JP',sans-serif;background:#f5f4f0;color:#222}}
+    .header{{background:#fff;border-bottom:1px solid #e8e5e0;padding:0 2rem;display:flex;align-items:center;height:56px}}
+    .logo{{font-family:'Noto Serif JP',serif;font-size:15px;letter-spacing:3px;color:#1a3a35;text-decoration:none}}
+    .hero{{background:#1a3a35;padding:3rem 2rem;text-align:center}}
+    .hero-tag{{font-size:10px;letter-spacing:4px;color:#5caa8a;margin-bottom:12px;text-transform:uppercase}}
+    .hero-title{{font-family:'Noto Serif JP',serif;font-size:22px;color:#f0f7f5;font-weight:300;letter-spacing:3px;line-height:1.7}}
+    .hero-date{{font-size:11px;color:#6aaa90;margin-top:12px;letter-spacing:1px}}
+    .container{{max-width:760px;margin:0 auto;padding:3rem 2rem}}
+    .article-body{{background:#fff;border:1px solid #e8e5e0;padding:2.5rem 3rem;line-height:1.9;font-size:15px;color:#333}}
+    .article-body h2{{font-family:'Noto Serif JP',serif;font-size:18px;color:#1a3a35;font-weight:400;letter-spacing:2px;margin:2.5rem 0 1rem;padding-bottom:8px;border-bottom:1px solid #d0ebe0}}
+    .article-body p{{margin-bottom:1.2rem;color:#444}}
+    .article-body strong{{color:#1a3a35;font-weight:500}}
+    .back{{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#888;text-decoration:none;letter-spacing:1px;margin-bottom:1.5rem}}
+    .back:hover{{color:#1a3a35}}
+    .footer{{text-align:center;padding:2rem;font-size:11px;color:#aaa;letter-spacing:1px;border-top:1px solid #e8e5e0;background:#fff;margin-top:2rem}}
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a class="logo" href="../index.html">温泉・医療ツーリズムガイド</a>
+  </div>
+  <div class="hero">
+    <div class="hero-tag">Onsen Guide</div>
+    <div class="hero-title">{theme}</div>
+    <div class="hero-date">{today}</div>
+  </div>
+  <div class="container">
+    <a class="back" href="../index.html">← 記事一覧に戻る</a>
+    <div class="article-body">
+      {article_content}
+    </div>
+  </div>
+  <div class="footer">© 2026 温泉・医療ツーリズムガイド ― 毎週月曜日更新</div>
+</body>
+</html>"""
+
+os.makedirs("articles", exist_ok=True)
+with open(filename, "w", encoding="utf-8") as f:
+    f.write(html)
+
+entry = {{"title": theme, "file": filename, "date": today}}
+print(json.dumps(entry, ensure_ascii=False))

@@ -188,7 +188,7 @@ const grid = document.getElementById('articles-grid');
       <div class="card-pref">${p.pref}</div>
       <div class="card-title">${published ? published.title : p.name}</div>
       <div class="card-effect">${p.effect}</div>
-      <div class="card-status">${published ? '✓ ' + published.date + ' 公開' : '記事作成中'}</div>
+      <div class="card-status">${published ? '' : '記事作成中'}</div>
     </div>
   `;
   grid.appendChild(card);

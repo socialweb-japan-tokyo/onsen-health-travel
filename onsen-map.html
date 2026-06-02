@@ -5,8 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>全国温泉地図 | 温泉・医療ツーリズムガイド</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Noto Sans JP',sans-serif;background:#fff}
@@ -16,13 +14,16 @@
     .hero-tag{font-size:10px;letter-spacing:4px;color:#5caa8a;margin-bottom:8px;text-transform:uppercase}
     .hero-title{font-family:'Noto Serif JP',serif;font-size:20px;color:#f0f7f5;font-weight:300;letter-spacing:3px;margin-bottom:6px}
     .hero-count{font-size:11px;color:#6aaa90;letter-spacing:1px}
-    #map{height:680px;width:100%;background:#fff}
-    .leaflet-tile{filter:grayscale(100%) brightness(1.8) contrast(0.6)}
-    .popup-title{font-size:14px;font-weight:500;color:#1a3a35;margin-bottom:4px}
-    .popup-pref{font-size:11px;color:#aaa;margin-bottom:4px}
-    .popup-effect{font-size:12px;color:#5aaa85;margin-bottom:6px}
-    .popup-desc{font-size:12px;color:#666;line-height:1.6}
-    .footer{text-align:center;padding:1.5rem;font-size:11px;color:#aaa;letter-spacing:1px;border-top:1px solid #e8e5e0;background:#fff}
+    .map-wrap{position:relative;max-width:860px;margin:0 auto;padding:2rem}
+    .map-wrap img{width:100%;display:block}
+    svg.pins{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+    svg.pins circle{pointer-events:all;cursor:pointer}
+    .tooltip{position:absolute;background:#fff;border:1px solid #e0e0e0;border-radius:4px;padding:10px 14px;font-size:12px;box-shadow:0 4px 16px rgba(0,0,0,0.12);display:none;z-index:10;min-width:180px;pointer-events:none}
+    .tooltip-title{font-size:14px;font-weight:500;color:#1a3a35;margin-bottom:2px}
+    .tooltip-pref{font-size:11px;color:#aaa;margin-bottom:4px}
+    .tooltip-effect{font-size:12px;color:#5aaa85;margin-bottom:4px}
+    .tooltip-desc{font-size:12px;color:#666;line-height:1.6}
+    .footer{text-align:center;padding:1.5rem;font-size:11px;color:#aaa;letter-spacing:1px;border-top:1px solid #e8e5e0;margin-top:1rem}
   </style>
 </head>
 <body>
@@ -32,100 +33,121 @@
   <div class="hero">
     <div class="hero-tag">Onsen Map</div>
     <div class="hero-title">全国温泉地図</div>
-    <div class="hero-count">全国 80以上の温泉地を掲載</div>
+    <div class="hero-count">全国 60以上の温泉地を掲載</div>
   </div>
-  <div id="map"></div>
+  <div class="map-wrap" id="mapWrap">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Regions_and_Prefectures_of_Japan_2.svg/800px-Regions_and_Prefectures_of_Japan_2.svg.png" id="mapImg" alt="日本地図">
+    <svg class="pins" id="pinSvg"></svg>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
   <div class="footer">© 2026 温泉・医療ツーリズムガイド</div>
 
   <script>
-    const map = L.map('map', {zoomControl:true}).setView([36.5, 137.0], 5);
+  // 緯度経度→画像上のXY変換（日本地図用）
+  // 画像サイズ基準: 北緯45.5〜南緯30.0, 東経129.0〜146.0
+  function latLngToPercent(lat, lng) {
+    const latMax = 45.5, latMin = 30.0;
+    const lngMin = 129.0, lngMax = 146.5;
+    const x = ((lng - lngMin) / (lngMax - lngMin)) * 100;
+    const y = ((latMax - lat) / (latMax - latMin)) * 100;
+    return {x, y};
+  }
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors',
-      opacity: 0.3
-    }).addTo(map);
+  const onsenList = [
+    {name:"登別温泉",pref:"北海道",lat:42.44,lng:141.11,effect:"皮膚病・神経痛",desc:"9種類の泉質。硫黄泉が特に有名。"},
+    {name:"洞爺湖温泉",pref:"北海道",lat:42.54,lng:140.76,effect:"神経痛・疲労回復",desc:"洞爺湖畔のリゾート温泉地。"},
+    {name:"定山渓温泉",pref:"北海道",lat:42.98,lng:141.09,effect:"疲労回復・美肌",desc:"札幌近郊の奥座敷。"},
+    {name:"阿寒湖温泉",pref:"北海道",lat:43.45,lng:144.10,effect:"神経痛・リウマチ",desc:"阿寒湖畔の秘境温泉。"},
+    {name:"十勝川温泉",pref:"北海道",lat:42.87,lng:143.57,effect:"美肌・疲労回復",desc:"モール温泉として有名。"},
+    {name:"層雲峡温泉",pref:"北海道",lat:43.73,lng:142.87,effect:"疲労回復・冷え性",desc:"大雪山の渓谷沿いの温泉。"},
+    {name:"酸ヶ湯温泉",pref:"青森県",lat:40.66,lng:140.88,effect:"皮膚病・慢性疾患",desc:"ヒバ千人風呂で有名。"},
+    {name:"乳頭温泉郷",pref:"秋田県",lat:39.77,lng:140.73,effect:"皮膚病・婦人病",desc:"秘湯の宝庫。鶴の湯が有名。"},
+    {name:"玉川温泉",pref:"秋田県",lat:39.96,lng:140.80,effect:"慢性疾患",desc:"強酸性。岩盤浴で有名。"},
+    {name:"銀山温泉",pref:"山形県",lat:38.61,lng:140.57,effect:"疲労回復・神経痛",desc:"大正ロマンの温泉街。"},
+    {name:"蔵王温泉",pref:"山形県",lat:38.34,lng:140.44,effect:"皮膚病・神経痛",desc:"強酸性の硫黄泉。"},
+    {name:"秋保温泉",pref:"宮城県",lat:38.22,lng:140.67,effect:"神経痛・疲労回復",desc:"仙台の奥座敷。日本三名湯。"},
+    {name:"鳴子温泉",pref:"宮城県",lat:38.74,lng:140.61,effect:"皮膚病・神経痛",desc:"こけしの産地。豊富な泉質。"},
+    {name:"飯坂温泉",pref:"福島県",lat:37.80,lng:140.47,effect:"疲労回復・神経痛",desc:"日本書紀にも登場する古湯。"},
+    {name:"草津温泉",pref:"群馬県",lat:36.62,lng:138.60,effect:"関節炎・リウマチ",desc:"日本三名泉のひとつ。"},
+    {name:"伊香保温泉",pref:"群馬県",lat:36.53,lng:138.99,effect:"婦人病・神経痛",desc:"石段街が有名。"},
+    {name:"四万温泉",pref:"群馬県",lat:36.69,lng:138.82,effect:"消化器病・神経痛",desc:"国民保養温泉地第1号。"},
+    {name:"万座温泉",pref:"群馬県",lat:36.64,lng:138.51,effect:"皮膚病・糖尿病",desc:"標高1800mの高原温泉。"},
+    {name:"箱根温泉",pref:"神奈川県",lat:35.23,lng:139.11,effect:"美肌・皮膚疾患",desc:"多様な泉質のリゾート温泉地。"},
+    {name:"熱海温泉",pref:"静岡県",lat:35.10,lng:139.08,effect:"神経痛・疲労回復",desc:"日本を代表するリゾート温泉。"},
+    {name:"修善寺温泉",pref:"静岡県",lat:34.97,lng:138.93,effect:"疲労回復・神経痛",desc:"伊豆最古の温泉。竹林が美しい。"},
+    {name:"石和温泉",pref:"山梨県",lat:35.64,lng:138.62,effect:"疲労回復・神経痛",desc:"ぶどう畑の中の温泉地。"},
+    {name:"白骨温泉",pref:"長野県",lat:36.27,lng:137.68,effect:"婦人病・皮膚病",desc:"乳白色の湯が特徴の秘湯。"},
+    {name:"野沢温泉",pref:"長野県",lat:36.92,lng:138.44,effect:"神経痛・疲労回復",desc:"外湯めぐりが楽しい温泉村。"},
+    {name:"湯田中渋温泉郷",pref:"長野県",lat:36.74,lng:138.41,effect:"神経痛・疲労回復",desc:"スノーモンキーで有名。"},
+    {name:"奥飛騨温泉郷",pref:"岐阜県",lat:36.33,lng:137.55,effect:"神経痛・疲労回復",desc:"北アルプスの麓の温泉郷。"},
+    {name:"下呂温泉",pref:"岐阜県",lat:35.81,lng:137.24,effect:"筋肉痛・疲労回復",desc:"日本三名泉のひとつ。"},
+    {name:"宇奈月温泉",pref:"富山県",lat:36.88,lng:137.58,effect:"疲労回復・神経痛",desc:"黒部峡谷の入口。"},
+    {name:"和倉温泉",pref:"石川県",lat:37.09,lng:136.99,effect:"神経痛・疲労回復",desc:"能登半島の名湯。"},
+    {name:"山代温泉",pref:"石川県",lat:36.32,lng:136.35,effect:"神経痛・疲労回復",desc:"加賀四湯のひとつ。"},
+    {name:"あわら温泉",pref:"福井県",lat:36.22,lng:136.23,effect:"神経痛・疲労回復",desc:"北陸の奥座敷。"},
+    {name:"有馬温泉",pref:"兵庫県",lat:34.80,lng:135.25,effect:"神経痛・冷え性",desc:"日本三古泉のひとつ。"},
+    {name:"城崎温泉",pref:"兵庫県",lat:35.62,lng:134.82,effect:"神経痛・疲労回復",desc:"7つの外湯めぐりが人気。"},
+    {name:"龍神温泉",pref:"和歌山県",lat:33.97,lng:135.64,effect:"美肌・疲労回復",desc:"日本三美人の湯のひとつ。"},
+    {name:"白浜温泉",pref:"和歌山県",lat:33.68,lng:135.34,effect:"慢性疾患・疲労",desc:"日本書紀にも記される古湯。"},
+    {name:"玉造温泉",pref:"島根県",lat:35.43,lng:132.99,effect:"婦人病・美肌",desc:"古事記にも登場する古湯。"},
+    {name:"三朝温泉",pref:"鳥取県",lat:35.37,lng:133.84,effect:"がん・リウマチ",desc:"世界有数のラジウム温泉。"},
+    {name:"湯原温泉",pref:"岡山県",lat:35.12,lng:133.63,effect:"神経痛・皮膚病",desc:"露天風呂番付西の横綱。"},
+    {name:"道後温泉",pref:"愛媛県",lat:33.85,lng:132.79,effect:"神経痛・筋肉痛",desc:"日本最古の温泉。"},
+    {name:"別府温泉",pref:"大分県",lat:33.28,lng:131.50,effect:"慢性疲労・神経痛",desc:"日本一の湧出量。"},
+    {name:"由布院温泉",pref:"大分県",lat:33.26,lng:131.37,effect:"疲労回復・美肌",desc:"由布岳を望むリゾート温泉地。"},
+    {name:"長湯温泉",pref:"大分県",lat:33.01,lng:131.26,effect:"心臓病・高血圧",desc:"世界有数の炭酸泉。"},
+    {name:"黒川温泉",pref:"熊本県",lat:33.07,lng:131.11,effect:"神経痛・疲労回復",desc:"入湯手形で人気の秘湯の里。"},
+    {name:"嬉野温泉",pref:"佐賀県",lat:33.07,lng:129.98,effect:"美肌・疲労回復",desc:"日本三大美人の湯のひとつ。"},
+    {name:"武雄温泉",pref:"佐賀県",lat:33.19,lng:130.02,effect:"疲労回復・神経痛",desc:"楼門が有名な古湯。"},
+    {name:"雲仙温泉",pref:"長崎県",lat:32.71,lng:130.20,effect:"皮膚病・神経痛",desc:"日本初の国立公園内の温泉地。"},
+    {name:"指宿温泉",pref:"鹿児島県",lat:31.26,lng:130.63,effect:"腰痛・冷え性",desc:"砂むし温泉が全国的に有名。"},
+    {name:"霧島温泉",pref:"鹿児島県",lat:31.90,lng:130.87,effect:"疲労回復・神経痛",desc:"坂本龍馬も訪れた温泉郷。"},
+  ];
 
-    const icon = L.divIcon({
-      html: '<div style="width:10px;height:10px;border-radius:50%;background:#1a3a35;border:2px solid #5caa8a;box-shadow:0 1px 4px rgba(0,0,0,0.2)"></div>',
-      className:'',iconSize:[10,10],iconAnchor:[5,5]
-    });
+  const img = document.getElementById('mapImg');
+  const svg = document.getElementById('pinSvg');
+  const tooltip = document.getElementById('tooltip');
+  const wrap = document.getElementById('mapWrap');
 
-    const onsenList = [
-      {name:"登別温泉",pref:"北海道",lat:42.439,lng:141.109,effect:"皮膚病・神経痛",desc:"9種類の泉質を誇る。硫黄泉が特に有名。"},
-      {name:"洞爺湖温泉",pref:"北海道",lat:42.540,lng:140.758,effect:"神経痛・疲労回復",desc:"洞爺湖畔に広がるリゾート温泉地。"},
-      {name:"定山渓温泉",pref:"北海道",lat:42.984,lng:141.094,effect:"疲労回復・美肌",desc:"札幌近郊の奥座敷。豊富な湯量が自慢。"},
-      {name:"阿寒湖温泉",pref:"北海道",lat:43.447,lng:144.100,effect:"神経痛・リウマチ",desc:"阿寒湖畔の秘境温泉。マリモで有名。"},
-      {name:"十勝川温泉",pref:"北海道",lat:42.867,lng:143.567,effect:"美肌・疲労回復",desc:"モール温泉として有名。植物性の温泉。"},
-      {name:"層雲峡温泉",pref:"北海道",lat:43.729,lng:142.872,effect:"疲労回復・冷え性",desc:"大雪山の渓谷沿いに広がる温泉地。"},
-      {name:"ニセコ温泉",pref:"北海道",lat:42.804,lng:140.688,effect:"疲労回復・神経痛",desc:"スキーリゾートとしても有名な温泉郷。"},
-      {name:"乳頭温泉郷",pref:"秋田県",lat:39.774,lng:140.726,effect:"皮膚病・婦人病",desc:"秘湯の宝庫。鶴の湯など7つの宿が点在。"},
-      {name:"玉川温泉",pref:"秋田県",lat:39.963,lng:140.800,effect:"慢性疾患",desc:"強酸性の日本一の湧出量。岩盤浴で有名。"},
-      {name:"蔵王温泉",pref:"山形県",lat:38.338,lng:140.440,effect:"皮膚病・神経痛",desc:"強酸性の硫黄泉。スキー場でも有名。"},
-      {name:"銀山温泉",pref:"山形県",lat:38.611,lng:140.574,effect:"疲労回復・神経痛",desc:"大正ロマンの面影が残る情緒ある温泉街。"},
-      {name:"天童温泉",pref:"山形県",lat:38.363,lng:140.378,effect:"疲労回復・筋肉痛",desc:"将棋の駒で有名な温泉地。"},
-      {name:"鳴子温泉",pref:"宮城県",lat:38.736,lng:140.612,effect:"皮膚病・神経痛",desc:"こけしの産地。豊富な泉質が自慢。"},
-      {name:"秋保温泉",pref:"宮城県",lat:38.218,lng:140.670,effect:"神経痛・疲労回復",desc:"仙台の奥座敷。日本三名湯のひとつ。"},
-      {name:"飯坂温泉",pref:"福島県",lat:37.799,lng:140.466,effect:"疲労回復・神経痛",desc:"日本書紀にも登場する古湯。"},
-      {name:"東山温泉",pref:"福島県",lat:37.494,lng:139.928,effect:"疲労回復・婦人病",desc:"会津の奥座敷。滝のある温泉街。"},
-      {name:"酸ヶ湯温泉",pref:"青森県",lat:40.660,lng:140.875,effect:"皮膚病・慢性疾患",desc:"ヒバ千人風呂で有名な国民保養温泉地。"},
-      {name:"浅虫温泉",pref:"青森県",lat:40.829,lng:140.860,effect:"疲労回復・美肌",desc:"陸奥湾を望む温泉地。"},
-      {name:"花巻温泉",pref:"岩手県",lat:39.397,lng:141.127,effect:"神経痛・疲労回復",desc:"宮沢賢治ゆかりの地。広大な温泉郷。"},
-      {name:"草津温泉",pref:"群馬県",lat:36.618,lng:138.596,effect:"関節炎・リウマチ",desc:"日本三名泉のひとつ。強酸性の硫黄泉。"},
-      {name:"伊香保温泉",pref:"群馬県",lat:36.529,lng:138.988,effect:"婦人病・神経痛",desc:"石段街が有名。黄金の湯と白銀の湯。"},
-      {name:"四万温泉",pref:"群馬県",lat:36.685,lng:138.818,effect:"消化器病・神経痛",desc:"国民保養温泉地第1号。青い湯が特徴。"},
-      {name:"万座温泉",pref:"群馬県",lat:36.637,lng:138.511,effect:"皮膚病・糖尿病",desc:"標高1800mの高原温泉。硫黄濃度が高い。"},
-      {name:"水上温泉",pref:"群馬県",lat:36.840,lng:138.938,effect:"疲労回復・神経痛",desc:"谷川岳の麓。利根川沿いの温泉地。"},
-      {name:"箱根温泉",pref:"神奈川県",lat:35.232,lng:139.107,effect:"美肌・皮膚疾患",desc:"多様な泉質が楽しめるリゾート温泉地。"},
-      {name:"熱海温泉",pref:"静岡県",lat:35.100,lng:139.075,effect:"神経痛・疲労回復",desc:"日本を代表するリゾート温泉地。"},
-      {name:"伊東温泉",pref:"静岡県",lat:34.966,lng:139.102,effect:"神経痛・疲労回復",desc:"湯量豊富な東伊豆の温泉地。"},
-      {name:"修善寺温泉",pref:"静岡県",lat:34.972,lng:138.930,effect:"疲労回復・神経痛",desc:"伊豆最古の温泉。竹林の風景が美しい。"},
-      {name:"上諏訪温泉",pref:"長野県",lat:36.040,lng:138.095,effect:"神経痛・リウマチ",desc:"諏訪湖畔の温泉地。諏訪大社が近い。"},
-      {name:"野沢温泉",pref:"長野県",lat:36.924,lng:138.436,effect:"神経痛・疲労回復",desc:"外湯めぐりが楽しい温泉村。"},
-      {name:"白骨温泉",pref:"長野県",lat:36.270,lng:137.681,effect:"婦人病・皮膚病",desc:"乳白色の湯が特徴の秘湯。"},
-      {name:"別所温泉",pref:"長野県",lat:36.349,lng:138.161,effect:"神経痛・疲労回復",desc:"信州最古の温泉。国宝の塔がある。"},
-      {name:"湯田中渋温泉郷",pref:"長野県",lat:36.742,lng:138.409,effect:"神経痛・疲労回復",desc:"スノーモンキーで有名な温泉地。"},
-      {name:"石和温泉",pref:"山梨県",lat:35.641,lng:138.617,effect:"疲労回復・神経痛",desc:"ぶどう畑の中の温泉地。"},
-      {name:"和倉温泉",pref:"石川県",lat:37.088,lng:136.986,effect:"神経痛・疲労回復",desc:"能登半島の名湯。海の温泉として有名。"},
-      {name:"山代温泉",pref:"石川県",lat:36.317,lng:136.348,effect:"神経痛・疲労回復",desc:"加賀四湯のひとつ。松尾芭蕉も訪れた。"},
-      {name:"山中温泉",pref:"石川県",lat:36.268,lng:136.422,effect:"神経痛・疲労回復",desc:"鶴仙渓沿いの温泉地。芭蕉の句で有名。"},
-      {name:"あわら温泉",pref:"福井県",lat:36.221,lng:136.227,effect:"神経痛・疲労回復",desc:"北陸の奥座敷。"},
-      {name:"宇奈月温泉",pref:"富山県",lat:36.876,lng:137.583,effect:"疲労回復・神経痛",desc:"黒部峡谷の入口。トロッコ列車が有名。"},
-      {name:"下呂温泉",pref:"岐阜県",lat:35.806,lng:137.244,effect:"筋肉痛・疲労回復",desc:"日本三名泉のひとつ。美人の湯として有名。"},
-      {name:"奥飛騨温泉郷",pref:"岐阜県",lat:36.332,lng:137.550,effect:"神経痛・疲労回復",desc:"北アルプスの麓。5つの温泉地からなる。"},
-      {name:"湯の山温泉",pref:"三重県",lat:35.006,lng:136.516,effect:"疲労回復・神経痛",desc:"御在所岳の麓。紅葉が美しい温泉地。"},
-      {name:"有馬温泉",pref:"兵庫県",lat:34.799,lng:135.249,effect:"神経痛・冷え性",desc:"日本三古泉のひとつ。金泉・銀泉が有名。"},
-      {name:"城崎温泉",pref:"兵庫県",lat:35.621,lng:134.820,effect:"神経痛・疲労回復",desc:"7つの外湯めぐりが楽しめる温泉地。"},
-      {name:"湯村温泉",pref:"兵庫県",lat:35.556,lng:134.465,effect:"神経痛・疲労回復",desc:"山陰の名湯。荒湯の高温源泉が有名。"},
-      {name:"龍神温泉",pref:"和歌山県",lat:33.972,lng:135.640,effect:"美肌・疲労回復",desc:"日本三美人の湯のひとつ。"},
-      {name:"白浜温泉",pref:"和歌山県",lat:33.683,lng:135.344,effect:"慢性疾患・疲労",desc:"日本書紀にも記される古湯。"},
-      {name:"勝浦温泉",pref:"和歌山県",lat:33.582,lng:135.945,effect:"疲労回復・神経痛",desc:"海の温泉として有名。忘帰洞が名物。"},
-      {name:"玉造温泉",pref:"島根県",lat:35.425,lng:132.994,effect:"婦人病・美肌",desc:"古事記にも登場。美肌の湯として有名。"},
-      {name:"三朝温泉",pref:"鳥取県",lat:35.374,lng:133.836,effect:"がん・リウマチ",desc:"世界有数のラジウム温泉。"},
-      {name:"皆生温泉",pref:"鳥取県",lat:35.499,lng:133.360,effect:"神経痛・疲労回復",desc:"日本海を望む海岸沿いの温泉地。"},
-      {name:"湯原温泉",pref:"岡山県",lat:35.124,lng:133.630,effect:"神経痛・皮膚病",desc:"露天風呂番付西の横綱。砂湯が有名。"},
-      {name:"道後温泉",pref:"愛媛県",lat:33.849,lng:132.788,effect:"神経痛・筋肉痛",desc:"日本最古の温泉。夏目漱石の小説の舞台。"},
-      {name:"祖谷温泉",pref:"徳島県",lat:33.862,lng:133.917,effect:"疲労回復・神経痛",desc:"かずら橋で有名な秘境の温泉地。"},
-      {name:"別府温泉",pref:"大分県",lat:33.279,lng:131.499,effect:"慢性疲労・神経痛",desc:"日本一の湧出量。地獄めぐりが有名。"},
-      {name:"由布院温泉",pref:"大分県",lat:33.262,lng:131.370,effect:"疲労回復・美肌",desc:"由布岳を望むリゾート温泉地。"},
-      {name:"黒川温泉",pref:"熊本県",lat:33.073,lng:131.113,effect:"神経痛・疲労回復",desc:"入湯手形で人気の秘湯の里。"},
-      {name:"指宿温泉",pref:"鹿児島県",lat:31.256,lng:130.634,effect:"腰痛・冷え性",desc:"砂むし温泉が全国的に有名。"},
-      {name:"霧島温泉",pref:"鹿児島県",lat:31.897,lng:130.869,effect:"疲労回復・神経痛",desc:"霧島山麓に広がる温泉郷。坂本龍馬も訪れた。"},
-      {name:"嬉野温泉",pref:"佐賀県",lat:33.073,lng:129.982,effect:"美肌・疲労回復",desc:"日本三大美人の湯のひとつ。"},
-      {name:"武雄温泉",pref:"佐賀県",lat:33.194,lng:130.022,effect:"疲労回復・神経痛",desc:"日本書紀にも登場する古湯。楼門が有名。"},
-      {name:"雲仙温泉",pref:"長崎県",lat:32.714,lng:130.204,effect:"皮膚病・神経痛",desc:"日本初の国立公園内の温泉地。"},
-      {name:"長湯温泉",pref:"大分県",lat:33.012,lng:131.261,effect:"心臓病・高血圧",desc:"世界有数の炭酸泉。飲泉でも有名。"},
-    ];
-
+  function renderPins() {
+    svg.innerHTML = '';
+    const w = img.offsetWidth;
+    const h = img.offsetHeight;
     onsenList.forEach(o => {
-      L.marker([o.lat, o.lng], {icon})
-        .addTo(map)
-        .bindPopup(`
-          <div class="popup-title">♨ ${o.name}</div>
-          <div class="popup-pref">${o.pref}</div>
-          <div class="popup-effect">${o.effect}</div>
-          <div class="popup-desc">${o.desc}</div>
-        `);
+      const {x, y} = latLngToPercent(o.lat, o.lng);
+      const cx = w * x / 100;
+      const cy = h * y / 100;
+      const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      circle.setAttribute('cx', cx);
+      circle.setAttribute('cy', cy);
+      circle.setAttribute('r', 6);
+      circle.setAttribute('fill', '#1a3a35');
+      circle.setAttribute('stroke', '#5caa8a');
+      circle.setAttribute('stroke-width', '2');
+      circle.style.cursor = 'pointer';
+      circle.addEventListener('mouseenter', (e) => {
+        tooltip.innerHTML = `
+          <div class="tooltip-title">♨ ${o.name}</div>
+          <div class="tooltip-pref">${o.pref}</div>
+          <div class="tooltip-effect">${o.effect}</div>
+          <div class="tooltip-desc">${o.desc}</div>`;
+        tooltip.style.display = 'block';
+        const rect = wrap.getBoundingClientRect();
+        const ex = e.clientX - rect.left;
+        const ey = e.clientY - rect.top;
+        tooltip.style.left = (ex + 12) + 'px';
+        tooltip.style.top = (ey - 10) + 'px';
+      });
+      circle.addEventListener('mouseleave', () => {
+        tooltip.style.display = 'none';
+      });
+      svg.appendChild(circle);
     });
+  }
+
+  img.onload = renderPins;
+  if (img.complete) renderPins();
+  window.addEventListener('resize', renderPins);
   </script>
 </body>
 </html>

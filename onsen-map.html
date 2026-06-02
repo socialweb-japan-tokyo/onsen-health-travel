@@ -157,37 +157,34 @@
     <div class="hero-desc">効能で選ぶ、日本の温泉旅</div>
   </div>
 
-  <div class="map-section" id="map-section">
-    <div class="map-inner">
-      <div class="section-head"><!-- 温泉検索フォーム -->
-<div class="onsen-search">
-  <div class="search-row">
-    <label class="search-field">
-      <span class="search-label">都道府県</span>
-      <select id="pref-select">
-        <option value="">-- 選択してください --</option>
-      </select>
-    </label>
-    <label class="search-field">
-      <span class="search-label">温泉</span>
-      <select id="onsen-select" disabled>
-        <option value="">-- まず都道府県を選択 --</option>
-      </select>
-    </label>
-    <button type="button" id="search-reset" class="search-reset">リセット</button>
-  </div>
-</div><span>Onsen Map</span></div>
-      <div class="map-hint">ピンをクリックすると下の記事カードへスクロールします</div>
-      <div class="tooltip" id="tooltip"></div>
-      <svg id="map" viewBox="0 0 860 900"></svg>
+ <div class="map-section" id="map-section">
+  <div class="map-inner">
+    <div class="section-head"><span>Onsen Map</span></div>
+
+    <!-- 温泉検索フォーム ← section-head の外に出す -->
+    <div class="onsen-search">
+      <div class="search-row">
+        <label class="search-field">
+          <span class="search-label">都道府県</span>
+          <select id="pref-select">
+            <option value="">-- 選択してください --</option>
+          </select>
+        </label>
+        <label class="search-field">
+          <span class="search-label">温泉</span>
+          <select id="onsen-select" disabled>
+            <option value="">-- まず都道府県を選択 --</option>
+          </select>
+        </label>
+        <button type="button" id="search-reset" class="search-reset">リセット</button>
+      </div>
     </div>
-  </div>
 
-  <div class="articles-section" id="articles-section">
-    <div class="section-head"><span>Articles</span></div>
-    <div class="grid" id="articles-grid"></div>
+    <div class="map-hint">ピンをクリックすると下の記事カードへスクロールします</div>
+    <div class="tooltip" id="tooltip"></div>
+    <svg id="map" viewBox="0 0 860 900"></svg>
   </div>
-
+</div>
   <div class="footer">© 2026 効能旅(Kounou Tabi) </div>
 
   <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>

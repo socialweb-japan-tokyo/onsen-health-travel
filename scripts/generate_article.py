@@ -44,6 +44,8 @@ message = client.messages.create(
 )
 
 article_content = message.content[0].text
+# コードブロックの記号が混入した場合に除去
+article_content = article_content.replace("```html", "").replace("```", "").strip()
 today = datetime.date.today().strftime("%Y-%m-%d")
 filename = f"articles/{today}-{week_number}.html"
 

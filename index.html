@@ -3,24 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>温泉・医療ツーリズム情報 | 日本の健康旅行ガイド</title>
+  <title>温泉・医療ツーリズムガイド | 日本の健康旅行情報</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    body { font-family: sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; color: #333; }
-    h1 { color: #2c7a7b; border-bottom: 2px solid #2c7a7b; padding-bottom: 10px; }
-    .article-list { list-style: none; padding: 0; }
-    .article-list li { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 12px; }
-    .article-list li a { text-decoration: none; color: #2c7a7b; font-size: 18px; font-weight: bold; }
-    .article-list li p { color: #666; margin: 6px 0 0; }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Noto Sans JP',sans-serif;background:#f5f4f0;color:#222}
+    .header{background:#fff;border-bottom:1px solid #e8e5e0;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:56px}
+    .logo{font-family:'Noto Serif JP',serif;font-size:15px;letter-spacing:3px;color:#1a3a35;font-weight:400;text-decoration:none}
+    .nav{display:flex;gap:28px}
+    .nav a{font-size:11px;letter-spacing:2px;color:#888;text-decoration:none}
+    .nav a:hover{color:#1a3a35}
+    .tagline{font-size:11px;color:#aaa;letter-spacing:1px}
+    .hero{background:#1a3a35;padding:3.5rem 2rem;text-align:center}
+    .hero-en{font-size:10px;letter-spacing:4px;color:#5caa8a;margin-bottom:12px;text-transform:uppercase}
+    .hero-ja{font-family:'Noto Serif JP',serif;font-size:26px;color:#f0f7f5;font-weight:300;letter-spacing:5px;margin-bottom:10px}
+    .hero-desc{font-size:12px;color:#6aaa90;letter-spacing:1px}
+    .container{max-width:900px;margin:0 auto;padding:2.5rem 1.5rem}
+    .section-head{display:flex;align-items:center;gap:12px;margin-bottom:1.5rem}
+    .section-head span{font-size:10px;letter-spacing:3px;color:#888;text-transform:uppercase}
+    .section-head::after{content:'';flex:1;height:1px;background:#ddd}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}.nav,.tagline{display:none}}
+    .card{background:#fff;border:1px solid #e8e5e0;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s}
+    .card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+    .card-thumb{height:160px;background:#2d5a4a;position:relative;overflow:hidden}
+    .thumb-label{position:absolute;bottom:10px;left:12px;font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.7);text-transform:uppercase}
+    .card-body{padding:14px 16px}
+    .card-tag{font-size:10px;letter-spacing:1px;color:#5aaa85;margin-bottom:6px}
+    .card-title{font-size:14px;color:#1a2a25;font-weight:500;line-height:1.6;margin-bottom:6px}
+    .card-date{font-size:11px;color:#aaa}
+    .footer{text-align:center;padding:2rem;font-size:11px;color:#aaa;letter-spacing:1px;border-top:1px solid #e8e5e0;background:#fff;margin-top:2rem}
   </style>
 </head>
 <body>
-  <h1>🌸 温泉・医療ツーリズムガイド</h1>
-  <p>日本の温泉地と医療ツーリズムに関する情報をお届けします。</p>
-  <ul class="article-list" id="articles">
-    <li>
-      <a href="articles/2026-06-02-23.html">下呂温泉のアルカリ性単純温泉と筋肉痛</a>
-      <p>2026-06-02公開 ― 下呂温泉のアルカリ性単純温泉と筋肉痛について詳しく解説します。</p>
-    </li>
-  </ul>
+  <div class="header">
+    <a class="logo" href="/">温泉・医療ツーリズムガイド</a>
+    <div class="nav">
+      <a href="#">記事一覧</a>
+      <a href="#">効能別</a>
+      <a href="#">温泉地図</a>
+    </div>
+    <div class="tagline">日本の健康旅行情報</div>
+  </div>
+  <div class="hero">
+    <div class="hero-en">Japan Wellness Travel Guide</div>
+    <div class="hero-ja">温泉・医療ツーリズム</div>
+    <div class="hero-desc">日本全国の温泉地と健康旅行の情報を毎週更新</div>
+  </div>
+  <div class="container">
+    <div class="section-head"><span>Latest Articles</span></div>
+    <div class="grid" id="articles">
+    </div>
+  </div>
+  <div class="footer">© 2026 温泉・医療ツーリズムガイド ― 毎週月曜日更新</div>
 </body>
 </html>

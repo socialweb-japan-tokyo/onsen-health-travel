@@ -346,26 +346,25 @@ pinGroups
 
   // 3. 温泉が選ばれたら：ピンをハイライト＋カードへスクロール
   onsenSelect.addEventListener('change', () => {
-    const id = onsenSelect.value;
+  const id = onsenSelect.value;
 
-    document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
-    document.querySelectorAll('.card.flash').forEach(el => el.classList.remove('flash'));
+  // 直前のハイライトをクリア
+  document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
 
-    if (!id) return;
+  if (!id) return;
 
-    // ピンを id で特定（D3 のデータバインドを利用）
-    const pinNode = d3.selectAll('.pin').filter(d => d && d.id === id).node();
-    if (pinNode) pinNode.classList.add('highlight');
+  // 該当ピンをハイライト（点滅）
+  const pinNode = d3.selectAll('.pin').filter(d => d && d.id === id).node();
+  if (pinNode) {
+    pinNode.classList.add('highlight');
 
-    // カードへスクロール＆フラッシュ
-    const card = document.getElementById(id);
-    if (card) {
-      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      void card.offsetWidth; // reflow
-      card.classList.add('flash');
+    // マップが画面内に入るようスクロール
+    const mapSection = document.getElementById('map-section');
+    if (mapSection) {
+      mapSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
-  });
-
+  }
+});
   // 4. リセットボタン
   resetBtn.addEventListener('click', () => {
     prefSelect.value = '';

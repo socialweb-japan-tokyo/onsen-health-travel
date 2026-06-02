@@ -146,8 +146,47 @@
 .search-field select:disabled{background:#f0efea;color:#aaa;cursor:not-allowed}
 .search-reset{font-family:'Noto Sans JP',sans-serif;font-size:11px;letter-spacing:1px;padding:9px 18px;background:#1a3a35;color:#fff;border:none;border-radius:4px;cursor:pointer;transition:background .15s}
 .search-reset:hover{background:#2d5a4a}
-.pin.highlight circle{r:9;fill:#e08a3a !important;stroke:#fff !important;stroke-width:2.5}
-.pin.highlight{animation:pulse 1.5s ease-in-out infinite}
+/* === ハイライト演出（波紋 + グロー + ラベル） === */
+
+/* ハイライトされたピン本体（グロー＋鼓動） */
+.pin.highlight circle:not(.ripple){
+  r:10;
+  fill:#ff6b35 !important;
+  stroke:#fff !important;
+  stroke-width:3;
+  filter:drop-shadow(0 0 12px rgba(255,107,53,0.9)) drop-shadow(0 0 20px rgba(255,107,53,0.5));
+  animation:glow-pulse 1.2s ease-in-out infinite;
+}
+@keyframes glow-pulse{
+  0%,100%{r:10;filter:drop-shadow(0 0 8px rgba(255,107,53,0.7))}
+  50%{r:13;filter:drop-shadow(0 0 18px rgba(255,107,53,1)) drop-shadow(0 0 30px rgba(255,107,53,0.6))}
+}
+
+/* 波紋エフェクト */
+.ripple{
+  fill:none;
+  stroke:#ff6b35;
+  stroke-width:2;
+  opacity:0;
+  animation:ripple-anim 1.6s ease-out infinite;
+  pointer-events:none;
+}
+.ripple-2{animation-delay:0.5s}
+.ripple-3{animation-delay:1s}
+@keyframes ripple-anim{
+  0%{r:6;opacity:0.8;stroke-width:3}
+  100%{r:30;opacity:0;stroke-width:0.5}
+}
+
+/* 温泉名ラベル */
+.pin-label{
+  animation:label-fade-in 0.4s ease-out;
+  pointer-events:none;
+}
+@keyframes label-fade-in{
+  0%{opacity:0;transform:translateY(5px)}
+  100%{opacity:1;transform:translateY(0)}
+}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
 @media(max-width:480px){.search-row{flex-direction:column;align-items:stretch}.search-reset{align-self:flex-end}}
   </style>
@@ -321,9 +360,10 @@ pinGroups
     const pref = prefSelect.value;
     onsenSelect.innerHTML = '';
 
-    // 直前のハイライトをクリア
-    document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
-
+    // 直前のハイライト・波紋・ラベルをクリア
+  document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
+  document.querySelectorAll('.ripple').forEach(el => el.remove());
+  document.querySelectorAll('.pin-label').forEach(el => el.remove());
     if (!pref) {
       onsenSelect.innerHTML = '<option value="">-- まず都道府県を選択 --</option>';
       onsenSelect.disabled = true;
@@ -345,18 +385,39 @@ pinGroups
   });
 
   // 3. 温泉が選ばれたら：ピンをハイライト＋カードへスクロール
-  onsenSelect.addEventListener('change', () => {
+  // 3. 温泉が選ばれたら：マップ上でピンを派手にハイライト
+onsenSelect.addEventListener('change', () => {
   const id = onsenSelect.value;
 
-  // 直前のハイライトをクリア
+  // 直前のハイライト・波紋・ラベルをクリア
   document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
+  document.querySelectorAll('.ripple').forEach(el => el.remove());
+  document.querySelectorAll('.pin-label').forEach(el => el.remove());
 
   if (!id) return;
 
-  // 該当ピンをハイライト（点滅）
-  const pinNode = d3.selectAll('.pin').filter(d => d && d.id === id).node();
+  // 該当ピンを d3 で取得
+  const pinSelection = d3.selectAll('.pin').filter(d => d && d.id === id);
+  const pinNode = pinSelection.node();
+
   if (pinNode) {
     pinNode.classList.add('highlight');
+
+    // 波紋を3つ挿入（既存 circle の前に入れて、本体ピンが手前に来るように）
+    pinSelection.insert('circle', ':first-child').attr('class', 'ripple');
+    pinSelection.insert('circle', ':first-child').attr('class', 'ripple ripple-2');
+    pinSelection.insert('circle', ':first-child').attr('class', 'ripple ripple-3');
+
+    // 温泉名のラベル（ふきだし）を追加
+    const data = pinSelection.datum();
+    pinSelection.append('g').attr('class', 'pin-label')
+      .html(`
+        <rect x="-50" y="-38" width="100" height="22" rx="11" 
+              fill="#1a3a35" opacity="0.95"/>
+        <text x="0" y="-23" text-anchor="middle" 
+              fill="#fff" font-size="11" font-weight="500"
+              font-family="Noto Sans JP, sans-serif">${data.name}</text>
+      `);
 
     // マップが画面内に入るようスクロール
     const mapSection = document.getElementById('map-section');
@@ -365,13 +426,15 @@ pinGroups
     }
   }
 });
-  // 4. リセットボタン
-  resetBtn.addEventListener('click', () => {
-    prefSelect.value = '';
-    onsenSelect.innerHTML = '<option value="">-- まず都道府県を選択 --</option>';
-    onsenSelect.disabled = true;
-    document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
-  });
+// 4. リセットボタン
+resetBtn.addEventListener('click', () => {
+  prefSelect.value = '';
+  onsenSelect.innerHTML = '<option value="">-- まず都道府県を選択 --</option>';
+  onsenSelect.disabled = true;
+  document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
+  document.querySelectorAll('.ripple').forEach(el => el.remove());
+  document.querySelectorAll('.pin-label').forEach(el => el.remove());
+});  
 })();
   </script>
 </body>

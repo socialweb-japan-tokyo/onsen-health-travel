@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>万座温泉で標高1,800mの強硫黄泉が呼吸器を整える | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 群馬県 &gt; 万座温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Respiratory Recovery</div>
+    <h1 class="hero-title">万座温泉で<br>標高1,800mの強硫黄泉が呼吸器を整える</h1>
+    <p class="hero-lead">
+      群馬県、白根山の南稜、標高約1,800mに湧く<strong>日本一の硫黄濃度</strong>を誇る酸性硫黄泉。
+      白濁の湯に浸かりながら立ちのぼる湯気を吸い込むことで、硫化水素が気管支拡張と去痰を促し、
+      喘息・気管支炎・慢性気管支炎などの<strong>呼吸器疾患</strong>に効くとされてきた湯治場。
+      アレルゲンの少ない高地気候とあわせて、呼吸を深くやり直すための2泊3日プランをご紹介します。
+    </p>
+    <div class="hero-meta">群馬県吾妻郡嬬恋村 / 酸性-含硫黄-マグネシウム・ナトリウム-塩化物泉</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">ALTITUDE</div>
+        <div class="fact-value">1,800<small>m</small></div>
+        <div class="fact-unit">日本最高所級</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">TYPE</div>
+        <div class="fact-value">硫黄泉</div>
+        <div class="fact-unit">硫黄濃度日本一</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">呼吸器</div>
+        <div class="fact-unit">喘息・気管支炎</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">2<small>泊</small>3<small>日</small></div>
+        <div class="fact-unit">湯治型1週間〜</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる万座温泉</div>
+    <ul class="tldr-list">
+      <li>白根山南稜、標高約1,800mの高地温泉。上信越高原国立公園内、国民保養温泉地に指定</li>
+      <li>湧出量1日540万L、源泉温度80℃の酸性硫黄泉。硫黄濃度は日本一ともいわれる白濁の湯</li>
+      <li>泉質別適応症で「慢性気管支炎」が指定される硫黄泉+高地気候の組み合わせは、呼吸器の転地療養に古来適する</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ硫黄の湯が「呼吸器」に効くのか</h2>
+    </div>
+    <p>これまでご紹介してきた温泉のほとんどは、湯に浸かって<strong>皮膚から成分を取り込む</strong>ことで効能を発揮します。万座温泉が独自なのは、湯に含まれる<strong>硫化水素ガスが、皮膚と気道の2つの経路</strong>で身体に届くこと。白濁した湯の表面から立ちのぼる湯気には硫化水素が混ざっており、入浴中の呼吸はもちろん、温泉街を歩いているだけでも、ほのかな硫黄の香りとともにこのガスを吸い込みます。</p>
+
+    <p>硫化水素は、気道粘膜に届くと<strong>血管を拡張させて気管支を緩め、痰を出やすくする(去痰作用)</strong>働きが知られています。万座が古くから「<strong>ぜんそくに効く</strong>」「呼吸器病に効能がある」と語り継がれてきたのはこのためで、泉質別適応症としても硫黄泉には「慢性気管支炎」が指定されています。そこに加えて<strong>標高1,800mの高地気候</strong>。空気中のハウスダスト・スギ花粉などのアレルゲンと大気汚染物質が大幅に減り、湿度も低く、呼吸器を「リセット」する転地効果が古くから療養に活用されてきました。さらに皮膚側では、強い殺菌力を持つ酸性硫黄泉が慢性湿疹・アトピー性皮膚炎・乾癬などに効き、温熱と血管拡張作用は神経痛・関節痛・冷え性にも対応——<strong>「呼吸を整える」を主軸に、皮膚・関節・血流まで一通り整える</strong>のが万座の湯です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 硫化水素が「皮膚」と「気道」の2経路で届く —</div>
+      <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="380" fill="#fafaf6"/>
+
+        <!-- 標高表示(背景) -->
+        <text x="40" y="30" font-family="Noto Serif JP" font-size="11" fill="#5a8ca0" font-weight="500">標高 1,800m / 高地気候</text>
+        <g stroke="#a8c8d8" stroke-width="0.5" fill="none">
+          <line x1="40" y1="45" x2="560" y2="45" stroke-dasharray="3,3"/>
+        </g>
+        <text x="540" y="42" font-family="Noto Sans JP" font-size="9" fill="#5a8ca0" text-anchor="end">アレルゲン少・湿度低</text>
+
+        <!-- 中央:人体(立ち姿、上半身) -->
+        <g transform="translate(300, 75)">
+          <!-- 頭 -->
+          <ellipse cx="0" cy="20" rx="22" ry="24" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1.2"/>
+          <!-- 目・口・鼻 -->
+          <circle cx="-7" cy="15" r="1.2" fill="#1a2a25"/>
+          <circle cx="7" cy="15" r="1.2" fill="#1a2a25"/>
+          <!-- 鼻 -->
+          <path d="M 0 22 L -2 28 L 2 28 Z" fill="#e8b89c" stroke="#1a2a25" stroke-width="0.4"/>
+          <!-- 口 -->
+          <path d="M -5 32 Q 0 35 5 32" stroke="#1a2a25" stroke-width="0.8" fill="none"/>
+          <!-- 首 -->
+          <rect x="-7" y="42" width="14" height="10" fill="#f4d4b8" stroke="#1a2a25" stroke-width="0.8"/>
+          <!-- 胴体 -->
+          <path d="M -42 52 L 42 52 L 48 200 L -48 200 Z" fill="#e8d8c0" stroke="#1a2a25" stroke-width="1.2"/>
+
+          <!-- 気管(縦の管) -->
+          <rect x="-3" y="55" width="6" height="35" fill="#cfdfe5" stroke="#1a2a25" stroke-width="0.6"/>
+          <!-- 気管支(分岐) -->
+          <path d="M 0 90 L -18 120 M 0 90 L 18 120" stroke="#1a2a25" stroke-width="2" fill="none"/>
+          <!-- 肺(左右) -->
+          <ellipse cx="-22" cy="135" rx="18" ry="28" fill="#f4b8a8" stroke="#1a2a25" stroke-width="1" opacity="0.85"/>
+          <ellipse cx="22" cy="135" rx="18" ry="28" fill="#f4b8a8" stroke="#1a2a25" stroke-width="1" opacity="0.85"/>
+          <!-- 気管支の小分岐 -->
+          <g stroke="#9a4a3a" stroke-width="0.6" fill="none">
+            <line x1="-22" y1="125" x2="-30" y2="135"/>
+            <line x1="-22" y1="125" x2="-15" y2="135"/>
+            <line x1="-22" y1="140" x2="-30" y2="150"/>
+            <line x1="-22" y1="140" x2="-15" y2="150"/>
+            <line x1="22" y1="125" x2="30" y2="135"/>
+            <line x1="22" y1="125" x2="15" y2="135"/>
+            <line x1="22" y1="140" x2="30" y2="150"/>
+            <line x1="22" y1="140" x2="15" y2="150"/>
+          </g>
+
+          <!-- 肺の名前 -->
+          <text x="0" y="178" font-family="Noto Serif JP" font-size="9" fill="#5a3a2a" text-anchor="middle" font-weight="500">気管支・肺</text>
+        </g>
+
+        <!-- 左側:浴槽+湯気 -->
+        <g transform="translate(80, 245)">
+          <!-- 浴槽 -->
+          <rect x="0" y="40" width="100" height="40" rx="4" fill="#e8e8ec" stroke="#1a2a25" stroke-width="1.5"/>
+          <!-- 白濁の湯 -->
+          <rect x="2" y="42" width="96" height="14" fill="#fff" opacity="0.85"/>
+          <!-- 湯気(立ち上る) -->
+          <g stroke="#cfd5d2" stroke-width="1" fill="none" opacity="0.75">
+            <path d="M 20 35 Q 18 20 22 5 Q 25 -10 22 -25 Q 18 -40 22 -55"/>
+            <path d="M 50 35 Q 53 20 50 5 Q 47 -10 51 -25 Q 53 -40 50 -55"/>
+            <path d="M 80 35 Q 78 20 82 5 Q 85 -10 80 -25 Q 78 -40 82 -55"/>
+          </g>
+          <!-- 硫化水素の粒子(湯気の中) -->
+          <g fill="#f0c878">
+            <circle cx="22" cy="0" r="2"/>
+            <text x="22" y="3" font-family="Noto Serif JP" font-size="6" fill="#1a2a25" text-anchor="middle" font-weight="700">H₂S</text>
+            <circle cx="50" cy="-15" r="2.5"/>
+            <text x="50" y="-12" font-family="Noto Serif JP" font-size="6" fill="#1a2a25" text-anchor="middle" font-weight="700">H₂S</text>
+            <circle cx="80" cy="-5" r="2"/>
+            <text x="80" y="-2" font-family="Noto Serif JP" font-size="6" fill="#1a2a25" text-anchor="middle" font-weight="700">H₂S</text>
+            <circle cx="35" cy="-30" r="2.5"/>
+            <text x="35" y="-27" font-family="Noto Serif JP" font-size="6" fill="#1a2a25" text-anchor="middle" font-weight="700">H₂S</text>
+          </g>
+          <text x="50" y="105" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">白濁の硫黄泉</text>
+          <text x="50" y="118" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">硫化水素を放散</text>
+        </g>
+
+        <!-- 経路①皮膚への矢印 -->
+        <g stroke="#c44a3a" stroke-width="2" fill="none">
+          <path d="M 190 270 Q 230 270 260 250" marker-end="url(#arrowM)"/>
+        </g>
+        <text x="225" y="260" font-family="Noto Sans JP" font-size="9" fill="#c44a3a" text-anchor="middle">① 皮膚から</text>
+
+        <!-- 経路②気道への矢印(湯気から鼻・口へ) -->
+        <g stroke="#5caa8a" stroke-width="2" fill="none">
+          <path d="M 130 200 Q 200 150 290 105" marker-end="url(#arrowM2)"/>
+        </g>
+        <text x="200" y="170" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle">② 湯気を吸入</text>
+
+        <!-- 右側:効能の説明 -->
+        <g transform="translate(420, 200)">
+          <!-- 効能① -->
+          <circle cx="0" cy="0" r="11" fill="#5caa8a"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">気</text>
+          <text x="18" y="0" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">気管支拡張</text>
+          <text x="18" y="13" font-family="Noto Sans JP" font-size="9" fill="#555">喘息・気管支炎の緩和</text>
+
+          <!-- 効能② -->
+          <circle cx="0" cy="40" r="11" fill="#5caa8a"/>
+          <text x="0" y="44" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">痰</text>
+          <text x="18" y="40" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">去痰作用</text>
+          <text x="18" y="53" font-family="Noto Sans JP" font-size="9" fill="#555">慢性気管支炎の改善</text>
+
+          <!-- 効能③ -->
+          <circle cx="0" cy="80" r="11" fill="#c44a3a"/>
+          <text x="0" y="84" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">皮</text>
+          <text x="18" y="80" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">皮膚の殺菌</text>
+          <text x="18" y="93" font-family="Noto Sans JP" font-size="9" fill="#555">アトピー・乾癬などに</text>
+
+          <!-- 効能④ -->
+          <circle cx="0" cy="120" r="11" fill="#c47a3a"/>
+          <text x="0" y="124" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">血</text>
+          <text x="18" y="120" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">血流促進</text>
+          <text x="18" y="133" font-family="Noto Sans JP" font-size="9" fill="#555">神経痛・関節痛・冷え</text>
+        </g>
+
+        <!-- 下部:総括 -->
+        <text x="300" y="360" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500" font-style="italic">+ 高地気候(アレルゲン少・湿度低)で呼吸器を転地療養</text>
+
+        <defs>
+          <marker id="arrowM" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#c44a3a"/>
+          </marker>
+          <marker id="arrowM2" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">呼吸器に効く3つの要素</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">硫化水素の吸入<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;気管支拡張・去痰作用">気管支拡張・去痰作用</small></div>
+        <div class="effect-desc">
+          白濁した湯から立ちのぼる湯気には硫化水素が含まれ、入浴中の呼吸で気道粘膜に届きます。気管支を緩める作用と痰を出しやすくする作用が知られ、硫黄泉は泉質別適応症で「慢性気管支炎」が指定されています。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">高地気候の転地効果<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;標高1,800m">標高1,800m</small></div>
+        <div class="effect-desc">
+          高地の空気はアレルゲンや大気汚染物質が大幅に減り、湿度も低め。喘息・アレルギー疾患の方が日常を離れることで症状が落ち着きやすくなる「転地療養」効果が、古くから知られています。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">皮膚と血流への作用<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;殺菌+温熱+血管拡張">殺菌+温熱+血管拡張</small></div>
+        <div class="effect-desc">
+          酸性硫黄泉の強い殺菌力が慢性湿疹・アトピー性皮膚炎・尋常性乾癬などの皮膚疾患に対応。硫化水素による血管拡張作用が血流を改善し、神経痛・関節痛・冷え性・高血圧にも幅広く効きます。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(2泊3日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、慣らし入浴で身体を高地に適応</strong><br>
+          東京から北陸新幹線で軽井沢駅まで約1時間10分 → 西武バスで万座温泉まで約2時間。標高1,800mに到着したら、まずは<strong>軽い散歩で高地に適応</strong>を。チェックイン後、宿の浴室で15分の慣らし入浴。<strong>湯気をしっかり鼻と口で吸い込む</strong>ように、ゆっくり呼吸をしながら浸かるのが、万座流。夕食は宿の和食で、特に味の濃いものは控えめに(高地では味覚が変わります)。湯あがり後は早めに就寝、深い呼吸を確かめながら眠りに入ります。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>MAIN</small></div>
+        <div class="tl-content">
+          <strong>朝湯+万座空吹の見学+昼夕の入浴</strong><br>
+          朝6時頃の<strong>朝湯(20分)</strong>で1日をスタート。澄み切った高地の空気と湯気の組み合わせは、この標高でしか体験できません。朝食後、徒歩で<strong>万座空吹(からぶき)</strong>へ。岩肌から噴き出す火山ガスと湯気の景観が圧巻で、硫黄の香りに包まれながらしばし呼吸を整えます。日中は宿の異なる浴槽(姥湯=湯畑、大苦湯、苦湯、ラジウム北光湯など)を巡って、それぞれの湯の違いを体感。夕方の入浴は長めに20〜30分、しっかり呼吸を意識して。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝湯で締めくくり、ゆっくり下山</strong><br>
+          最終日も朝湯から。湯気を吸い込みながらの「<strong>深呼吸入浴</strong>」が今日のメインテーマ。チェックアウトのあと、季節によっては<strong>高山植物の散策路</strong>(春〜夏、コマクサ・イワカガミなど約200種)や、紅葉(秋)、樹氷(冬)を楽しんで下山。本格的な呼吸器療養を希望する方は<strong>1週間以上の湯治</strong>がおすすめで、宿では湯治プランを用意しているところもあります。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">呼吸器疾患のある方への重要な注意</div>
+      <strong>硫化水素は適量では治療効果がありますが、濃度や状態によっては有毒で、呼吸器疾患の方には逆効果になる場合があります。</strong>
+      <ul style="list-style: none; padding-left: 0; margin-top: 6px;">
+        <li>・<strong>喘息の発作期間中は入浴禁忌</strong>。発作が落ち着いている安定期に、医師に相談のうえ来訪を</li>
+        <li>・重度のCOPD・肺気腫・呼吸不全のある方、酸素療法中の方は標高1,800mの低酸素環境が負担になります。必ず主治医に相談を</li>
+        <li>・浴室の換気を確認し、湯気がこもった密閉空間で長時間吸入しないこと(硫化水素中毒のリスク)</li>
+        <li>・極度の乾燥肌・敏感肌の方は強酸性のため肌がしみる場合があるので、入浴後は真水で軽くすすぐ</li>
+        <li>・高血圧・心臓病・動脈硬化のある方は高地+高温浴の組み合わせが負担になる場合があるので医師相談を</li>
+        <li>・1回の入浴は10〜15分が目安、長時間の入浴・連続入浴は避ける。水分補給を必ず</li>
+      </ul>
+      <strong>万座温泉は治療の代替ではなく、医療と並行して行う補助的な転地療養です。</strong>持病のある方は必ずかかりつけ医に相談のうえ計画してください。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>群馬県吾妻郡嬬恋村干俣万座温泉(白根山南稜、上信越高原国立公園内、標高約1,800m)</td></tr>
+        <tr><th>東京から</th><td>北陸新幹線「あさま」「はくたか」で軽井沢駅まで約1時間10分 → 西武高原バス「万座温泉行き」で約2時間。または上野駅から特急「草津・四万」で万座・鹿沢口駅まで約2時間40分 → バスで約40分</td></tr>
+        <tr><th>大阪から</th><td>新幹線で東京経由、合計約4〜5時間</td></tr>
+        <tr><th>車</th><td>関越自動車道「渋川伊香保IC」から国道292号で約2時間。冬期はチェーン・スタッドレス必須、雪道走行に自信がない方はバス利用推奨</td></tr>
+        <tr><th>営業期間</th><td>通年営業(冬季は積雪のため一部道路規制あり)</td></tr>
+        <tr><th>主要施設</th><td>姥湯(湯畑) / 大苦湯 / ラジウム北光湯 / 苦湯 / 万座空吹(からぶき、火山ガス噴出地点) / 各旅館の湯</td></tr>
+        <tr><th>泉質</th><td>酸性-含硫黄-マグネシウム・ナトリウム-塩化物泉(強硫黄泉)、源泉温度約80℃、27種類の泉質、湧出量1日540万L</td></tr>
+        <tr><th>効能</th><td>呼吸器疾患(慢性気管支炎・喘息・気管支炎)・慢性皮膚病(アトピー・乾癬・湿疹)・神経痛・筋肉痛・関節痛・冷え性・高血圧・糖尿病・五十肩・リウマチ</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      万座温泉は、湯に浸かるだけの温泉ではありません。
+      <strong style="color:#d4ebe0">白濁の湯から立ちのぼる湯気を呼吸とともに取り込み</strong>、硫化水素が気管支を緩めて痰を出しやすくする——
+      湯と湯気と高地の空気が、一緒に呼吸器を整えてくれる稀有な湯治場です。
+      標高1,800mの高地気候はアレルゲンと大気汚染物質を大幅に減らし、
+      喘息やアトピーが日常から離れて落ち着く転地効果も期待できます。
+      <strong style="color:#d4ebe0">医療の代替ではなく、医療と並行する補助的な療養</strong>として、
+      持病のある方は主治医と相談のうえ、まずは週末2泊の体験から、
+      手応えがあれば1週間の湯治へと滞在を伸ばしていく旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

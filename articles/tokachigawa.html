@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>十勝川温泉のモール温泉で太古の植物のチカラを肌に取り込む | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 北海道 &gt; 十勝川温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Botanical Bath</div>
+    <h1 class="hero-title">十勝川温泉で<br>太古の植物のチカラを肌に取り込む</h1>
+    <p class="hero-lead">
+      北海道音更町、十勝川沿いに湧き出る世界でも希少な「モール温泉」。
+      300万〜1500万年前の植物が堆積した泥炭層を通って湧き出す琥珀色の湯は、
+      鉱物ではなく<strong>植物由来のフミン物質</strong>がしっとりと肌に届く、世界に2か所だけだった奇跡の温泉。
+      乾燥肌・大人の肌悩み・1泊2日のごほうび旅をお探しの方に向けたプランをご紹介します。
+    </p>
+    <div class="hero-meta">北海道河東郡音更町 / ナトリウム-塩化物・炭酸水素塩泉(モール泉)</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">ORIGIN</div>
+        <div class="fact-value">1,500<small>万年前</small></div>
+        <div class="fact-unit">太古の植物層</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">PH</div>
+        <div class="fact-value">8.5</div>
+        <div class="fact-unit">弱アルカリ性</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">保湿・美肌</div>
+        <div class="fact-unit">疲労回復</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">週末プラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる十勝川温泉</div>
+    <ul class="tldr-list">
+      <li>1990年頃まで世界で十勝川とドイツのバーデン=バーデンの2か所でしか確認されなかった「モール温泉」</li>
+      <li>葦などが堆積した泥炭層・亜炭層を通って湧き出す琥珀色の湯。植物性のフミン物質を含む</li>
+      <li>2004年に北海道遺産に選定された希少な温泉資源。地域全体で保護活動を続けている</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ植物が、温泉になるのか</h2>
+    </div>
+    <p>「温泉」と聞いてイメージするのは、火山の熱で湧き出るミネラル豊富な鉱物性の湯。日本のほとんどの温泉、そしてここまでにご紹介してきた草津・下呂・登別・道後・有馬・箱根・別府・黒川・玉川——その<strong>すべてが火山性の鉱物温泉</strong>です。十勝川温泉だけが、まったく違う成り立ちをしています。</p>
+
+    <p>十勝平野の地下には、葦などの植物が300万〜1500万年もの年月をかけて堆積した<strong>泥炭層・亜炭層</strong>が広がっています。ドイツ語で「亜炭」を意味する「モール(Moor)」に由来する名前のとおり、地下水がこの植物の層を通り抜けるときに、葉や根が分解されてできた<strong>フミン物質(腐植物質)</strong>を溶かし込みます。地下500〜700mまで下りた水は岩盤層の摩擦熱で温められ、フミン酸を抱えたまま地上に湧き出す——これが十勝川「モール温泉」の正体です。鉱物の代わりに、太古の植物のエキスがたっぷり溶け込んだ湯。ヨーロッパで「泥炭泥を肌に塗る」モール浴と原理的に近く、化粧水のような<strong>天然の保湿成分</strong>として肌に届きます。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 地下500〜700m、植物の層を抜けて湧き出るまで —</div>
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="360" fill="#fafaf6"/>
+
+        <!-- 地表 -->
+        <rect x="40" y="40" width="380" height="20" fill="#9ab09a" stroke="#1a2a25" stroke-width="1"/>
+        <text x="35" y="54" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">地表</text>
+        <!-- 草・木 -->
+        <g fill="#5a7a4a">
+          <path d="M 80 40 L 78 30 L 80 35 L 82 28 L 84 35 L 82 30 L 80 40 Z"/>
+          <path d="M 140 40 L 138 28 L 140 32 L 142 26 L 144 32 L 142 28 L 140 40 Z"/>
+          <path d="M 220 40 L 218 30 L 222 35 L 220 40 Z"/>
+          <path d="M 320 40 L 318 28 L 320 33 L 322 27 L 324 33 L 322 28 L 320 40 Z"/>
+        </g>
+
+        <!-- 火山灰土層 -->
+        <rect x="40" y="60" width="380" height="40" fill="#c8b89c" stroke="#1a2a25" stroke-width="0.8"/>
+        <text x="35" y="84" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">火山灰土</text>
+        <text x="425" y="84" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="start">〜50m</text>
+
+        <!-- 泥炭層 -->
+        <rect x="40" y="100" width="380" height="55" fill="#7a5a3a" stroke="#1a2a25" stroke-width="0.8"/>
+        <text x="35" y="130" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">泥炭層</text>
+        <text x="425" y="130" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="start">〜300m</text>
+        <!-- 植物の繊維イメージ -->
+        <g stroke="#3a2a1a" stroke-width="0.6" fill="none">
+          <path d="M 60 110 Q 100 115 140 112 Q 180 118 220 113 Q 260 116 300 112 Q 340 115 380 113"/>
+          <path d="M 70 125 Q 110 130 150 128 Q 200 132 240 130 Q 280 128 330 132 Q 360 130 400 128"/>
+          <path d="M 50 140 Q 90 145 130 142 Q 180 145 220 140 Q 270 142 310 145 Q 350 142 390 145"/>
+        </g>
+        <text x="230" y="148" font-family="Noto Sans JP" font-size="8" fill="#e8d8c8" text-anchor="middle">葦などの植物が堆積(300万〜1500万年前)</text>
+
+        <!-- 亜炭層 -->
+        <rect x="40" y="155" width="380" height="65" fill="#3a2a1a" stroke="#1a2a25" stroke-width="0.8"/>
+        <text x="35" y="190" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">亜炭層</text>
+        <text x="425" y="190" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="start">〜600m</text>
+        <!-- フミン酸の粒子 -->
+        <g fill="#c4a878">
+          <circle cx="80" cy="180" r="2"/>
+          <circle cx="120" cy="195" r="2"/>
+          <circle cx="160" cy="178" r="2"/>
+          <circle cx="200" cy="200" r="2"/>
+          <circle cx="240" cy="185" r="2"/>
+          <circle cx="280" cy="195" r="2"/>
+          <circle cx="320" cy="178" r="2"/>
+          <circle cx="360" cy="200" r="2"/>
+          <circle cx="100" cy="210" r="2"/>
+          <circle cx="180" cy="208" r="2"/>
+          <circle cx="260" cy="210" r="2"/>
+          <circle cx="340" cy="210" r="2"/>
+        </g>
+        <text x="230" y="215" font-family="Noto Sans JP" font-size="8" fill="#e8d8c8" text-anchor="middle">フミン酸・腐植物質を含む(モール)</text>
+
+        <!-- 岩盤層 -->
+        <rect x="40" y="220" width="380" height="60" fill="#5a5a5a" stroke="#1a2a25" stroke-width="0.8"/>
+        <text x="35" y="255" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">岩盤層</text>
+        <text x="425" y="255" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="start">600m〜</text>
+        <!-- 岩盤の模様 -->
+        <g stroke="#3a3a3a" stroke-width="0.5" fill="none">
+          <line x1="60" y1="240" x2="80" y2="260"/>
+          <line x1="120" y1="245" x2="140" y2="265"/>
+          <line x1="200" y1="240" x2="220" y2="260"/>
+          <line x1="280" y1="245" x2="300" y2="265"/>
+          <line x1="360" y1="240" x2="380" y2="260"/>
+        </g>
+        <text x="230" y="275" font-family="Noto Sans JP" font-size="8" fill="#e8d8c8" text-anchor="middle">地殻変動で温められた地下水(55〜60℃)</text>
+
+        <!-- 地下水の上昇矢印 -->
+        <g stroke="#5caa8a" stroke-width="2.5" fill="none">
+          <path d="M 230 270 L 230 230 L 230 160 L 230 110 L 230 75" marker-end="url(#arrowUp)"/>
+        </g>
+
+        <!-- 浴槽(右側) -->
+        <g transform="translate(450, 130)">
+          <rect x="0" y="40" width="100" height="50" rx="4" fill="#c4a878" stroke="#1a2a25" stroke-width="1.5"/>
+          <rect x="0" y="40" width="100" height="8" fill="#a88858" opacity="0.5"/>
+          <text x="50" y="105" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">琥珀色の湯</text>
+          <text x="50" y="118" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">フミン酸を含む</text>
+          <!-- 湯気 -->
+          <g stroke="#aaa" stroke-width="0.8" fill="none">
+            <path d="M 25 35 Q 23 25 25 15"/>
+            <path d="M 50 35 Q 48 22 52 12"/>
+            <path d="M 75 35 Q 77 25 73 15"/>
+          </g>
+        </g>
+
+        <!-- 浴槽への流れの矢印 -->
+        <path d="M 230 75 Q 350 60 460 145" stroke="#5caa8a" stroke-width="2" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowUp)"/>
+
+        <!-- 凡例 -->
+        <g transform="translate(40, 310)">
+          <circle cx="6" cy="6" r="3" fill="#c4a878"/>
+          <text x="14" y="9" font-family="Noto Sans JP" font-size="9" fill="#555">● = フミン酸/腐植物質(植物由来の保湿成分)</text>
+        </g>
+        <g transform="translate(340, 310)">
+          <line x1="0" y1="6" x2="14" y2="6" stroke="#5caa8a" stroke-width="2"/>
+          <text x="20" y="9" font-family="Noto Sans JP" font-size="9" fill="#555">━ = 地下水の上昇経路</text>
+        </g>
+
+        <defs>
+          <marker id="arrowUp" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">3つの成分が肌をしっとり包む</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">フミン物質<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;植物由来の保湿成分">植物由来の保湿成分</small></div>
+        <div class="effect-desc">
+          泥炭・亜炭から溶け出した有機酸の総称。皮膚の角質をすべすべにし、再生作用があるとされます。化粧水のように肌に行き渡るのが、鉱物温泉にはないモール泉の特徴です。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">弱アルカリ性<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;pH8.5の角質ケア">pH8.5の角質ケア</small></div>
+        <div class="effect-desc">
+          pH8.5のアルカリ性が古い角質をやさしく落とし、フミン酸が浸透しやすい状態に。「アルカリ+植物成分」の組み合わせが、ツルツル感を倍増させます。肌が弱い人にも安心。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">ナトリウム塩化物<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;保温と保湿膜">保温と保湿膜</small></div>
+        <div class="effect-desc">
+          適度な塩分が肌表面に薄い膜を作り、湯あがり後もしっとり感が持続。十勝川温泉のモール泉は塩分も含むため、保湿効果が「植物成分+塩分」の二重構造です。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、夕方の入浴と十勝のごちそう</strong><br>
+          とかち帯広空港からバスまたはレンタカーで約40分。とかち花畑牧場や十勝が丘公園を経由してチェックイン。明るいうちに露天風呂へ入り、<strong>琥珀色の湯の色をしっかり目で楽しむ</strong>のがモール温泉の醍醐味。夕食は十勝ワインに豚丼、ジンギスカン、十勝産チーズを。夜にもう一度入浴して、湯あがりのしっとり感をパジャマで確かめます。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝湯で肌を整え、十勝のスイーツへ</strong><br>
+          朝風呂20分でしっとり保湿膜をたっぷり。チェックアウト後は六花亭・柳月など帯広スイーツ巡りや、ばんえい競馬・幸福駅などの観光へ。「<strong>翌朝の肌が違う</strong>」のがモール泉の特徴とよく言われます。化粧ノリの変化を確かめながら帰路に。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      モール温泉は他の鉱物温泉に比べて刺激が穏やかで、敏感肌の方や乾燥肌の方にも入りやすい泉質です。1回15〜20分、1日2〜3回が目安。湯の色(琥珀〜黄褐色)はフミン物質が溶け込んでいる証拠で、汚れではないので安心して浸かれます。湯あがりに身体を石鹸でゴシゴシ洗わず、軽く流す程度にすると保湿成分が残ります。冬季は道路凍結があるため、レンタカーはスタッドレス必須。心臓・血圧に持病のある方、妊娠中の方はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>北海道河東郡音更町十勝川温泉(帯広市街から車で約20分)</td></tr>
+        <tr><th>とかち帯広空港から</th><td>連絡バスまたはレンタカーで約40〜50分</td></tr>
+        <tr><th>JR帯広駅から</th><td>路線バス(十勝川温泉行き)で約30分、またはタクシーで約20分</td></tr>
+        <tr><th>東京から</th><td>飛行機でとかち帯広空港まで約1時間40分 → 上記アクセス。合計約3時間</td></tr>
+        <tr><th>札幌から</th><td>JR特急「とかち」「おおぞら」で帯広駅まで約2時間30分 → バスで約30分</td></tr>
+        <tr><th>車</th><td>道東自動車道「音更帯広IC」から約15分</td></tr>
+        <tr><th>泉質</th><td>ナトリウム-塩化物・炭酸水素塩泉(弱アルカリ性低張性高温泉)<br>※環境省泉質分類上は単純温泉等だが、植物性フミン物質を含む「モール泉」</td></tr>
+        <tr><th>効能</th><td>美肌・保湿・神経痛・筋肉痛・関節痛・冷え性・慢性皮膚病・慢性婦人病・疲労回復・病後回復期</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      日本に約27,000ある温泉源のほとんどが、火山の熱と鉱物で湧く「石の温泉」だとすれば、
+      十勝川温泉はそのなかにあって唯一無二の<strong style="color:#d4ebe0">「植物の温泉」</strong>です。
+      300万〜1500万年前の葦や草が、長い時間をかけて泥炭・亜炭になり、
+      地下水に溶け出してフミン酸として肌に届く——
+      ドイツのバーデン=バーデンと並んで世界でわずか2か所だった希少な泉質。
+      鉱物の力強さでも、強酸性の刺激でもなく、太古の植物がゆっくり育てた<strong style="color:#d4ebe0">「柔らかな保湿」</strong>。
+      週末1泊、十勝平野のごちそうとともに、肌に植物の時間を取り込む旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

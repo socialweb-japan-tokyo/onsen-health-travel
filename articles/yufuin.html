@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>由布院温泉でやさしい単純温泉が疲労と肌を整える | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 大分県 &gt; 由布院温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Gentle Recovery</div>
+    <h1 class="hero-title">由布院温泉で<br>やさしい単純温泉が疲労と肌を整える</h1>
+    <p class="hero-lead">
+      大分県、由布岳の麓に広がる由布院盆地。源泉数約900(全国2位)、湧出量毎分38,600L(全国3位)を誇る、
+      日本屈指の<strong>アルカリ性単純温泉郷</strong>。
+      pH9前後のとろりとした湯が古い角質をやさしく分解し、メタケイ酸が肌に保湿膜を作ります。
+      刺激が少なく、子どもから高齢者まで安心して長湯できる「家族の湯」で、
+      疲労回復・神経痛・不眠症・自律神経の不調を整える1泊2日プランをご紹介します。
+    </p>
+    <div class="hero-meta">大分県由布市湯布院町 / アルカリ性単純温泉(主)・メタケイ酸豊富</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">PH</div>
+        <div class="fact-value">8.5–9.7</div>
+        <div class="fact-unit">アルカリ単純泉</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">SOURCES</div>
+        <div class="fact-value">約900</div>
+        <div class="fact-unit">全国第2位</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">疲労回復</div>
+        <div class="fact-unit">美肌・不眠</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">週末プラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる由布院温泉</div>
+    <ul class="tldr-list">
+      <li>源泉数約900(全国2位)、湧出量毎分38,600L(全国3位)。湯平温泉と共に「湯布院温泉」として国民保養温泉地</li>
+      <li>アルカリ性単純温泉が中心。pHが高めでとろりとした肌触り、湯あがりはつるつるすべすべに</li>
+      <li>「不眠症」が泉質別適応症にあるのは単純温泉だけ。自律神経不安定症・うつ状態にも適応</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ「単純温泉」が、これほど多くの不調に効くのか</h2>
+    </div>
+    <p>由布院温泉の主役である<strong>「単純温泉」</strong>は、その名前から「シンプル」「特徴がない」と誤解されがちですが、実際は逆です。温泉法上、<strong>温泉水1kg中の溶存成分(ガス成分を除く)が1,000mg未満かつ湧出時の泉温が25℃以上</strong>のものを単純温泉と呼びます。「成分量が少ない=刺激が少ない」ことが、実は単純温泉の最大の効能です。子どもからお年寄りまで湯あたりせず長湯でき、湯治のリハビリにも適することから古くは<strong>「神経痛の湯」「中風(脳卒中)の湯」「家族の湯」</strong>と呼ばれてきました。</p>
+
+    <p>由布院の単純温泉は、pHが9前後(中には9.7に達するものも)と<strong>アルカリ性が強い</strong>のが特徴。皮膚は通常弱酸性のため、アルカリ性の湯に浸かると皮膚表面が反応し、<strong>古くなった角質が静かに分解されて溶け出す</strong>。湯あがりにつるつるすべすべの感触になるのはこのためです。さらに由布院の湯には<strong>メタケイ酸</strong>が豊富で、これが肌に薄い保湿膜を作り、乾燥を防ぎます。同時に、低浸透圧の温泉成分が皮膚から血管に穏やかに届き、<strong>全身の血流が改善されて疲労物質(乳酸など)が運び出されます</strong>。神経痛・関節痛・冷え性が和らぎ、副交感神経が立ち上がるため、<strong>泉質別適応症で「不眠症」が指定されているのは単純温泉だけ</strong>——自律神経不安定症やうつ状態にも適応がある、日本でもっとも「万人向き」の温泉です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— アルカリ性単純温泉が皮膚から全身へ届く経路 —</div>
+      <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="340" fill="#fafaf6"/>
+
+        <!-- 上部:皮膚断面 -->
+        <text x="40" y="30" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">① 皮膚への作用</text>
+
+        <!-- 皮膚の層 -->
+        <!-- 湯(上) -->
+        <rect x="60" y="40" width="480" height="25" fill="#cae3ec" stroke="#5caa8a" stroke-width="0.8"/>
+        <text x="80" y="56" font-family="Noto Sans JP" font-size="9" fill="#1a3a35">アルカリ性単純温泉(pH 8.5〜9.7)+ メタケイ酸</text>
+
+        <!-- 角質層 -->
+        <rect x="60" y="65" width="480" height="15" fill="#e8d8c0" stroke="#9a8a6a" stroke-width="0.5"/>
+        <text x="80" y="76" font-family="Noto Sans JP" font-size="9" fill="#5a4a3a">角質層(古い角質)</text>
+        <!-- 角質が分解されている部分 -->
+        <g fill="#d8c0a0" opacity="0.5">
+          <circle cx="180" cy="72" r="2"/>
+          <circle cx="240" cy="72" r="2.5"/>
+          <circle cx="320" cy="72" r="2"/>
+          <circle cx="400" cy="72" r="2.5"/>
+        </g>
+        <!-- 角質分解の矢印 -->
+        <g stroke="#5caa8a" stroke-width="1.2" fill="none">
+          <line x1="180" y1="55" x2="180" y2="70" marker-end="url(#arrowY2)"/>
+          <line x1="240" y1="55" x2="240" y2="70" marker-end="url(#arrowY2)"/>
+          <line x1="320" y1="55" x2="320" y2="70" marker-end="url(#arrowY2)"/>
+          <line x1="400" y1="55" x2="400" y2="70" marker-end="url(#arrowY2)"/>
+        </g>
+
+        <!-- 表皮 -->
+        <rect x="60" y="80" width="480" height="20" fill="#f4d4b8" stroke="#1a2a25" stroke-width="0.5"/>
+        <text x="80" y="93" font-family="Noto Sans JP" font-size="9" fill="#5a4a3a">表皮(保湿膜あり)</text>
+        <!-- メタケイ酸の膜 -->
+        <g stroke="#5caa8a" stroke-width="1" fill="none" opacity="0.6">
+          <line x1="120" y1="83" x2="500" y2="83" stroke-dasharray="3,2"/>
+        </g>
+
+        <!-- 真皮 -->
+        <rect x="60" y="100" width="480" height="35" fill="#e8b8a0" stroke="#1a2a25" stroke-width="0.5"/>
+        <text x="80" y="118" font-family="Noto Sans JP" font-size="9" fill="#5a4a3a">真皮</text>
+        <!-- 血管 -->
+        <g stroke="#c44a3a" stroke-width="1.5" fill="none">
+          <path d="M 120 120 Q 180 117 240 122 Q 300 125 360 120 Q 420 117 480 122"/>
+        </g>
+        <text x="430" y="132" font-family="Noto Sans JP" font-size="8" fill="#c44a3a">血管</text>
+
+        <!-- 結果1:美肌 -->
+        <text x="70" y="155" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" font-weight="500">→ 古い角質が分解、メタケイ酸が保湿膜を作る → つるつる美肌</text>
+
+        <!-- 区切り線 -->
+        <line x1="60" y1="170" x2="540" y2="170" stroke="#d8d3c0" stroke-width="0.8" stroke-dasharray="3,3"/>
+
+        <!-- 下部:全身への効能 -->
+        <text x="40" y="195" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">② 全身への作用</text>
+
+        <!-- 血流の改善 -->
+        <g transform="translate(110, 240)">
+          <!-- 血管+赤血球 -->
+          <rect x="-50" y="-10" width="100" height="20" rx="10" fill="#fff" stroke="#c44a3a" stroke-width="1.5"/>
+          <g fill="#c44a3a">
+            <circle cx="-30" cy="0" r="3"/>
+            <circle cx="-10" cy="0" r="3"/>
+            <circle cx="10" cy="0" r="3"/>
+            <circle cx="30" cy="0" r="3"/>
+          </g>
+          <!-- 流れの矢印 -->
+          <line x1="-45" y1="15" x2="45" y2="15" stroke="#c44a3a" stroke-width="1.5" marker-end="url(#arrowY3)"/>
+          <text x="0" y="-20" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">血流促進</text>
+          <text x="0" y="40" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">疲労物質(乳酸)が排出</text>
+        </g>
+
+        <!-- 矢印 → -->
+        <line x1="170" y1="240" x2="220" y2="240" stroke="#5caa8a" stroke-width="1.5" marker-end="url(#arrowY1)"/>
+
+        <!-- 神経・関節 -->
+        <g transform="translate(290, 240)">
+          <!-- 関節アイコン -->
+          <circle cx="0" cy="0" r="15" fill="#f0e3d0" stroke="#1a2a25" stroke-width="1"/>
+          <circle cx="0" cy="0" r="8" fill="#e8c4a0"/>
+          <!-- 神経 -->
+          <g stroke="#9a4a3a" stroke-width="0.8" fill="none">
+            <line x1="-15" y1="-15" x2="-25" y2="-25"/>
+            <line x1="15" y1="-15" x2="25" y2="-25"/>
+            <line x1="0" y1="-15" x2="0" y2="-25"/>
+          </g>
+          <text x="0" y="-35" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">神経・関節</text>
+          <text x="0" y="35" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">神経痛・関節痛が緩和</text>
+        </g>
+
+        <!-- 矢印 → -->
+        <line x1="335" y1="240" x2="385" y2="240" stroke="#5caa8a" stroke-width="1.5" marker-end="url(#arrowY1)"/>
+
+        <!-- 自律神経 -->
+        <g transform="translate(450, 240)">
+          <!-- 脳のアイコン -->
+          <ellipse cx="0" cy="0" rx="20" ry="15" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1"/>
+          <path d="M -15 -5 Q 0 -10 15 -5 Q 10 5 0 0 Q -10 5 -15 -5" fill="none" stroke="#9a4a3a" stroke-width="0.5"/>
+          <text x="0" y="3" font-family="Noto Serif JP" font-size="9" fill="#1a2a25" text-anchor="middle" font-weight="500">脳</text>
+          <text x="0" y="-30" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">自律神経</text>
+          <text x="0" y="35" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">副交感優位・不眠改善</text>
+        </g>
+
+        <!-- 結果2:全身回復 -->
+        <text x="300" y="310" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500" font-style="italic">刺激が穏やかなため長湯でき、子どもから高齢者まで安心(「家族の湯」)</text>
+
+        <defs>
+          <marker id="arrowY1" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#5caa8a"/>
+          </marker>
+          <marker id="arrowY2" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
+            <polygon points="0,0 5,2 0,4" fill="#5caa8a"/>
+          </marker>
+          <marker id="arrowY3" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#c44a3a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">由布院の湯が効く3つの理由</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">アルカリ性で肌が整う<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;pH 8.5〜9.7+メタケイ酸">pH 8.5〜9.7+メタケイ酸</small></div>
+        <div class="effect-desc">
+          pHが高い湯が皮膚表面の古い角質を穏やかに分解。同時にメタケイ酸が薄い保湿膜を作り、湯あがりにつるつるすべすべの肌に。新陳代謝が活性化されるため、入浴の美肌効果は約1ヶ月後まで持続するとされます。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">刺激が少なく長湯OK<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;「家族の湯」「神経痛の湯」">「家族の湯」「神経痛の湯」</small></div>
+        <div class="effect-desc">
+          溶存成分が1,000mg/L未満で、刺激物質を含まないため、子どもからお年寄り、デリケートな肌の方まで安心して入浴可能。長湯による湯あたりが起こりにくく、神経痛・筋肉痛・関節痛・冷え性に幅広く対応。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">不眠症への適応<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;単純温泉だけが持つ効能">単純温泉だけが持つ効能</small></div>
+        <div class="effect-desc">
+          泉質別適応症で「不眠症」が指定されているのは単純温泉のみ。さらに自律神経不安定症・うつ状態にも適応があります。穏やかな温熱が副交感神経を立ち上げ、心身のリラックスと睡眠の質改善が期待できます。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、夕方の長湯で疲労を解く</strong><br>
+          東京から飛行機で大分空港まで約1時間40分 → リムジンバスで由布院温泉まで約55分。チェックイン後、まずは宿の風呂で<strong>15〜20分の慣らし入浴</strong>。単純温泉は刺激が少ないので、いきなり長湯せず、まず身体を温泉に慣らすイメージで。夕食まで時間があれば、由布岳を眺めながら金鱗湖周辺の散策、または足湯で軽く。夕食は<strong>豊後牛・関アジ・関サバ・椎茸など大分の地のもの</strong>。湯あがりに寝る前にもう一度<strong>20〜30分のゆっくりとした入浴</strong>を入れると、副交感神経が立ち上がり、深い眠りに入りやすくなります。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝霧の中の朝湯+由布岳眺望</strong><br>
+          由布院は朝霧で有名な盆地。早朝6〜7時、霧に包まれた風景を見ながらの朝湯はこの土地ならではの体験。20分ほどゆっくり浸かれば、前日の疲労が完全にリセットされた感覚が得られるはず。チェックアウト後は<strong>金鱗湖の朝のさんぽ</strong>、<strong>湯の坪街道</strong>の食べ歩き(豊後牛コロッケ、湯布院プリンなど)、時間があれば<strong>湯平温泉</strong>(国民保養温泉地として由布院温泉とセット指定)まで足を延ばすのもおすすめ。<strong>「翌朝の肌が違う」「夜よく眠れた」</strong>という感覚が、由布院の単純温泉の正直な手応えです。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      単純温泉は<strong>刺激が穏やかで湯あたりを起こしにくい泉質</strong>ですが、長湯のしすぎ(1回30分超え)は脱水と心臓への負担を招きます。1回15〜20分を目安に、こまめな水分補給を。pHが高いアルカリ単純温泉は古い角質を分解するため、湯あがりに身体を石鹸でゴシゴシ洗わず、シャワーで軽く流す程度に。乾燥肌の方は湯あがりの保湿クリームを忘れずに。子どもや高齢者にも比較的安心ですが、心臓・血圧・呼吸器に持病のある方、妊娠中の方は入浴前にかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>大分県由布市湯布院町(由布岳の麓、由布院盆地)</td></tr>
+        <tr><th>東京から</th><td>飛行機で大分空港まで約1時間40分 → リムジンバス「ゆふいん号」で由布院駅まで約55分</td></tr>
+        <tr><th>福岡から</th><td>博多駅からJR特急「ゆふいんの森」で由布院駅まで約2時間10分、高速バスで約2時間</td></tr>
+        <tr><th>別府から</th><td>JRゆふ高原線で由布院駅まで約1時間、車で約25分(やまなみハイウェイ経由)</td></tr>
+        <tr><th>主要スポット</th><td>金鱗湖(朝霧の名所) / 湯の坪街道(食べ歩き) / 由布岳(標高1,583m) / 各旅館の湯</td></tr>
+        <tr><th>国民保養温泉地</th><td>湯平温泉と共に「湯布院温泉」として指定</td></tr>
+        <tr><th>泉質</th><td>アルカリ性単純温泉(主)、ナトリウム-塩化物泉、炭酸水素塩泉など。源泉数約900(全国2位)、湧出量毎分38,600L(全国3位)、源泉温度40〜100℃</td></tr>
+        <tr><th>効能</th><td>疲労回復・神経痛・筋肉痛・関節痛・冷え性・自律神経不安定症・不眠症・うつ状態・美肌・健康増進・病後回復期</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      由布院温泉は、強い成分や派手な刺激で攻めるタイプの湯ではありません。
+      pH9前後のアルカリ性単純温泉が、皮膚の古い角質を<strong style="color:#d4ebe0">穏やかに整え</strong>、
+      メタケイ酸が薄い保湿膜を作り、血流の改善が全身の疲労物質を運び出す——
+      その作用が穏やかで、子どもから高齢者まで安心して長湯できる「家族の湯」。
+      <strong style="color:#d4ebe0">泉質別適応症で「不眠症」が指定されているのは単純温泉だけ</strong>という事実が、
+      由布院が日々の疲労や心身の不調にどれだけ広く対応するかを物語っています。
+      派手な効能ではなく、<strong style="color:#d4ebe0">毎日の疲れを丁寧に解く</strong>ための1泊2日に、ぜひ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

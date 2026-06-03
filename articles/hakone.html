@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>箱根十七湯を肌悩みに合わせて選び分ける | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 神奈川県 &gt; 箱根温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Skin Curation</div>
+    <h1 class="hero-title">箱根十七湯で<br>肌悩みに合った湯を選ぶ</h1>
+    <p class="hero-lead">
+      神奈川県、新宿から約90分のアクセスにひらく、17(または20)もの温泉地が集まる国内最大級の温泉郷。
+      標高や地質の違いで湧き出す泉質は約20種類、「四大美人泉質」がすべて揃う希少なエリア。
+      乾燥・くすみ・吹き出物といった異なる肌悩みに、エリアを選び分けてアプローチする2泊3日の旅をご紹介します。
+    </p>
+    <div class="hero-meta">神奈川県箱根町 / アルカリ性単純温泉・硫酸塩泉・硫黄泉ほか約20種</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">PH</div>
+        <div class="fact-value">2〜9</div>
+        <div class="fact-unit">エリア別約20種</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">TEMP</div>
+        <div class="fact-value">40<small>℃</small></div>
+        <div class="fact-unit">源泉40〜90℃</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">美肌</div>
+        <div class="fact-unit">皮膚疾患・神経痛</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">2<small>泊</small>3<small>日</small></div>
+        <div class="fact-unit">はしごプラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる箱根温泉</div>
+    <ul class="tldr-list">
+      <li>箱根町だけで17(20)もの温泉地、湧出量は1日2万5千トンで国内5位。約20種類の泉質が共存</li>
+      <li>美肌に効く「四大美人泉質」(アルカリ性単純泉・炭酸水素塩泉・硫酸塩泉・硫黄泉)がすべて揃う</li>
+      <li>標高が上がるほど酸性に近づく地質構造。エリアを移動するだけで異なる肌悩みにアプローチできる</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ箱根は肌悩みに「選び分け」ができるのか</h2>
+    </div>
+    <p>美肌に効くとされる「四大美人泉質」は、それぞれ作用が異なります。アルカリ性単純泉は<strong>クレンジング</strong>、硫酸塩泉は<strong>代謝促進と美白</strong>、硫黄泉は<strong>殺菌と角質ケア</strong>、炭酸水素塩泉は<strong>柔軟化</strong>。つまり「美肌の湯」とひとくくりにいっても、効くポイントが違うのです。</p>
+
+    <p>箱根が特殊なのは、外輪山に囲まれたカルデラ地形のなかで、<strong>標高が上がるにつれて泉質が酸性寄りに変化する</strong>こと。標高100m前後の箱根湯本はpH9.0台のアルカリ性単純温泉、中腹の強羅は硫酸塩泉、標高1,000m近い大涌谷周辺は強酸性硫酸塩泉と、ロープウェイで一日のうちに泉質を「登り下り」できます。乾燥肌、角質くすみ、吹き出物——それぞれ違う原因の肌悩みに対して、<strong>エリアを移動するだけで適切な湯にたどり着ける</strong>のが、箱根十七湯の最大の価値です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 標高×泉質×肌悩みのマップ —</div>
+      <svg viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="300" fill="#fafaf6"/>
+
+        <!-- 山の輪郭(カルデラ) -->
+        <path d="M 30 240 L 80 200 L 130 160 L 180 130 L 230 110 L 280 100 L 330 110 L 380 130 L 430 160 L 480 200 L 530 240 Z" fill="#e8e5d8" stroke="#1a2a25" stroke-width="1"/>
+
+        <!-- 標高線 -->
+        <line x1="20" y1="240" x2="540" y2="240" stroke="#999" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <line x1="20" y1="180" x2="540" y2="180" stroke="#999" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <line x1="20" y1="130" x2="540" y2="130" stroke="#999" stroke-width="0.5" stroke-dasharray="2,2"/>
+        <text x="15" y="244" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="end">100m</text>
+        <text x="15" y="184" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="end">600m</text>
+        <text x="15" y="134" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="end">1000m</text>
+
+        <!-- エリア・泉質ポイント -->
+        <!-- 箱根湯本(標高約100m, アルカリ性) -->
+        <g>
+          <circle cx="100" cy="230" r="8" fill="#5caa8a" stroke="#1a3a35" stroke-width="1.5"/>
+          <text x="100" y="234" font-family="Noto Serif JP" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">湯</text>
+          <text x="100" y="258" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">箱根湯本</text>
+          <text x="100" y="272" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">アルカリ性単純泉 pH9</text>
+          <text x="100" y="285" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle">→ 乾燥肌・敏感肌</text>
+        </g>
+
+        <!-- 強羅(標高約500m, 硫酸塩泉) -->
+        <g>
+          <circle cx="230" cy="180" r="8" fill="#c0a85a" stroke="#1a3a35" stroke-width="1.5"/>
+          <text x="230" y="184" font-family="Noto Serif JP" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">強</text>
+          <text x="230" y="170" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">強羅</text>
+          <text x="230" y="158" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">硫酸塩泉 pH7</text>
+          <text x="230" y="146" font-family="Noto Sans JP" font-size="9" fill="#c47a3a" text-anchor="middle">→ くすみ・代謝</text>
+        </g>
+
+        <!-- 大涌谷・仙石原(標高約1000m, 強酸性硫黄泉) -->
+        <g>
+          <circle cx="360" cy="125" r="8" fill="#aa5a3a" stroke="#1a3a35" stroke-width="1.5"/>
+          <text x="360" y="129" font-family="Noto Serif JP" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">谷</text>
+          <text x="360" y="115" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">大涌谷・仙石原</text>
+          <text x="360" y="103" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">酸性硫酸塩泉 pH2〜3</text>
+          <text x="360" y="91" font-family="Noto Sans JP" font-size="9" fill="#aa3a3a" text-anchor="middle">→ 吹き出物・脂性</text>
+        </g>
+
+        <!-- 芦ノ湖(標高約720m, 単純硫黄泉) -->
+        <g>
+          <circle cx="470" cy="200" r="8" fill="#8aa8c0" stroke="#1a3a35" stroke-width="1.5"/>
+          <text x="470" y="204" font-family="Noto Serif JP" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">芦</text>
+          <text x="470" y="190" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">芦ノ湖</text>
+          <text x="470" y="178" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">単純硫黄泉 pH7台</text>
+          <text x="470" y="166" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle">→ 仕上げ・整肌</text>
+        </g>
+
+        <!-- pH軸の右側ラベル -->
+        <text x="555" y="244" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="start">アルカリ</text>
+        <text x="555" y="184" font-family="Noto Sans JP" font-size="9" fill="#c47a3a" text-anchor="start">中性</text>
+        <text x="555" y="134" font-family="Noto Sans JP" font-size="9" fill="#aa3a3a" text-anchor="start">酸性</text>
+
+        <!-- ロープウェイで結ぶ流れ -->
+        <path d="M 110 225 Q 170 215 220 188" stroke="#5caa8a" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <path d="M 240 178 Q 300 150 350 130" stroke="#5caa8a" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+        <path d="M 370 128 Q 420 165 460 195" stroke="#5caa8a" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrow)"/>
+
+        <defs>
+          <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">「四大美人泉質」を悩みに合わせて使い分ける</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">アルカリ性単純泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;箱根湯本・塔之沢">湯本・塔之沢</small></div>
+        <div class="effect-desc">
+          pH9.0前後の弱アルカリ性が古い角質をやさしく乳化分解、「クレンジングの湯」。刺激が少なく、乾燥肌・敏感肌にも安心。旅の入り口で肌を整える役割を担います。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">硫酸塩泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;強羅・小涌谷">強羅・小涌谷</small></div>
+        <div class="effect-desc">
+          カルシウムやマグネシウムの硫酸塩を含む湯。肌の新陳代謝を促し、メラニンの蓄積を抑える「美白の湯」。くすみや色素沈着が気になる方に向きます。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">(強)酸性硫黄泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;仙石原・芦之湯">仙石原・芦之湯</small></div>
+        <div class="effect-desc">
+          乳白色の硫黄泉。酸性で殺菌力が強く、過剰な皮脂と古い角質を分解。吹き出物・脂性肌・慢性湿疹に。刺激は強いので短時間入浴を守るのがコツです。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(2泊3日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>箱根湯本に到着、アルカリ性で肌を整える</strong><br>
+          新宿からロマンスカーで約90分。箱根湯本に到着したら、まずはこのエリアのアルカリ性単純温泉で20分の入浴を。pH9.0の湯がクレンジングのように古い角質をオフし、これから受ける刺激の強い湯への「下ごしらえ」になります。夕方に温泉街を散策、夜にもう一度ゆっくり浸かる日です。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>MAIN</small></div>
+        <div class="tl-content">
+          <strong>登山電車・ロープウェイで「泉質を登る」</strong><br>
+          朝風呂のあと、箱根登山電車で強羅へ。硫酸塩泉の宿で日帰り入浴し、代謝とくすみケアにアプローチ。さらにロープウェイで大涌谷から仙石原へ移動し、乳白色の酸性硫黄泉に短時間(10分)入浴。標高が上がるごとに変わる泉質を、肌で体感する一日です。彫刻の森美術館やガラスの森美術館も近くにあります。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>箱根湯本に戻ってやさしく仕上げ</strong><br>
+          チェックアウト前に、再度アルカリ性単純温泉で15〜20分の仕上げ入浴。強い湯で開いた肌をクレンジングし直し、しっとりと閉じてあげるイメージ。湯あがり後は箱根湯本駅周辺で土産物を見て、ロマンスカーで新宿へ。週末2泊で肌の手触りが変わっているはずです。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      泉質を切り替える「はしご旅」では、特に強酸性の湯は1回10分以内を厳守。アトピー性皮膚炎・敏感肌の方は、酸性硫黄泉に入る前に必ず腕の内側でパッチテストを。湯と湯の間には30分以上の休憩と水分補給(コップ1杯)を必ず。一日に3〜4湯までを上限に、欲張らないこと。心臓・血圧・呼吸器に持病のある方、妊娠中の方は、特に大涌谷周辺の硫黄ガスに注意し、かかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>神奈川県足柄下郡箱根町(湯本・強羅・仙石原・芦ノ湖など17エリア)</td></tr>
+        <tr><th>新宿から</th><td>小田急ロマンスカーで箱根湯本駅まで約90分。乗換なしで最も便利</td></tr>
+        <tr><th>東京駅から</th><td>JR東海道新幹線で小田原駅まで約35分 → 箱根登山鉄道で箱根湯本駅まで約15分</td></tr>
+        <tr><th>エリア間の移動</th><td>箱根湯本 → 強羅:登山電車で約40分 / 強羅 → 大涌谷:ケーブルカー+ロープウェイで約20分 / 大涌谷 → 芦ノ湖:ロープウェイで約20分</td></tr>
+        <tr><th>大阪から</th><td>新幹線で小田原駅まで約3時間 → 上記アクセス</td></tr>
+        <tr><th>車</th><td>東名高速「御殿場IC」または「厚木IC」から箱根方面へ約30〜40分</td></tr>
+        <tr><th>泉質</th><td>アルカリ性単純温泉・硫酸塩泉・酸性硫黄泉・塩化物泉ほか約20種</td></tr>
+        <tr><th>効能</th><td>美肌・慢性皮膚病・神経痛・筋肉痛・冷え性・疲労回復・きりきず・やけど・慢性婦人病</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      箱根が「温泉のデパート」と例えられるのは、ただ泉質が多いからではなく、
+      標高ごとに性質の違う湯が層をなしていて、それを登山電車やロープウェイで自由に行き来できるからです。
+      乾燥肌にはアルカリ性、くすみには硫酸塩泉、吹き出物には酸性硫黄泉——
+      自分の肌悩みに対する「正しい湯」を選び、刺激のやさしい湯で仕上げる。
+      この選び分けが可能なエリアは、日本に箱根しかありません。
+      新宿から90分、週末2泊で、自分の肌に合った湯と出会う旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>別府八湯で慢性疲労と自律神経を整える | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 大分県 &gt; 別府温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Autonomic Reset</div>
+    <h1 class="hero-title">別府八湯で<br>慢性疲労と自律神経を整える</h1>
+    <p class="hero-lead">
+      大分県別府市、源泉数・湧出量ともに日本一の「日本の温泉首都」。
+      別府八湯と呼ばれる8つの温泉郷と、砂湯・蒸し湯・泥湯といった多彩な入浴法が、
+      交感神経が優位になりがちな現代人の自律神経を、刺激のリズムで整える。
+      慢性疲労・睡眠障害・うつ状態に悩む方に向けた、2泊3日の自律神経リセットプランをご紹介します。
+    </p>
+    <div class="hero-meta">大分県別府市 / 単純温泉・塩化物泉・硫黄泉ほか7種の泉質</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">SOURCES</div>
+        <div class="fact-value">約2,200</div>
+        <div class="fact-unit">源泉数日本一</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">OUTPUT</div>
+        <div class="fact-value">13<small>万kL/日</small></div>
+        <div class="fact-unit">湧出量日本一</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">自律神経</div>
+        <div class="fact-unit">慢性疲労・睡眠</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">2<small>泊</small>3<small>日</small><br></div>
+        <div class="fact-unit">湯巡りプラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる別府温泉</div>
+    <ul class="tldr-list">
+      <li>1分間で東京ドームの75%を満たす湯量と、国内源泉の約1割が集まる「世界第2位の泉都」</li>
+      <li>別府八湯=8つの温泉郷×4つの入浴法(普通湯・砂湯・蒸し湯・泥湯)で、刺激のバリエーションが圧倒的</li>
+      <li>厚生労働省指定の適応症に「自律神経不安定症・睡眠障害・うつ状態」が明記された数少ない温泉</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ別府の湯が自律神経をリセットするのか</h2>
+    </div>
+    <p>慢性疲労や不眠の根本にあるのは、ストレス過多で<strong>交感神経が常時優位になり、副交感神経が立ち上がらない</strong>状態。心臓や呼吸は休まらず、夜になっても身体が「戦闘モード」を解除できません。これを整えるには、副交感神経をしっかりと刺激する「強い切り替え」が必要です。</p>
+
+    <p>別府が特殊なのは、ただ温泉が多いだけでなく、<strong>性質の異なる入浴法を一日のなかで巡れる</strong>こと。42℃の普通湯で温熱刺激を入れ、温められた砂に全身を埋める砂湯で発汗を促し、75〜80℃の噴気を使う蒸し湯で深部体温を上げ、硫化水素を含む泥湯で末梢神経を拡張する——<strong>1つの温泉地で4種類の異なる刺激を順番に受けられる</strong>のは別府しかありません。サウナの「ととのう」が交互浴で自律神経を整えるのと同じ原理が、別府ではより多彩な刺激として2泊3日にわたって続きます。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 入浴法を巡るほど自律神経のバランスが整う —</div>
+      <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="320" fill="#fafaf6"/>
+
+        <!-- 軸 -->
+        <line x1="60" y1="260" x2="560" y2="260" stroke="#1a2a25" stroke-width="1.5"/>
+        <line x1="60" y1="40" x2="60" y2="260" stroke="#1a2a25" stroke-width="1.5"/>
+
+        <!-- Y軸ラベル -->
+        <text x="50" y="60" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="end">高</text>
+        <text x="50" y="155" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="end">中</text>
+        <text x="50" y="258" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="end">低</text>
+        <text x="35" y="155" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500" transform="rotate(-90, 35, 155)">活動度</text>
+
+        <!-- X軸ラベル -->
+        <text x="120" y="278" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="middle">到着前</text>
+        <text x="230" y="278" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="middle">DAY 1</text>
+        <text x="350" y="278" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="middle">DAY 2</text>
+        <text x="470" y="278" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="middle">DAY 3</text>
+        <text x="310" y="305" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">時間</text>
+
+        <!-- 入浴ポイント(縦線) -->
+        <line x1="200" y1="60" x2="200" y2="260" stroke="#e0d8c8" stroke-width="0.8" stroke-dasharray="2,3"/>
+        <line x1="260" y1="60" x2="260" y2="260" stroke="#e0d8c8" stroke-width="0.8" stroke-dasharray="2,3"/>
+        <line x1="320" y1="60" x2="320" y2="260" stroke="#e0d8c8" stroke-width="0.8" stroke-dasharray="2,3"/>
+        <line x1="380" y1="60" x2="380" y2="260" stroke="#e0d8c8" stroke-width="0.8" stroke-dasharray="2,3"/>
+        <line x1="440" y1="60" x2="440" y2="260" stroke="#e0d8c8" stroke-width="0.8" stroke-dasharray="2,3"/>
+
+        <!-- 交感神経の曲線(赤) - 高い状態から徐々に下がる -->
+        <path d="M 60 80 L 130 80 L 200 95 L 260 130 L 320 145 L 380 165 L 440 175 L 500 180 L 560 178" stroke="#c44a3a" stroke-width="2.5" fill="none"/>
+        <text x="570" y="180" font-family="Noto Sans JP" font-size="10" fill="#c44a3a" text-anchor="start">交感神経</text>
+
+        <!-- 副交感神経の曲線(緑) - 低い状態から徐々に上がる -->
+        <path d="M 60 220 L 130 220 L 200 200 L 260 170 L 320 155 L 380 130 L 440 115 L 500 110 L 560 108" stroke="#5caa8a" stroke-width="2.5" fill="none"/>
+        <text x="570" y="108" font-family="Noto Sans JP" font-size="10" fill="#5caa8a" text-anchor="start">副交感神経</text>
+
+        <!-- 慢性疲労状態のラベル -->
+        <text x="100" y="68" font-family="Noto Sans JP" font-size="9" fill="#c44a3a" text-anchor="middle">交感優位</text>
+        <text x="100" y="240" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle">副交感弱</text>
+
+        <!-- バランス状態のラベル -->
+        <text x="520" y="200" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle">バランス回復</text>
+
+        <!-- 入浴ポイントマーカー -->
+        <!-- Day 1 普通湯 -->
+        <g>
+          <circle cx="200" cy="125" r="9" fill="#5caa8a" stroke="#fff" stroke-width="2"/>
+          <text x="200" y="129" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">湯</text>
+          <text x="200" y="50" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle">普通湯</text>
+          <text x="200" y="38" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">温熱で整える</text>
+        </g>
+        <!-- Day 1 砂湯 -->
+        <g>
+          <circle cx="260" cy="105" r="9" fill="#c0a85a" stroke="#fff" stroke-width="2"/>
+          <text x="260" y="109" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">砂</text>
+          <text x="260" y="50" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle">砂湯</text>
+          <text x="260" y="38" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">発汗+圧迫</text>
+        </g>
+        <!-- Day 2 蒸し湯 -->
+        <g>
+          <circle cx="320" cy="100" r="9" fill="#8aa8c0" stroke="#fff" stroke-width="2"/>
+          <text x="320" y="104" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">蒸</text>
+          <text x="320" y="50" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle">蒸し湯</text>
+          <text x="320" y="38" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">深部体温↑</text>
+        </g>
+        <!-- Day 2 泥湯 -->
+        <g>
+          <circle cx="380" cy="90" r="9" fill="#7a5a4a" stroke="#fff" stroke-width="2"/>
+          <text x="380" y="94" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">泥</text>
+          <text x="380" y="50" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle">泥湯</text>
+          <text x="380" y="38" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">硫化水素</text>
+        </g>
+        <!-- Day 3 仕上げ -->
+        <g>
+          <circle cx="440" cy="100" r="9" fill="#5caa8a" stroke="#fff" stroke-width="2"/>
+          <text x="440" y="104" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">湯</text>
+          <text x="440" y="50" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle">仕上げ湯</text>
+          <text x="440" y="38" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">定着させる</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">別府ならではの3つの「特殊浴」</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">砂湯<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">竹瓦温泉ほか</small></div>
+        <div class="effect-desc">
+          温泉熱で温められた砂を首から下に被せる発汗療法。砂の遠赤外線と圧迫が温熱刺激と一緒に届き、10〜15分で大量の汗が出ます。神経痛・腰痛・肩こりに効果が明記された別府ならではの入浴法。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">蒸し湯<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">鉄輪・柴石温泉</small></div>
+        <div class="effect-desc">
+          75〜80℃の温泉噴気で蒸す蒸気浴。鉄輪むし湯では薬草「石菖」を敷きつめた床に横たわり、香りに包まれる入浴。10分程度で深部体温が上がり、新陳代謝と発汗が促進。慢性疲労に。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">泥湯<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">明礬温泉ほか</small></div>
+        <div class="effect-desc">
+          鉱泥(温泉成分が沈積した泥)に浸かる、または塗布する独特の入浴法。含まれる硫化水素ガスが末梢血管を拡張、副交感神経を強く刺激します。高血圧・神経痛・睡眠障害にも期待される泉質。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(2泊3日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>別府温泉に到着、竹瓦温泉の砂湯で発汗</strong><br>
+          大分空港から1時間ほどで到着。チェックイン後、宿の湯で15分の慣らし入浴。夕方に明治12年創業の竹瓦温泉へ行き、別府名物の砂湯を体験(10〜15分)。砂をかけられて全身ポカポカ、20分後には大量の汗で「戦闘モード」が解けるのを感じます。夕食後は宿でゆっくり。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>MAIN</small></div>
+        <div class="tl-content">
+          <strong>鉄輪のむし湯+地獄蒸し → 明礬の泥湯へ</strong><br>
+          朝風呂のあとバスで鉄輪温泉へ。むし湯(10分)で深部体温を上げて発汗、その後「地獄蒸し工房」で温泉蒸気で蒸した野菜・海産物の昼食。午後はバスで明礬温泉へ移動し、紺屋地獄の泥湯(15分)で硫化水素ガスを浴びて副交感神経を刺激。夜は宿の普通湯でリラックス、ぐっすり眠れる感覚を実感する日です。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>観海寺温泉の朝湯で仕上げ、地獄めぐり</strong><br>
+          高台にある観海寺温泉の朝湯で、別府湾を見下ろしながら20分の仕上げ入浴。チェックアウト後は「地獄めぐり」(海地獄・血の池地獄など)を観光してから帰路へ。「睡眠の質が変わった」と感じるのは帰宅後3〜5日目という方が多く、効果は遅効的に深まります。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      4種類の入浴法を巡る「湯巡り」では、特に砂湯・蒸し湯は10〜15分を厳守。長時間では脱水・湯あたり(めまい・倦怠感)を起こします。連続して別の浴法に移るときは、最低30分の休憩と水分補給(コップ1〜2杯)を必ず。明礬の硫黄ガスはぜんそく・呼吸器疾患の方は要注意。砂湯は腰痛が強い時期や心臓に持病のある方は不可。<strong>高血圧症・動脈硬化症・心臓病のある方は42℃以上の高温浴は禁忌</strong>。すべての入浴前にかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>大分県別府市(別府八湯=浜脇・別府・観海寺・堀田・明礬・鉄輪・柴石・亀川)</td></tr>
+        <tr><th>大分空港から</th><td>エアライナー(リムジンバス)で別府北浜まで約45分</td></tr>
+        <tr><th>福岡空港から</th><td>高速バス「とよのくに号」で別府北浜まで約2時間</td></tr>
+        <tr><th>東京から</th><td>飛行機で大分空港まで約1時間40分 → リムジンバス約45分。合計約3時間</td></tr>
+        <tr><th>大阪から</th><td>新幹線で小倉駅 → JR日豊本線特急「ソニック」で別府駅まで合計約4時間30分</td></tr>
+        <tr><th>エリア間の移動</th><td>別府駅 → 鉄輪温泉:バスで約20分 / 別府駅 → 明礬温泉:バスで約25分 / 別府駅 → 観海寺温泉:バスで約15分</td></tr>
+        <tr><th>泉質</th><td>単純温泉・塩化物泉・炭酸水素塩泉・硫酸塩泉・含鉄泉・硫黄泉・酸性泉(計7種類)</td></tr>
+        <tr><th>効能</th><td>慢性疲労・自律神経不安定症・睡眠障害・うつ状態・神経痛・筋肉痛・関節痛・冷え性・病後回復</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      別府が「温泉首都」と呼ばれるのは、湧出量や源泉数の数字だけではありません。
+      普通湯・砂湯・蒸し湯・泥湯という<strong style="color:#5caa8a">性質の違う4つの入浴法</strong>を、
+      8つの温泉郷の中で自由に組み合わせられる——
+      これが、交感神経が休まらない現代人にとっての別府の真価です。
+      強い発汗、深部温熱、硫化水素、そして仕上げの普通湯。
+      刺激のリズムが副交感神経を呼び戻し、夜の眠りや日中の集中力が
+      帰宅後に変わってくる。週末2泊で「自律神経のチューニング」を試してみる旅です。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

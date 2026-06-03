@@ -1,13 +1,188 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- ホームページ(温泉マップ) -->
   <url>
-    <loc>https://tai-web-jp.github.io/onsen-health-travel/</loc>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/</loc>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- 記事:草津温泉 -->
   <url>
-    <loc>https://tai-web-jp.github.io/onsen-health-travel/articles/2026-06-02-23.html</loc>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/kusatsu.html</loc>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
+
+  <!-- 記事:下呂温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/gero.html</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:登別温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/noboribetsu.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:道後温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/dogo.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:有馬温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/arima.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:箱根温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/hakone.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:別府温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/beppu.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:黒川温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/kurokawa.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:玉川温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/tamagawa.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:十勝川温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/tokachigawa.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:指宿温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/ibusuki.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:乳頭温泉郷 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/nyuto.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:長湯温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/nagayu.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:酸ヶ湯温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/sukayu.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:湯村温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/yumura.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:野沢温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/nozawa.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:修善寺温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/shuzenji.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:白浜温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/shirahama.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:湯田中渋温泉郷 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/yudanaka-shibu.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:嬉野温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/ureshino.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:由布院温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/yufuin.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 記事:万座温泉 -->
+  <url>
+    <loc>https://socialweb-japan-tokyo.github.io/onsen-health-travel/articles/manza.html</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>

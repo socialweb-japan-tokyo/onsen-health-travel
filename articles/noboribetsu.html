@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>登別温泉の硫黄泉と食塩泉で皮膚病と神経痛をいたわる | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 北海道 &gt; 登別温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Skin &amp; Nerve Healing</div>
+    <h1 class="hero-title">登別温泉で<br>皮膚と神経をいたわる</h1>
+    <p class="hero-lead">
+      北海道、地獄谷を源泉とする「温泉のデパート」。
+      乳白色の硫黄泉が慢性的な皮膚炎をしずめ、温まりの深い食塩泉が神経痛と冷えを内側からほぐす。
+      慢性湿疹・アトピー・神経痛・リウマチに悩む方に向けた、2泊3日の湯治プランをご紹介します。
+    </p>
+    <div class="hero-meta">北海道登別市 / 硫黄泉・食塩泉ほか9種類の泉質</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">PH</div>
+        <div class="fact-value">2〜7</div>
+        <div class="fact-unit">泉質ごと9種</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">TEMP</div>
+        <div class="fact-value">42<small>℃</small></div>
+        <div class="fact-unit">源泉45〜90℃</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">皮膚病</div>
+        <div class="fact-unit">神経痛・リウマチ</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">2<small>泊</small>3<small>日</small></div>
+        <div class="fact-unit">湯治プラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる登別温泉</div>
+    <ul class="tldr-list">
+      <li>9種類の泉質が湧く「温泉のデパート」。硫黄泉(皮膚)と食塩泉(神経)の合わせ技が湯治に最適</li>
+      <li>乳白色の硫黄泉が皮脂と雑菌を分解、食塩泉が肌に保温膜を張り深部までじっくり温める</li>
+      <li>2泊3日の入り分けプランで、慢性皮膚炎と神経痛の両方に同時にアプローチできる</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ登別の湯が皮膚と神経の両方に効くのか</h2>
+    </div>
+    <p>登別温泉が「温泉のデパート」と呼ばれる理由は、わずか直径450mの爆裂火口跡「地獄谷」から、化学組成のまったく異なる泉質が同時に湧き出していること。なかでも双璧となるのが、乳白色の<strong>硫黄泉</strong>と、無色透明の<strong>食塩泉(ナトリウム塩化物泉)</strong>です。</p>
+
+    <p>硫黄泉は皮脂や角質をやさしく分解し、慢性皮膚炎の炎症をしずめる「皮膚の湯」。一方の食塩泉は、皮膚表面のタンパク質と塩分が結びついて薄い保温膜を作り、湯あがり後も体の芯がポカポカと冷めにくくなる「熱の湯」。この保温効果が血流を持続させ、こわばった末梢神経をゆっくり解いていきます。草津のような単一の強酸性で「リセット」するのではなく、登別は<strong>性質の異なる湯を組み合わせて「整える」</strong>のが本質です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 硫黄泉と食塩泉が皮膚・神経に届くまで —</div>
+      <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="280" fill="#fafaf6"/>
+
+        <!-- 肌の断面図 -->
+        <g transform="translate(40,40)">
+          <!-- 表皮(炎症あり、赤み) -->
+          <rect x="0" y="0" width="200" height="30" fill="#e8b4a0" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="20" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">表皮</text>
+          <!-- 炎症マーク -->
+          <g>
+            <circle cx="20" cy="15" r="3" fill="#c44a3a" opacity="0.7"/>
+            <circle cx="60" cy="12" r="3" fill="#c44a3a" opacity="0.7"/>
+            <circle cx="100" cy="18" r="3" fill="#c44a3a" opacity="0.7"/>
+            <circle cx="150" cy="14" r="3" fill="#c44a3a" opacity="0.7"/>
+            <circle cx="180" cy="17" r="3" fill="#c44a3a" opacity="0.7"/>
+          </g>
+          <!-- 保温膜(食塩泉) -->
+          <path d="M 0 -3 Q 50 -6 100 -3 Q 150 -6 200 -3 L 200 0 L 0 0 Z" fill="#c0d8e8" opacity="0.7" stroke="#5caa8a" stroke-width="0.5" stroke-dasharray="2,2"/>
+          <!-- 真皮 -->
+          <rect x="0" y="30" width="200" height="40" fill="#f0c0a8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="55" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">真皮</text>
+          <!-- 血管(温まって拡張) -->
+          <path d="M 10 50 Q 50 45 90 55 Q 130 50 170 52 Q 190 53 200 50" stroke="#aa3a3a" stroke-width="2.5" fill="none"/>
+          <!-- 末梢神経層 -->
+          <rect x="0" y="70" width="200" height="40" fill="#d4c8b8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="95" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">末梢神経</text>
+          <!-- 神経線維 -->
+          <g stroke="#6a5a4a" stroke-width="1.2" fill="none">
+            <path d="M 10 85 Q 30 80 50 88 Q 70 90 90 84 Q 110 82 130 89 Q 150 85 170 87 Q 185 88 195 85"/>
+            <path d="M 10 100 Q 30 95 50 103 Q 70 105 90 99 Q 110 97 130 104 Q 150 100 170 102 Q 185 103 195 100"/>
+          </g>
+          <!-- 凡例 -->
+          <text x="100" y="135" font-family="Noto Sans JP" font-size="9" fill="#c44a3a" text-anchor="middle">● = 炎症  </text>
+          <text x="100" y="148" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle">- - - = 食塩泉の保温膜</text>
+        </g>
+
+        <!-- 説明ステップ -->
+        <g transform="translate(280,30)">
+          <!-- ステップ1 -->
+          <circle cx="15" cy="15" r="12" fill="#5caa8a"/>
+          <text x="15" y="19" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+          <text x="35" y="14" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">硫黄泉で皮脂と雑菌を分解</text>
+          <text x="35" y="28" font-family="Noto Sans JP" font-size="10" fill="#555">炎症をしずめる土台ができる</text>
+
+          <!-- ステップ2 -->
+          <circle cx="15" cy="65" r="12" fill="#5caa8a"/>
+          <text x="15" y="69" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+          <text x="35" y="64" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">食塩泉が肌に保温膜を張る</text>
+          <text x="35" y="78" font-family="Noto Sans JP" font-size="10" fill="#555">湯冷めしにくく深部まで温まる</text>
+
+          <!-- ステップ3 -->
+          <circle cx="15" cy="115" r="12" fill="#5caa8a"/>
+          <text x="15" y="119" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+          <text x="35" y="114" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">血流が末梢まで届く</text>
+          <text x="35" y="128" font-family="Noto Sans JP" font-size="10" fill="#555">こわばった神経がほぐれる</text>
+
+          <!-- ステップ4 -->
+          <circle cx="15" cy="165" r="12" fill="#1a3a35"/>
+          <text x="15" y="169" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">4</text>
+          <text x="35" y="164" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">皮膚と神経が同時にいたわられる</text>
+          <text x="35" y="178" font-family="Noto Sans JP" font-size="10" fill="#555">湯治を続けるほど症状が安定</text>
+        </g>
+
+        <g stroke="#5caa8a" stroke-width="2" fill="none" marker-end="url(#arrow)">
+          <path d="M 245 60 Q 265 60 275 50"/>
+        </g>
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <polygon points="0,0 8,3 0,6" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">3つの湯が役割分担で身体を整える</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">硫黄泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">皮膚の湯</small></div>
+        <div class="effect-desc">
+          乳白色の代表泉。硫黄成分が余分な皮脂と古い角質を分解し、毛細血管を拡張させて血流を改善。慢性湿疹・アトピー性皮膚炎・慢性婦人病に古くから用いられてきました。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">食塩泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">熱の湯</small></div>
+        <div class="effect-desc">
+          無色透明で塩辛い湯。皮膚表面のタンパク質と結びついて保温膜を作り、湯冷めを防ぎます。神経痛・腰痛・冷え性・リウマチ性疾患に効果が期待されます。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">重曹泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">仕上げの湯</small></div>
+        <div class="effect-desc">
+          皮膚の角質を柔らかくし、分泌物を乳化する「美人の湯」。硫黄泉と食塩泉の刺激でこわばった肌を、最後にやさしく整えます。皮膚病・切り傷・神経痛にも。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(2泊3日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、地獄谷散策と慣らし入浴</strong><br>
+          新千歳空港から1時間ほどで到着。チェックイン前に源泉地帯「地獄谷」の遊歩道を30分ほど歩き、硫黄の蒸気を浴びて呼吸器と気分を整えます。夕方は硫黄泉に10分の慣らし入浴。長湯は禁物、まず身体を慣らす日です。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>MAIN</small></div>
+        <div class="tl-content">
+          <strong>「硫黄泉 → 食塩泉」の入り分け</strong><br>
+          朝風呂は硫黄泉15分で皮膚をリセット。午前中は温泉街を散歩し、午後は食塩泉に20分ゆっくり浸かって神経と末梢を温める。夕食後は重曹泉で仕上げ。1日3回、性質の違う湯をはしごするのが登別流の湯治です。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>仕上げの朝風呂と効果確認</strong><br>
+          チェックアウト前に再度、硫黄泉と食塩泉を短時間ずつ入って締めくくります。皮膚のかゆみが減ったか、腰や肩のこわばりがゆるんだかをチェック。湯治の効果は帰宅後2〜3日でさらに深まる方が多いです。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      硫黄泉は刺激がやや強いため、1回10〜15分、1日2〜3回が目安。湯あたり(めまい・倦怠感)を感じたら短めに切り上げる。アトピー性皮膚炎で症状が強い時期や敏感肌の方は、入浴後に真水で軽くすすぐと刺激が和らぎます。食塩泉は保温力が強いので、入浴後はコップ1杯の水分補給を必ず。心臓・血圧・呼吸器に持病のある方、妊娠中の方はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>北海道登別市登別温泉町</td></tr>
+        <tr><th>新千歳空港から(バス)</th><td>道南バス「高速登別温泉エアポート号」で登別温泉まで約1時間15分(片道1,800円)。乗換なしで最も便利</td></tr>
+        <tr><th>新千歳空港から(JR)</th><td>新千歳空港駅 → 南千歳駅で特急に乗換 → JR登別駅まで約50分 → 道南バスで登別温泉まで約15分(計約1時間30分)</td></tr>
+        <tr><th>札幌から</th><td>JR特急で登別駅まで約1時間10分 → バスで約15分。または高速バスで直行約2時間</td></tr>
+        <tr><th>東京から</th><td>飛行機で新千歳空港まで約1時間30分 → 上記アクセス。合計約4時間</td></tr>
+        <tr><th>車</th><td>道央自動車道「登別東IC」より約10分。新千歳空港から約1時間、札幌から約1時間40分</td></tr>
+        <tr><th>泉質</th><td>硫黄泉・食塩泉・重曹泉・酸性鉄泉ほか計9種類</td></tr>
+        <tr><th>効能</th><td>慢性皮膚炎・神経痛・リウマチ・冷え性・疲労回復・慢性婦人病など</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      登別温泉が「温泉のデパート」と呼ばれてきたのは、ただ泉質が多いからではなく、
+      性質の違う湯を組み合わせることで身体の複数の不調に同時にアプローチできるからです。
+      硫黄泉が皮膚の炎症をしずめ、食塩泉が保温膜を張って末梢神経まで温め、
+      重曹泉がやさしく仕上げる——この役割分担が、慢性皮膚炎と神経痛のように
+      「同じ人に同時に起こりやすい不調」に対する、湯治本来の答えになっています。
+      2泊3日の小さな旅で、地獄谷の蒸気と乳白色の湯に身体を預けてみてください。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

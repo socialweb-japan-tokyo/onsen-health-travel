@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白浜温泉で太平洋と万葉の湯に身を委ねる | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 和歌山県 &gt; 白浜温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Seaside Ancient Bath</div>
+    <h1 class="hero-title">白浜温泉で<br>太平洋と万葉の湯に身を委ねる</h1>
+    <p class="hero-lead">
+      和歌山県、紀伊半島の南西端。<strong>道後・有馬と並ぶ「日本三古湯」</strong>のひとつで、
+      古くは「牟婁の湯」と呼ばれ、万葉集や日本書紀に名を残す約1,400年の温泉。
+      斉明天皇から文武天皇まで歴代の天皇が行幸した「<strong>崎の湯</strong>」は今も太平洋の波しぶきが届く露天風呂として現役。
+      神経痛・関節痛・皮膚病に効くナトリウム塩化物泉と、海と一体の絶景を楽しむ1泊2日プランをご紹介します。
+    </p>
+    <div class="hero-meta">和歌山県西牟婁郡白浜町 / ナトリウム-塩化物泉(弱アルカリ性高張性高温泉)</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">ORIGIN</div>
+        <div class="fact-value">658<small>年</small></div>
+        <div class="fact-unit">斉明天皇行幸</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">SPRINGS</div>
+        <div class="fact-value">120<small>+</small></div>
+        <div class="fact-unit">泉源数</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">海×古湯</div>
+        <div class="fact-unit">神経痛・皮膚病</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">海と湯と絶景</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる白浜温泉</div>
+    <ul class="tldr-list">
+      <li>道後・有馬と並ぶ「日本三古湯」のひとつ。万葉集・日本書紀にも記された約1,400年の歴史</li>
+      <li>「崎の湯」は太平洋の波しぶきが届く絶景露天風呂。明治の「湯崎七湯」で唯一現存する湯壺</li>
+      <li>白良浜(ケイ酸含有の白砂)、円月島、三段壁、千畳敷など海岸絶景が一帯に集まる温泉郷</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ歴代の天皇は1,400年「海の湯」を求めたのか</h2>
+    </div>
+    <p>日本の温泉文化を語るとき、必ず先頭に挙げられる3つの古湯——道後・有馬・白浜。<strong>「日本三古湯」</strong>のうち、道後と有馬がいずれも山あいに開けたのに対し、白浜だけは<strong>太平洋を望む海岸線</strong>に湧いています。万葉集や日本書紀に「牟婁の湯」「紀の温湯」として記され、658年(斉明4年)に<strong>斉明天皇と中大兄皇子(後の天智天皇)</strong>が湯治のために京から下向。以後、持統・文武天皇まで歴代天皇の行幸が続き、その源泉は今も「<strong>行幸源泉</strong>」と呼ばれます。当時の宮人がなぜ遠路はるばる紀伊半島の南端まで湯治に来たのか——理由は、湯の効能だけではありませんでした。</p>
+
+    <p>「<strong>崎の湯</strong>」は、岬の岩礁を削った天然の湯壺に、地下から78℃のナトリウム塩化物泉が湧き出す露天風呂。<strong>波しぶきが浴槽に届くほど海と一体</strong>で、湯の塩分は地下源泉と海水の両方に由来します。塩化物泉は皮膚に塩分の膜を作って湯冷めを防ぎ、神経痛・関節痛・慢性皮膚病・婦人病に効くとされます。さらに、海風と潮の香り、波の音、太平洋に開けた空と、五感のすべてを開放する空間効果が、「治す」を超えた<strong>「整える」</strong>体験になります。万葉の人々がここに見たのは、おそらくその「<strong>湯と海と空が一つになる感覚</strong>」。明治の「湯崎七湯」のうち唯一現存する崎の湯では、1,400年前の景色を、湯壺の縁に肘をかけて今も眺められます。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 崎の湯 ― 海と湯と空がひとつになる場所 —</div>
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="360" fill="#fafaf6"/>
+
+        <!-- 空 -->
+        <rect x="0" y="0" width="600" height="120" fill="#cae3ec"/>
+        <!-- 太陽/雲 -->
+        <circle cx="480" cy="50" r="18" fill="#f0d878"/>
+        <g fill="#fff" opacity="0.7">
+          <ellipse cx="120" cy="40" rx="30" ry="8"/>
+          <ellipse cx="200" cy="55" rx="25" ry="7"/>
+        </g>
+        <text x="50" y="40" font-family="Noto Serif JP" font-size="11" fill="#5a8ca0" font-weight="500">空</text>
+
+        <!-- 海(太平洋) - 右側を広く -->
+        <rect x="280" y="120" width="320" height="180" fill="#7aaac0"/>
+        <!-- 波の表現 -->
+        <g stroke="#5a8ca0" stroke-width="1" fill="none" opacity="0.8">
+          <path d="M 290 145 Q 320 142 350 145 Q 380 148 410 145 Q 440 142 470 145 Q 500 148 530 145 Q 560 142 590 145"/>
+          <path d="M 290 170 Q 320 167 350 170 Q 380 173 410 170 Q 440 167 470 170 Q 500 173 530 170 Q 560 167 590 170"/>
+          <path d="M 290 200 Q 320 197 350 200 Q 380 203 410 200 Q 440 197 470 200 Q 500 203 530 200 Q 560 197 590 200"/>
+          <path d="M 290 230 Q 320 227 350 230 Q 380 233 410 230 Q 440 227 470 230 Q 500 233 530 230 Q 560 227 590 230"/>
+          <path d="M 290 260 Q 320 257 350 260 Q 380 263 410 260 Q 440 257 470 260 Q 500 263 530 260 Q 560 257 590 260"/>
+        </g>
+        <text x="540" y="280" font-family="Noto Serif JP" font-size="14" fill="#fff" text-anchor="middle" font-weight="500">太平洋</text>
+
+        <!-- 岬の岩(崖) - 左から伸びる -->
+        <path d="M 0 300 L 0 120 L 60 120 L 90 140 L 120 130 L 160 150 L 200 145 L 230 165 L 260 160 L 290 180 L 290 300 Z" fill="#7a6a5a" stroke="#3a2a1a" stroke-width="1.2"/>
+        <!-- 岩肌のテクスチャ -->
+        <g stroke="#5a4a3a" stroke-width="0.8" fill="none" opacity="0.6">
+          <line x1="40" y1="160" x2="55" y2="200"/>
+          <line x1="100" y1="180" x2="115" y2="220"/>
+          <line x1="160" y1="190" x2="175" y2="230"/>
+          <line x1="220" y1="200" x2="235" y2="240"/>
+          <line x1="80" y1="240" x2="100" y2="270"/>
+          <line x1="150" y1="250" x2="170" y2="280"/>
+        </g>
+
+        <!-- 崎の湯(浴槽) -->
+        <g transform="translate(180, 195)">
+          <ellipse cx="0" cy="0" rx="60" ry="18" fill="#5a3a2a" stroke="#3a2a1a" stroke-width="2"/>
+          <ellipse cx="0" cy="-3" rx="52" ry="13" fill="#7aaac0" opacity="0.85"/>
+          <!-- 湯気 -->
+          <g stroke="#cfd5d2" stroke-width="0.8" fill="none" opacity="0.7">
+            <path d="M -25 -15 Q -27 -25 -25 -38"/>
+            <path d="M -10 -15 Q -8 -28 -10 -42"/>
+            <path d="M 8 -15 Q 10 -28 8 -42"/>
+            <path d="M 25 -15 Q 27 -25 25 -38"/>
+          </g>
+          <text x="0" y="-50" font-family="Noto Serif JP" font-size="13" fill="#1a3a35" text-anchor="middle" font-weight="500">崎の湯</text>
+          <text x="0" y="35" font-family="Noto Sans JP" font-size="9" fill="#fff" text-anchor="middle">1,400年前から残る湯壺</text>
+        </g>
+
+        <!-- 波しぶき(浴槽の右側、海から飛んでくる) -->
+        <g fill="#fff" opacity="0.85">
+          <circle cx="265" cy="180" r="2"/>
+          <circle cx="275" cy="172" r="1.5"/>
+          <circle cx="280" cy="185" r="1.8"/>
+          <circle cx="270" cy="195" r="1.5"/>
+          <circle cx="290" cy="178" r="1.5"/>
+        </g>
+        <text x="320" y="160" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="start" font-style="italic">→ 波しぶきが届く</text>
+
+        <!-- 地下源泉(78℃) -->
+        <g transform="translate(150, 320)">
+          <text x="0" y="0" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">行幸源泉(78℃)</text>
+          <text x="0" y="14" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">ナトリウム塩化物泉</text>
+        </g>
+
+        <!-- 地下源泉→崎の湯への矢印 -->
+        <g stroke="#c44a3a" stroke-width="2" fill="none">
+          <line x1="150" y1="295" x2="180" y2="215" marker-end="url(#arrowSpring)"/>
+        </g>
+
+        <!-- 海の文字 -->
+        <text x="540" y="155" font-family="Noto Serif JP" font-size="11" fill="#fff" font-weight="500" font-style="italic">波の音・潮の香り</text>
+
+        <!-- 5感の統合ラベル -->
+        <text x="300" y="345" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500" font-style="italic">湯×海×空 ― 三位一体の景観浴</text>
+
+        <defs>
+          <marker id="arrowSpring" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#c44a3a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">海と湯と古代が出会う3つの場所</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">崎の湯<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;万葉時代から残る湯壺">万葉時代から残る湯壺</small></div>
+        <div class="effect-desc">
+          太平洋の岩礁を削った天然の湯壺に、78℃のナトリウム塩化物泉が湧き出す絶景露天風呂。波しぶきが浴槽に届くロケーション、明治の「湯崎七湯」で唯一現存。神経痛・関節痛・皮膚病・婦人病に。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">行幸源泉と古湯<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;斉明・天智・持統・文武天皇">斉明・天智・持統・文武天皇</small></div>
+        <div class="effect-desc">
+          658年に斉明天皇と中大兄皇子(後の天智天皇)が来泉し、以後歴代天皇の行幸が続いたことから「行幸源泉」と呼ばれます。万葉集・日本書紀に「牟婁の湯」「紀の温湯」として記された日本最古級の湯のひとつ。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">海岸の絶景群<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;白良浜・円月島・三段壁">白良浜・円月島・三段壁</small></div>
+        <div class="effect-desc">
+          ケイ酸含有の真っ白な砂が美しい白良浜、波に削られた高さ25mの円月島(高嶋)、断崖絶壁の三段壁、波打つ岩盤の千畳敷——温泉郷の周辺に海岸絶景が密集し、湯と景色を一度に楽しめる。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、白良浜散策と日没の崎の湯</strong><br>
+          東京から飛行機で南紀白浜空港まで約1時間15分(関西からはJR特急「くろしお」で約2時間30分)。チェックイン後、まずは<strong>白良浜</strong>を散策。ケイ酸の真っ白な砂が太平洋の青と美しいコントラスト。夕方になったら<strong>崎の湯(入浴料500円)</strong>へ。日没の30分前に到着、78℃のナトリウム塩化物泉に浸かりながら、太平洋に沈む夕日を眺めます。湯壺に届く波しぶきと潮の香り——万葉人もこの景色を見ていたのだと思いを馳せて。夕食は宿で<strong>クエ・伊勢海老・近大マグロ</strong>などの紀州の海の幸を。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝湯+円月島・三段壁の絶景巡り</strong><br>
+          朝湯でゆっくり温まったあと、<strong>円月島</strong>へ。海蝕洞が満月のように見える高さ25mの小島は白浜のシンボル。続いて<strong>三段壁</strong>の海蝕洞窟と<strong>千畳敷</strong>の波打つ岩盤を訪ねます。お昼は地元の<strong>梅干</strong>や<strong>南高梅ソフト</strong>などをお土産に。アドベンチャーワールド(パンダで有名)も近く、家族連れにもおすすめ。帰路の前に<strong>牟婁の湯</strong>などの他の外湯にも立ち寄れば、湯崎七湯の名残を体感できます。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">崎の湯入浴のポイント</div>
+      崎の湯は<strong>洗い場・シャンプー・石鹸の使用ができません</strong>(湯が直接海に流れるため海洋環境保護)。シャワーは事前または宿で。海が荒れた日は波しぶきが強くなるため、波の状況を確認してから入浴を。台風時など臨時休業あり。混雑時(夏季・連休)は入場制限が出ることもあるため、事前に公式サイトで確認を。源泉78℃のため、湯温は熱め(43〜45℃前後)で、長湯は禁物。1回10〜15分が目安。心臓・血圧・呼吸器に持病のある方、妊娠中の方はかかりつけ医に相談を。海岸沿いは紫外線が強いため、日中の入浴では帽子・日焼け止めの準備を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>和歌山県西牟婁郡白浜町(紀伊半島南西部、太平洋沿岸)</td></tr>
+        <tr><th>東京から</th><td>飛行機で南紀白浜空港まで約1時間15分 → バス・タクシーで温泉街まで約10〜15分</td></tr>
+        <tr><th>大阪から</th><td>JR特急「くろしお」で白浜駅まで約2時間30分 → バスで約15分</td></tr>
+        <tr><th>名古屋から</th><td>JR特急「南紀」「くろしお」乗継で約4時間</td></tr>
+        <tr><th>車</th><td>紀勢自動車道「南紀白浜IC」から温泉街まで約15分</td></tr>
+        <tr><th>主要施設</th><td>崎の湯(海と一体の露天) / 牟婁の湯 / 御舟温泉 / 砿湯 / 白良湯(白良浜近く) / 円月島(白浜のシンボル) / 三段壁 / 千畳敷 / 白良浜</td></tr>
+        <tr><th>温泉郷</th><td>湯崎・大浦・古賀浦・綱不知・白浜・東白浜・新白浜の7ヶ所に細分される温泉郷。泉源120以上、温泉ホテル90以上</td></tr>
+        <tr><th>泉質</th><td>ナトリウム-塩化物泉(弱アルカリ性高張性高温泉)、源泉温度78℃(行幸源泉)</td></tr>
+        <tr><th>効能</th><td>神経痛・筋肉痛・関節痛・慢性皮膚病・婦人病・冷え性・疲労回復・きりきず・やけど</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      白浜温泉は、道後・有馬と並ぶ<strong style="color:#d4ebe0">日本三古湯</strong>のひとつでありながら、
+      その独自性は「海と一体になる湯」にあります。
+      658年に斉明天皇が下向して以来、万葉の人々も、近代の旅人も、現代の私たちも、
+      崎の湯の縁に肘をかけて<strong style="color:#d4ebe0">同じ太平洋</strong>を眺めてきた——
+      1,400年変わらない景観に身を浸す体験は、ほかの温泉では得られません。
+      湯の効能と海の開放感、古代の物語と現代のリゾート機能が、
+      白良浜のケイ酸の白砂と円月島のシルエットの中に同居しています。
+      週末1泊、紀伊半島の南西端で、湯と海と万葉の時間に身を委ねる旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

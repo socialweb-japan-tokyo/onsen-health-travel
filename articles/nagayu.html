@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>長湯温泉で飲んで浴びて心臓と血管を整える | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 大分県 &gt; 長湯温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Drink &amp; Bathe</div>
+    <h1 class="hero-title">長湯温泉で<br>飲んで浴びて心臓と血管を整える</h1>
+    <p class="hero-lead">
+      大分県竹田市、くじゅう連山の麓。「飲んで効き、長湯して利く」と詠まれた<strong>世界屈指の炭酸泉</strong>。
+      皮膚から吸収される二酸化炭素が血管を広げ、飲泉が胃腸とミネラルバランスを整える——
+      高血圧・心臓・血管の不調に、ドイツの温泉療養文化と同じ仕組みで向き合う温泉地。
+      週末2泊3日のセラピーリゾートをご紹介します。
+    </p>
+    <div class="hero-meta">大分県竹田市直入町 / マグネシウム・ナトリウム-炭酸水素塩泉(炭酸泉)</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">CO₂</div>
+        <div class="fact-value">1,000<small>mg+/L</small></div>
+        <div class="fact-unit">高濃度炭酸ガス</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">DRINK</div>
+        <div class="fact-value">5<small>か所</small></div>
+        <div class="fact-unit">公共飲泉場</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">心臓・血圧</div>
+        <div class="fact-unit">胃腸・糖尿</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">2<small>泊</small>3<small>日</small></div>
+        <div class="fact-unit">セラピープラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる長湯温泉</div>
+    <ul class="tldr-list">
+      <li>「西方独逸のカルルスバード、東方日本の長湯温泉」(1933年)と称えられた世界屈指の炭酸泉</li>
+      <li>50以上の泉源すべてが250ppm超の炭酸水素塩泉、入浴と飲泉の両方で循環器系にアプローチ</li>
+      <li>ドイツのバートクロツィンゲン市と姉妹都市提携、2015年に国民保養温泉地として再指定</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ「飲んで浴びる」と心臓と血管に届くのか</h2>
+    </div>
+    <p>1933年、九州帝国大学別府温泉治療学研究所の松尾武幸博士はドイツ・カルルスバードでの研究を経て、長湯温泉を「<strong>飲んで効き、長湯して利く、長湯のお湯は心臓胃腸に血の薬</strong>」と詠みました。これは詩的な比喩ではなく、当時のドイツ温泉医学の最先端の知見を長湯に重ね合わせた、極めて具体的な処方箋でした。長湯温泉の本質は、<strong>炭酸泉が浴用と飲用の両方から心臓・血管・胃腸に働きかける</strong>という、日本では類を見ない療養設計にあります。</p>
+
+    <p>入浴の場合、湯に溶けた二酸化炭素は皮膚から直接吸収され、毛細血管を物理的に拡張。心臓は同じ量の血液を送るのに弱い力で済むため、<strong>血圧が下がり心臓の負担が減ります</strong>。長湯のもうひとつの特徴である「<strong>ラムネ温泉</strong>」は32℃の低温で、お湯の温度刺激が少ないぶん長時間浸かることが可能で、CO₂の吸収量が増える設計です。一方の飲泉は、ヨーロッパでは「飲む薬」として何世紀も使われてきた療法。胃腸の働きを整え、ミネラル(鉄分・カルシウム・マグネシウム)を補給し、血糖値や脂質代謝にも影響することが報告されています。「皮膚からの吸収」と「腸からの吸収」、2つの経路で同じ炭酸泉を取り込めるのが長湯の独自性です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 2つの経路で炭酸泉が身体に届く —</div>
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="360" fill="#fafaf6"/>
+
+        <!-- 中央の人体シルエット -->
+        <g transform="translate(300, 50)">
+          <!-- 頭 -->
+          <circle cx="0" cy="25" r="22" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1.2"/>
+          <!-- 顔 -->
+          <circle cx="-6" cy="22" r="1" fill="#1a2a25"/>
+          <circle cx="6" cy="22" r="1" fill="#1a2a25"/>
+          <path d="M -4 30 Q 0 33 4 30" stroke="#1a2a25" stroke-width="0.8" fill="none"/>
+          <!-- 首 -->
+          <rect x="-6" y="45" width="12" height="12" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1"/>
+          <!-- 胴体 -->
+          <path d="M -32 57 L 32 57 L 36 180 L -36 180 Z" fill="#e8d8c0" stroke="#1a2a25" stroke-width="1.2"/>
+          <!-- 心臓マーク -->
+          <g transform="translate(-12, 90)">
+            <path d="M 0 5 C -8 -3 -16 5 -8 13 L 0 21 L 8 13 C 16 5 8 -3 0 5 Z" fill="#c44a3a" stroke="#8a2a1a" stroke-width="1"/>
+          </g>
+          <text x="-12" y="120" font-family="Noto Sans JP" font-size="9" fill="#8a2a1a" text-anchor="middle">心臓</text>
+          <!-- 胃 -->
+          <ellipse cx="8" cy="125" rx="14" ry="10" fill="#dca878" stroke="#1a2a25" stroke-width="1"/>
+          <text x="8" y="128" font-family="Noto Sans JP" font-size="8" fill="#5a3a1a" text-anchor="middle">胃</text>
+          <!-- 血管網 -->
+          <g stroke="#aa3a3a" stroke-width="1.2" fill="none">
+            <path d="M -25 70 Q -20 90 -25 110 Q -28 130 -25 150 Q -22 165 -25 175"/>
+            <path d="M 25 70 Q 20 90 25 110 Q 28 130 25 150 Q 22 165 25 175"/>
+            <path d="M 0 100 Q -10 130 0 160 Q 10 175 0 180"/>
+          </g>
+        </g>
+
+        <!-- 左:浴用ルート -->
+        <g transform="translate(60, 130)">
+          <!-- 浴槽 -->
+          <rect x="0" y="40" width="120" height="50" rx="4" fill="#a8d8c8" stroke="#1a2a25" stroke-width="1.5"/>
+          <!-- 気泡(CO2) -->
+          <g fill="#fff" stroke="#5caa8a" stroke-width="0.5">
+            <circle cx="20" cy="55" r="2"/>
+            <circle cx="40" cy="68" r="2.5"/>
+            <circle cx="60" cy="50" r="2"/>
+            <circle cx="80" cy="65" r="2.5"/>
+            <circle cx="100" cy="55" r="2"/>
+            <circle cx="30" cy="78" r="1.5"/>
+            <circle cx="70" cy="80" r="1.5"/>
+            <circle cx="90" cy="75" r="2"/>
+          </g>
+          <text x="60" y="105" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">炭酸泉浴</text>
+          <text x="60" y="118" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">CO₂が皮膚から吸収</text>
+        </g>
+
+        <!-- 浴用→人体への矢印 -->
+        <g stroke="#5caa8a" stroke-width="2" fill="none">
+          <path d="M 185 165 Q 220 175 260 195" marker-end="url(#arrowGreen)"/>
+        </g>
+        <text x="225" y="170" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle">皮膚吸収</text>
+
+        <!-- 右:飲泉ルート -->
+        <g transform="translate(420, 130)">
+          <!-- カップ -->
+          <path d="M 40 45 L 80 45 L 75 90 L 45 90 Z" fill="#e8e3d0" stroke="#1a2a25" stroke-width="1.5"/>
+          <path d="M 80 55 Q 90 55 90 65 Q 90 75 80 75" stroke="#1a2a25" stroke-width="1.5" fill="none"/>
+          <!-- 液体 + 気泡 -->
+          <rect x="46" y="55" width="28" height="32" fill="#cae8e0"/>
+          <g fill="#fff" stroke="#5caa8a" stroke-width="0.3">
+            <circle cx="52" cy="65" r="1.5"/>
+            <circle cx="60" cy="75" r="1.5"/>
+            <circle cx="68" cy="68" r="1.5"/>
+            <circle cx="58" cy="82" r="1"/>
+          </g>
+          <text x="60" y="105" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">飲泉</text>
+          <text x="60" y="118" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">温泉水を飲む</text>
+        </g>
+
+        <!-- 飲泉→人体への矢印(口・胃へ) -->
+        <g stroke="#c47a3a" stroke-width="2" fill="none">
+          <path d="M 420 145 Q 380 130 340 130" marker-end="url(#arrowOrange)"/>
+          <path d="M 335 130 Q 320 135 315 145"/>
+          <path d="M 315 145 L 315 165"/>
+          <path d="M 315 165 Q 313 175 312 178" marker-end="url(#arrowOrange)"/>
+        </g>
+        <text x="380" y="125" font-family="Noto Sans JP" font-size="9" fill="#c47a3a" text-anchor="middle">口→胃吸収</text>
+
+        <!-- 効果説明 -->
+        <g transform="translate(40, 260)">
+          <circle cx="0" cy="0" r="11" fill="#5caa8a"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+          <text x="18" y="0" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">血管が拡張する</text>
+          <text x="18" y="14" font-family="Noto Sans JP" font-size="10" fill="#555">CO₂が血管壁に作用、毛細血管が広がる</text>
+        </g>
+
+        <g transform="translate(40, 295)">
+          <circle cx="0" cy="0" r="11" fill="#c44a3a"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+          <text x="18" y="0" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">血圧が下がる</text>
+          <text x="18" y="14" font-family="Noto Sans JP" font-size="10" fill="#555">心臓の負担が軽くなる(高血圧の改善)</text>
+        </g>
+
+        <g transform="translate(40, 330)">
+          <circle cx="0" cy="0" r="11" fill="#c47a3a"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+          <text x="18" y="0" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">胃腸とミネラルが整う</text>
+          <text x="18" y="14" font-family="Noto Sans JP" font-size="10" fill="#555">飲泉で消化機能と血糖値・鉄分にも作用</text>
+        </g>
+
+        <defs>
+          <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#5caa8a"/>
+          </marker>
+          <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#c47a3a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">3つの炭酸泉アプローチ</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">高温炭酸浴<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;御前湯・各旅館">御前湯・各旅館</small></div>
+        <div class="effect-desc">
+          40℃前後の炭酸泉で15〜20分。皮膚から吸収されたCO₂が末梢血管を拡張させ、血流が増加。湯あがり後にじんわり温まるのが、普通の温泉とは違う「内側からの温熱」です。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">低温長湯(ラムネ温泉)<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;32℃の名物外湯">32℃の名物外湯</small></div>
+        <div class="effect-desc">
+          全身に細かい気泡がびっしり付着する32℃の低温炭酸泉。長く浸かれるためCO₂吸収量が増え、心臓の弱い方やお年寄りにも安心。42℃の内湯との交互浴で自律神経も整います。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">飲泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;5か所の公共飲泉場">5か所の公共飲泉場</small></div>
+        <div class="effect-desc">
+          温泉街の各所にある飲泉場で、ドイツ式の「飲む温泉」を体験。胃腸機能の改善、便秘解消、ミネラル(鉄分・カルシウム)補給、血糖値の改善にも示唆。多飲は避けて少量ずつ。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(2泊3日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、御前湯と飲泉場めぐり</strong><br>
+          JR豊後竹田駅からバスで40〜50分。チェックイン後、温泉街を浴衣で散歩。芹川沿いの<strong>御前湯(ドイツ風洋館の共同浴場)</strong>でまずは15分の慣らし入浴。湯あがりに飲泉場で温泉水を一口(コップ半分まで)。夕食前にもう一度宿の湯で、夜は早めに就寝。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>MAIN</small></div>
+        <div class="tl-content">
+          <strong>ラムネ温泉の長湯+クアパーク長湯で運動浴</strong><br>
+          朝食後、名物<strong>「ラムネ温泉館」</strong>(藤森照信設計)へ。32℃の低温炭酸泉に15〜30分浸かると、肌に細かい気泡がびっしり付き、まるで天然のシャンパンに浸かるよう。42℃の内湯と交互に。午後はクアパーク長湯で運動浴(ヨーロッパ型の温泉プール)を体験。夕食前後にも飲泉場で水を一口ずつ。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝湯で仕上げ、温泉水土産</strong><br>
+          チェックアウト前に宿の湯か御前湯で最後の入浴。長湯で買える<strong>「飲める温泉水」</strong>のボトルを持ち帰れば、帰宅後も少量ずつ飲み続けられます。「血圧が下がった」「むくみが減った」など、長湯の効果は<strong>滞在後1〜2週間でじわじわ感じる</strong>遅効型。久住高原のドライブと組み合わせて帰路に。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴と飲泉のポイント</div>
+      <strong>炭酸泉は薬と同じく、飲み方・浴び方に注意が必要です。</strong>飲泉は1日に200〜500ml程度が目安、空腹時に少量ずつ。多飲するとお腹をくだすことがあります。入浴は1回15〜30分、長湯による湯あたりに注意。ラムネ温泉の32℃は低温ですが、CO₂で身体は温まるので途中で寒さを感じても焦らずに。<strong>心臓・血圧の持病で治療中の方は、必ずかかりつけ医に相談のうえ来訪を</strong>(降圧剤との相互作用の可能性)。妊娠中・授乳中の方の飲泉は控えめに。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>大分県竹田市直入町長湯(くじゅう連山の麓、芹川沿い)</td></tr>
+        <tr><th>JR豊後竹田駅から</th><td>大野竹田バス「玉来・竹田〜久住〜直入支所線」で約40〜50分、「長湯車庫」下車</td></tr>
+        <tr><th>大分空港から</th><td>空港バス+電車で豊後竹田駅まで約2時間30分 → 上記アクセス</td></tr>
+        <tr><th>福岡から</th><td>新幹線・特急ゆふいんの森などで合計約3時間30分</td></tr>
+        <tr><th>東京から</th><td>飛行機で大分空港または福岡空港 → 上記アクセス。合計約4〜5時間</td></tr>
+        <tr><th>車</th><td>九州自動車道・大分自動車道経由で大分IC → 大分県道47号で約60分</td></tr>
+        <tr><th>主要施設</th><td>御前湯(ドイツ風洋館の共同浴場)、ラムネ温泉館(藤森照信設計、32℃の低温炭酸泉)、クアパーク長湯(運動浴)、5か所の公共飲泉場</td></tr>
+        <tr><th>泉質</th><td>マグネシウム・ナトリウム-炭酸水素塩泉(炭酸泉)、CO₂濃度1,000mg/L以上</td></tr>
+        <tr><th>効能</th><td>高血圧・心臓病・動脈硬化・冷え性・神経痛・関節痛(浴用)/胃腸機能改善・便秘・糖尿病・鉄欠乏性貧血(飲泉)</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      日本の温泉文化のほとんどが「お湯に浸かる」ものだとすれば、
+      長湯温泉は<strong style="color:#d4ebe0">「お湯を飲む」「お湯に浸かる」「お湯と運動する」</strong>という、
+      ドイツ式の総合療養温泉文化を持つ稀有な場所です。
+      1933年に松尾武幸博士が「飲んで効き、長湯して利く」と詠んだとおり、
+      炭酸泉は皮膚と腸の両方から取り込まれ、血管を拡張し、心臓の負担を軽くする。
+      高血圧・心臓・血管にじわじわ効き、湯治後1〜2週間で手応えがやってくる遅効型の温泉。
+      週末2泊、世界屈指の炭酸泉でゆっくり「血の薬」を試してみる旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

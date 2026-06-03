@@ -218,6 +218,41 @@
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
 @media(max-width:480px){.search-row{flex-direction:column;align-items:stretch}.search-reset{align-self:flex-end}}
 
+/* === 言語切り替えボタン(English) === */
+#lang-switch-btn {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #1a3a35;
+  color: #f0f7f5;
+  padding: 10px 18px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  box-shadow: 0 6px 20px rgba(26, 58, 53, 0.25);
+  transition: background 0.2s, transform 0.2s;
+  z-index: 9998;
+}
+#lang-switch-btn:hover {
+  background: #2d5a4a;
+  transform: translateY(-2px);
+}
+#lang-switch-btn svg { display: block; flex-shrink: 0; }
+@media (max-width: 480px) {
+  #lang-switch-btn {
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 14px;
+    font-size: 11px;
+  }
+}
+
 /* === モバイル向け改善:タップしやすいピン + 広い地図スペース === */
 @media (max-width: 768px) {
   /* 地図セクションのパディングを減らして地図を広く */
@@ -230,27 +265,27 @@
   /* === ピンを大きく(タップしやすく) === */
   /* 記事未公開(グレー)のピン:わずかに大きく */
   .pin.no-article circle:not(.ripple) {
-    r: 7;
-    stroke-width: 1.8;
+    r: 8;
+    stroke-width: 2;
   }
   /* 記事公開済み(濃い緑)のピン:しっかり大きく */
   .pin.has-article circle:not(.ripple) {
-    r: 9;
-    stroke-width: 2.2;
+    r: 11;
+    stroke-width: 2.5;
   }
   /* タップ時のピン拡大 */
   .pin:hover circle:not(.ripple),
   .pin:active circle:not(.ripple) {
-    r: 11;
+    r: 13;
   }
   /* 効能フィルターでマッチしたピン */
   .pin.matched circle:not(.ripple) {
-    r: 11;
-    stroke-width: 2.5;
+    r: 13;
+    stroke-width: 3;
   }
   /* 効能フィルターで非マッチのグレーピン */
   .pin.dimmed circle:not(.ripple) {
-    r: 6;
+    r: 7;
   }
 
   /* ツールチップを画面に収まりやすく */
@@ -410,6 +445,17 @@ const pinGroups = svg.selectAll('.pin')
 pinGroups.append('circle')
   .attr('r', 5)
   .attr('stroke-width', 1.8);
+
+// === 透明なタップ領域 ― モバイルでピンを押しやすくするため ===
+// 見えない rect を被せることで、見た目を変えずにタップ可能範囲を広げる
+pinGroups.append('rect')
+  .attr('class', 'pin-hit-area')
+  .attr('x', -18)
+  .attr('y', -18)
+  .attr('width', 36)
+  .attr('height', 36)
+  .attr('fill', 'transparent')
+  .style('cursor', 'pointer');
 
 pinGroups
   .on('mouseenter', function(event, d) {
@@ -678,6 +724,34 @@ resetBtn.addEventListener('click', () => {
   document.querySelectorAll('.ripple').forEach(el => el.remove());
   document.querySelectorAll('.pin-label').forEach(el => el.remove());
 });  
+})();
+
+// === 言語切り替えボタン ===
+(function() {
+  // すでに translate.goog 上にいる場合は表示しない(Googleの翻訳バーで戻れる)
+  if (window.location.hostname.includes('translate.goog')) return;
+
+  // 現在のホスト名を translate.goog 形式に変換
+  // ルール: ハイフン(-) は -- に、ドット(.) は - に置換
+  // 例: socialweb-japan-tokyo.github.io → socialweb--japan--tokyo-github-io
+  const originalHost = window.location.hostname;
+  const translateHost = originalHost.replace(/-/g, '--').replace(/\./g, '-');
+  const translatedUrl = `https://${translateHost}.translate.goog${window.location.pathname}?_x_tr_sl=ja&_x_tr_tl=en&_x_tr_hl=en`;
+
+  // ボタンを生成
+  const btn = document.createElement('a');
+  btn.id = 'lang-switch-btn';
+  btn.href = translatedUrl;
+  btn.setAttribute('aria-label', 'Translate this page to English');
+  btn.innerHTML = `
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <line x1="2" y1="12" x2="22" y2="12"/>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+    </svg>
+    <span>English</span>
+  `;
+  document.body.appendChild(btn);
 })();
   </script>
 </body>

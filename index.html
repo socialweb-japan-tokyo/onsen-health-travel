@@ -217,6 +217,45 @@
 }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
 @media(max-width:480px){.search-row{flex-direction:column;align-items:stretch}.search-reset{align-self:flex-end}}
+
+/* === モバイル向け改善:タップしやすいピン + 広い地図スペース === */
+@media (max-width: 768px) {
+  /* 地図セクションのパディングを減らして地図を広く */
+  .map-section { padding: 1.5rem 0.5rem; }
+  .map-inner { padding: 0; }
+
+  /* ヒントテキストを小さめに */
+  .map-hint { font-size: 10px; margin-bottom: 0.5rem; }
+
+  /* === ピンを大きく(タップしやすく) === */
+  /* 記事未公開(グレー)のピン:わずかに大きく */
+  .pin.no-article circle:not(.ripple) {
+    r: 7;
+    stroke-width: 1.8;
+  }
+  /* 記事公開済み(濃い緑)のピン:しっかり大きく */
+  .pin.has-article circle:not(.ripple) {
+    r: 9;
+    stroke-width: 2.2;
+  }
+  /* タップ時のピン拡大 */
+  .pin:hover circle:not(.ripple),
+  .pin:active circle:not(.ripple) {
+    r: 11;
+  }
+  /* 効能フィルターでマッチしたピン */
+  .pin.matched circle:not(.ripple) {
+    r: 11;
+    stroke-width: 2.5;
+  }
+  /* 効能フィルターで非マッチのグレーピン */
+  .pin.dimmed circle:not(.ripple) {
+    r: 6;
+  }
+
+  /* ツールチップを画面に収まりやすく */
+  .tooltip { max-width: 280px; font-size: 13px; }
+}
   </style>
   <div class="hero">
     <div class="hero-en">Japan Wellness Travel Guide</div>

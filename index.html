@@ -418,6 +418,9 @@ const publishedArticles = {
 const W = 860, H = 900;
 const svg = d3.select('#map');
 
+// === ズーム用のグループ(全マップコンテンツを内包) ===
+const mapGroup = svg.append('g').attr('class', 'map-zoom-group');
+
 const projection = d3.geoMercator()
   .center([136.5, 35.8])
   .scale(1750)
@@ -425,7 +428,7 @@ const projection = d3.geoMercator()
 
 const path = d3.geoPath().projection(projection);
 
-svg.selectAll('.prefecture')
+mapGroup.selectAll('.prefecture')
   .data(geojson.features)
   .enter().append('path')
   .attr('class', 'prefecture')
@@ -433,7 +436,7 @@ svg.selectAll('.prefecture')
 
 const tooltip = document.getElementById('tooltip');
 
-const pinGroups = svg.selectAll('.pin')
+const pinGroups = mapGroup.selectAll('.pin')
   .data(pins)
   .enter().append('g')
   .attr('class', d => 'pin ' + (publishedArticles[d.name] ? 'has-article' : 'no-article'))
@@ -486,6 +489,56 @@ pinGroups
       card.classList.add('flash');
     }
   });
+
+// === 都道府県別ズーム機能 ===
+// 都道府県を選んだ瞬間に、その県の温泉が画面いっぱいに収まるよう自動ズーム
+function zoomToPrefecture(prefName) {
+  const prefPins = pins.filter(p => p.pref === prefName);
+  if (prefPins.length === 0) {
+    resetZoom();
+    return;
+  }
+
+  // 県内ピンの座標範囲を計算
+  let xs = [], ys = [];
+  prefPins.forEach(p => {
+    const [x, y] = projection([p.lng, p.lat]);
+    xs.push(x);
+    ys.push(y);
+  });
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+
+  // 範囲のサイズ(ピンが1つの場合はデフォルト値)
+  const w = (maxX - minX) || 100;
+  const h = (maxY - minY) || 100;
+
+  // 余白を確保してスケールを計算(最大5倍まで)
+  const padding = 100;
+  const scale = Math.min((W - padding * 2) / w, (H - padding * 2) / h, 5);
+
+  // 中心位置を計算
+  const cx = (minX + maxX) / 2;
+  const cy = (minY + maxY) / 2;
+
+  // 変換量を計算(中心をビューポート中央に置く)
+  const tx = W / 2 - cx * scale;
+  const ty = H / 2 - cy * scale;
+
+  // アニメーションで滑らかにズーム
+  mapGroup.transition()
+    .duration(750)
+    .attr('transform', `translate(${tx},${ty}) scale(${scale})`);
+}
+
+function resetZoom() {
+  mapGroup.transition()
+    .duration(750)
+    .attr('transform', 'translate(0,0) scale(1)');
+}
+
      // === 効能フィルター ===
 (function() {
   // 効能カテゴリーの定義
@@ -654,6 +707,7 @@ pinGroups
     if (!pref) {
       onsenSelect.innerHTML = '<option value="">-- まず都道府県を選択 --</option>';
       onsenSelect.disabled = true;
+      resetZoom();  // ズームも全国表示に戻す
       return;
     }
       // ★ 先頭にプレースホルダーを追加
@@ -671,6 +725,9 @@ onsensInPref.forEach(onsen => {
   onsenSelect.appendChild(option);
 });
     onsenSelect.disabled = false;
+
+    // 該当の都道府県エリアにマップを自動ズーム
+    zoomToPrefecture(pref);
   });
 
   // 3. 温泉が選ばれたら：ピンをハイライト＋カードへスクロール
@@ -723,6 +780,7 @@ resetBtn.addEventListener('click', () => {
   document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
   document.querySelectorAll('.ripple').forEach(el => el.remove());
   document.querySelectorAll('.pin-label').forEach(el => el.remove());
+  resetZoom();  // ズームも全国表示に戻す
 });  
 })();
 

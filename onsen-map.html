@@ -370,15 +370,14 @@ pinGroups
       return;
     }
 
-    onsenSelect.appendChild(new Option('-- 温泉を選択 --', ''));
-    pins
-      .filter(p => p.pref === pref)
-      .forEach(p => {
-        const hasArticle = !!publishedArticles[p.name];
-        option.textContent = `${onsen.name} — ${onsen.effect}`;
-        onsenSelect.appendChild(opt);
-      });
-
+   // 該当県の温泉でセレクトを埋める
+const onsensInPref = pins.filter(p => p.pref === pref);
+onsensInPref.forEach(onsen => {
+  const option = document.createElement('option');
+  option.value = onsen.id;
+  option.textContent = `${onsen.name} — ${onsen.effect}`;  // ← ✓マークなし
+  onsenSelect.appendChild(option);
+});
     onsenSelect.disabled = false;
   });
 

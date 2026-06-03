@@ -124,8 +124,45 @@
     @media(max-width:480px){.grid{grid-template-columns:1fr}}
     .card{background:#fff;border:1px solid #e8e5e0;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s;color:#222;scroll-margin-top:80px}
     .card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
-    .card.flash{box-shadow:0 0 0 3px #5caa8a;animation:flash 1.5s}
-    @keyframes flash{0%{box-shadow:0 0 0 3px #5caa8a}100%{box-shadow:0 0 0 0 transparent}}
+
+    /* === 該当カードへのジャンプ時のハイライト演出(オレンジ・2段パルス) === */
+    .card.flash {
+      animation: flash 2.5s ease-out;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes flash {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0),
+                    0 0 0 0 rgba(255, 107, 53, 0);
+        transform: scale(1);
+      }
+      12% {
+        box-shadow: 0 0 0 6px rgba(255, 107, 53, 1),
+                    0 0 30px 8px rgba(255, 107, 53, 0.55);
+        transform: scale(1.025);
+      }
+      32% {
+        box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.7),
+                    0 0 12px 2px rgba(255, 107, 53, 0.25);
+        transform: scale(1.01);
+      }
+      52% {
+        box-shadow: 0 0 0 6px rgba(255, 107, 53, 1),
+                    0 0 30px 8px rgba(255, 107, 53, 0.55);
+        transform: scale(1.025);
+      }
+      78% {
+        box-shadow: 0 0 0 5px rgba(255, 107, 53, 0.85),
+                    0 0 20px 4px rgba(255, 107, 53, 0.4);
+        transform: scale(1.015);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0),
+                    0 0 0 0 rgba(255, 107, 53, 0);
+        transform: scale(1);
+      }
+    }
     .card-thumb{height:140px;background:#2d5a4a;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:10px 14px}
     .thumb-label{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.85);text-transform:uppercase}
     .card.pending .card-thumb{filter:grayscale(0.6) brightness(0.85)}

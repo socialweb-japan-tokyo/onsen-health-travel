@@ -375,8 +375,6 @@ pinGroups
       .filter(p => p.pref === pref)
       .forEach(p => {
         const hasArticle = !!publishedArticles[p.name];
-        const opt = document.createElement('option');
-        opt.value = p.id;
         option.textContent = `${onsen.name} — ${onsen.effect}`;
         onsenSelect.appendChild(opt);
       });

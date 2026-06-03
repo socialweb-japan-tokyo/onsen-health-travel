@@ -1,5 +1,5 @@
 <!-- マップに戻るフローティングボタン -->
-<a href="https://socialweb-japan-tokyo.github.io/onsen-health-travel/onsen-map.html#map-section" 
+<a href="/onsen-health-travel/#map-section" 
    id="back-to-map-btn" 
    aria-label="温泉マップに戻る">
   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -82,6 +82,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-site-verification" content="Zgo0g_zWlklnnjoEhxSyODPNliHO0iT7o3oRcW9gpic" />
   <title>効能旅(Kounou Tabi) | 効能で選ぶ、日本の温泉旅</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
@@ -123,8 +124,45 @@
     @media(max-width:480px){.grid{grid-template-columns:1fr}}
     .card{background:#fff;border:1px solid #e8e5e0;text-decoration:none;display:block;transition:transform .2s,box-shadow .2s;color:#222;scroll-margin-top:80px}
     .card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.08)}
-    .card.flash{box-shadow:0 0 0 3px #5caa8a;animation:flash 1.5s}
-    @keyframes flash{0%{box-shadow:0 0 0 3px #5caa8a}100%{box-shadow:0 0 0 0 transparent}}
+
+    /* === 該当カードへのジャンプ時のハイライト演出(オレンジ・2段パルス) === */
+    .card.flash {
+      animation: flash 2.5s ease-out;
+      position: relative;
+      z-index: 2;
+    }
+    @keyframes flash {
+      0% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0),
+                    0 0 0 0 rgba(255, 107, 53, 0);
+        transform: scale(1);
+      }
+      12% {
+        box-shadow: 0 0 0 6px rgba(255, 107, 53, 1),
+                    0 0 30px 8px rgba(255, 107, 53, 0.55);
+        transform: scale(1.025);
+      }
+      32% {
+        box-shadow: 0 0 0 4px rgba(255, 107, 53, 0.7),
+                    0 0 12px 2px rgba(255, 107, 53, 0.25);
+        transform: scale(1.01);
+      }
+      52% {
+        box-shadow: 0 0 0 6px rgba(255, 107, 53, 1),
+                    0 0 30px 8px rgba(255, 107, 53, 0.55);
+        transform: scale(1.025);
+      }
+      78% {
+        box-shadow: 0 0 0 5px rgba(255, 107, 53, 0.85),
+                    0 0 20px 4px rgba(255, 107, 53, 0.4);
+        transform: scale(1.015);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(255, 107, 53, 0),
+                    0 0 0 0 rgba(255, 107, 53, 0);
+        transform: scale(1);
+      }
+    }
     .card-thumb{height:140px;background:#2d5a4a;position:relative;overflow:hidden;display:flex;align-items:flex-end;padding:10px 14px}
     .thumb-label{font-size:10px;letter-spacing:2px;color:rgba(255,255,255,0.85);text-transform:uppercase}
     .card.pending .card-thumb{filter:grayscale(0.6) brightness(0.85)}
@@ -216,6 +254,45 @@
 }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.65}}
 @media(max-width:480px){.search-row{flex-direction:column;align-items:stretch}.search-reset{align-self:flex-end}}
+
+/* === モバイル向け改善:タップしやすいピン + 広い地図スペース === */
+@media (max-width: 768px) {
+  /* 地図セクションのパディングを減らして地図を広く */
+  .map-section { padding: 1.5rem 0.5rem; }
+  .map-inner { padding: 0; }
+
+  /* ヒントテキストを小さめに */
+  .map-hint { font-size: 10px; margin-bottom: 0.5rem; }
+
+  /* === ピンを大きく(タップしやすく) === */
+  /* 記事未公開(グレー)のピン:わずかに大きく */
+  .pin.no-article circle:not(.ripple) {
+    r: 8;
+    stroke-width: 2;
+  }
+  /* 記事公開済み(濃い緑)のピン:しっかり大きく */
+  .pin.has-article circle:not(.ripple) {
+    r: 11;
+    stroke-width: 2.5;
+  }
+  /* タップ時のピン拡大 */
+  .pin:hover circle:not(.ripple),
+  .pin:active circle:not(.ripple) {
+    r: 13;
+  }
+  /* 効能フィルターでマッチしたピン */
+  .pin.matched circle:not(.ripple) {
+    r: 13;
+    stroke-width: 3;
+  }
+  /* 効能フィルターで非マッチのグレーピン */
+  .pin.dimmed circle:not(.ripple) {
+    r: 7;
+  }
+
+  /* ツールチップを画面に収まりやすく */
+  .tooltip { max-width: 280px; font-size: 13px; }
+}
   </style>
   <div class="hero">
     <div class="hero-en">Japan Wellness Travel Guide</div>
@@ -257,7 +334,7 @@
     <div class="onsen-search">
       <div class="search-row">
         <label class="search-field">
-          <span class="search-label">都道府県</span>
+          <span class="search-label">都道府県で絞り込む</span>
           <select id="pref-select">
             <option value="">-- 選択してください --</option>
           </select>
@@ -343,6 +420,9 @@ const publishedArticles = {
 const W = 860, H = 900;
 const svg = d3.select('#map');
 
+// === ズーム用のグループ(全マップコンテンツを内包) ===
+const mapGroup = svg.append('g').attr('class', 'map-zoom-group');
+
 const projection = d3.geoMercator()
   .center([136.5, 35.8])
   .scale(1750)
@@ -350,7 +430,7 @@ const projection = d3.geoMercator()
 
 const path = d3.geoPath().projection(projection);
 
-svg.selectAll('.prefecture')
+mapGroup.selectAll('.prefecture')
   .data(geojson.features)
   .enter().append('path')
   .attr('class', 'prefecture')
@@ -358,7 +438,7 @@ svg.selectAll('.prefecture')
 
 const tooltip = document.getElementById('tooltip');
 
-const pinGroups = svg.selectAll('.pin')
+const pinGroups = mapGroup.selectAll('.pin')
   .data(pins)
   .enter().append('g')
   .attr('class', d => 'pin ' + (publishedArticles[d.name] ? 'has-article' : 'no-article'))
@@ -371,6 +451,17 @@ pinGroups.append('circle')
   .attr('r', 5)
   .attr('stroke-width', 1.8);
 
+// === 透明なタップ領域 ― モバイルでピンを押しやすくするため ===
+// 見えない rect を被せることで、見た目を変えずにタップ可能範囲を広げる
+pinGroups.append('rect')
+  .attr('class', 'pin-hit-area')
+  .attr('x', -18)
+  .attr('y', -18)
+  .attr('width', 36)
+  .attr('height', 36)
+  .attr('fill', 'transparent')
+  .style('cursor', 'pointer');
+
 pinGroups
   .on('mouseenter', function(event, d) {
     const isPublished = !!publishedArticles[d.name];
@@ -379,7 +470,7 @@ pinGroups
       <div class="tt-pref">${d.pref}</div>
       <div class="tt-effect">${d.effect}</div>
       <div class="tt-desc">${d.desc}</div>
-      <div class="tt-status ${isPublished ? '' : 'pending'}">${isPublished ? '✓ 記事公開済み — クリックで該当カードへ' : '記事作成中 — クリックで該当カードへ'}</div>`;
+      ${isPublished ? '' : '<div class="tt-status pending">記事作成中 — クリックで該当カードへ</div>'}`;
     tooltip.style.display = 'block';
     tooltip.style.left = (event.clientX + 16) + 'px';
     tooltip.style.top = (event.clientY - 12) + 'px';
@@ -400,6 +491,56 @@ pinGroups
       card.classList.add('flash');
     }
   });
+
+// === 都道府県別ズーム機能 ===
+// 都道府県を選んだ瞬間に、その県の温泉が画面いっぱいに収まるよう自動ズーム
+function zoomToPrefecture(prefName) {
+  const prefPins = pins.filter(p => p.pref === prefName);
+  if (prefPins.length === 0) {
+    resetZoom();
+    return;
+  }
+
+  // 県内ピンの座標範囲を計算
+  let xs = [], ys = [];
+  prefPins.forEach(p => {
+    const [x, y] = projection([p.lng, p.lat]);
+    xs.push(x);
+    ys.push(y);
+  });
+  const minX = Math.min(...xs);
+  const maxX = Math.max(...xs);
+  const minY = Math.min(...ys);
+  const maxY = Math.max(...ys);
+
+  // 範囲のサイズ(ピンが1つの場合はデフォルト値)
+  const w = (maxX - minX) || 100;
+  const h = (maxY - minY) || 100;
+
+  // 余白を確保してスケールを計算(最大5倍まで)
+  const padding = 100;
+  const scale = Math.min((W - padding * 2) / w, (H - padding * 2) / h, 5);
+
+  // 中心位置を計算
+  const cx = (minX + maxX) / 2;
+  const cy = (minY + maxY) / 2;
+
+  // 変換量を計算(中心をビューポート中央に置く)
+  const tx = W / 2 - cx * scale;
+  const ty = H / 2 - cy * scale;
+
+  // アニメーションで滑らかにズーム
+  mapGroup.transition()
+    .duration(750)
+    .attr('transform', `translate(${tx},${ty}) scale(${scale})`);
+}
+
+function resetZoom() {
+  mapGroup.transition()
+    .duration(750)
+    .attr('transform', 'translate(0,0) scale(1)');
+}
+
      // === 効能フィルター ===
 (function() {
   // 効能カテゴリーの定義
@@ -568,6 +709,7 @@ pinGroups
     if (!pref) {
       onsenSelect.innerHTML = '<option value="">-- まず都道府県を選択 --</option>';
       onsenSelect.disabled = true;
+      resetZoom();  // ズームも全国表示に戻す
       return;
     }
       // ★ 先頭にプレースホルダーを追加
@@ -585,6 +727,9 @@ onsensInPref.forEach(onsen => {
   onsenSelect.appendChild(option);
 });
     onsenSelect.disabled = false;
+
+    // 該当の都道府県エリアにマップを自動ズーム
+    zoomToPrefecture(pref);
   });
 
   // 3. 温泉が選ばれたら：ピンをハイライト＋カードへスクロール
@@ -637,6 +782,7 @@ resetBtn.addEventListener('click', () => {
   document.querySelectorAll('.pin.highlight').forEach(el => el.classList.remove('highlight'));
   document.querySelectorAll('.ripple').forEach(el => el.remove());
   document.querySelectorAll('.pin-label').forEach(el => el.remove());
+  resetZoom();  // ズームも全国表示に戻す
 });  
 })();
   </script>

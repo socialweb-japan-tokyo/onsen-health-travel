@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>有馬温泉の金泉と銀泉で冷えを内側からめぐらせる | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 兵庫県 &gt; 有馬温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Cold &amp; Circulation</div>
+    <h1 class="hero-title">有馬温泉で<br>冷えを内側からめぐらせる</h1>
+    <p class="hero-lead">
+      兵庫県神戸市、六甲山の北麓にひらく日本三古湯のひとつ。
+      海水の1.5倍の塩分と鉄分を含む茶褐色の「金泉」が外側を分厚く覆い、
+      炭酸ガスを含む透明な「銀泉」が皮膚から血管を内側から広げる。
+      慢性的な冷え性・末梢循環障害・手足の冷たさに悩む方に向けた、2泊3日の温泉プランをご紹介します。
+    </p>
+    <div class="hero-meta">兵庫県神戸市 / 含鉄塩化物泉(金泉)+ 二酸化炭素泉・放射能泉(銀泉)</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">PH</div>
+        <div class="fact-value">6.6</div>
+        <div class="fact-unit">金泉:弱酸性</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">TEMP</div>
+        <div class="fact-value">42<small>℃</small></div>
+        <div class="fact-unit">源泉81〜98℃</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">冷え性</div>
+        <div class="fact-unit">末梢循環・神経痛</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">2<small>泊</small>3<small>日</small></div>
+        <div class="fact-unit">めぐりプラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる有馬温泉</div>
+    <ul class="tldr-list">
+      <li>療養泉9成分のうち7つを含む世界的に希少な湯。金泉(含鉄塩化物泉)と銀泉(炭酸泉・ラジウム泉)が同じ土地で湧く</li>
+      <li>金泉は海水の1.5倍の塩分で皮膚に薄い膜を作り、湯あがり後も体が冷めにくい「保温の湯」</li>
+      <li>銀泉の炭酸ガスは皮膚から吸収され末梢血管を拡張。「外側で保温」×「内側で血流促進」のダブルアプローチ</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ金泉と銀泉の組み合わせが冷え性に効くのか</h2>
+    </div>
+    <p>慢性的な冷え性は、単に身体を温めれば治るものではありません。問題の本質は<strong>「末梢の血管が細く、血流が手足の先まで届いていない」</strong>こと。外側からどれだけ熱を加えても、内側の血管が広がらない限り根本的には改善しません。有馬温泉が冷え性に強いのは、この「外側」と「内側」の両方に同時に働く、二系統の湯を持っているからです。</p>
+
+    <p>金泉(含鉄ナトリウム-塩化物強塩温泉)は、海水の1.5倍の塩分が皮膚表面のタンパク質と結びついて薄いコーティングを作り、湯冷めを徹底的に防ぎます。一方の銀泉(炭酸泉)に溶け込んだ二酸化炭素は、皮膚から血管内へ直接吸収され、毛細血管を物理的に拡張させて血流量を増やします。<strong>金泉で「熱を逃がさない」、銀泉で「血を巡らせる」</strong>——日本にある全温泉のうち炭酸泉はわずか0.2%、鉄泉は約1%とされる中、この2つが同じ温泉地で揃うのは極めて稀です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 金泉と銀泉が冷えを解くまで —</div>
+      <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="280" fill="#fafaf6"/>
+
+        <!-- 肌の断面図 -->
+        <g transform="translate(40,40)">
+          <!-- 金泉の保温膜(茶褐色のコーティング) -->
+          <rect x="0" y="-8" width="200" height="6" fill="#a85a3a" opacity="0.7" stroke="#7a3a2a" stroke-width="0.5"/>
+          <text x="100" y="-13" font-family="Noto Sans JP" font-size="8" fill="#7a3a2a" text-anchor="middle">金泉の塩+鉄の保温膜</text>
+          <!-- 表皮 -->
+          <rect x="0" y="0" width="200" height="25" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="16" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">表皮</text>
+          <!-- 銀泉の炭酸ガスが浸透 -->
+          <g fill="#5caa8a">
+            <circle cx="20" cy="12" r="2"/>
+            <circle cx="50" cy="10" r="2"/>
+            <circle cx="80" cy="14" r="2"/>
+            <circle cx="110" cy="11" r="2"/>
+            <circle cx="140" cy="13" r="2"/>
+            <circle cx="170" cy="12" r="2"/>
+          </g>
+          <!-- 真皮 -->
+          <rect x="0" y="25" width="200" height="35" fill="#f0c0a8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="46" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">真皮</text>
+          <!-- 細い末梢血管(拡張前) -->
+          <text x="-30" y="80" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="end">入浴前</text>
+          <path d="M 10 75 Q 50 73 90 76 Q 130 74 170 75 Q 190 76 200 74" stroke="#aa3a3a" stroke-width="1.2" fill="none"/>
+          <!-- 太い末梢血管(炭酸で拡張後) -->
+          <text x="-30" y="105" font-family="Noto Sans JP" font-size="8" fill="#5caa8a" text-anchor="end">入浴後</text>
+          <path d="M 10 100 Q 50 96 90 102 Q 130 98 170 100 Q 190 102 200 99" stroke="#aa3a3a" stroke-width="3.5" fill="none"/>
+          <!-- 凡例 -->
+          <text x="100" y="130" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle">● = 銀泉のCO₂が皮膚から吸収</text>
+          <text x="100" y="145" font-family="Noto Sans JP" font-size="9" fill="#aa3a3a" text-anchor="middle">━ = 拡張した末梢血管</text>
+        </g>
+
+        <!-- 説明ステップ -->
+        <g transform="translate(280,30)">
+          <!-- ステップ1 -->
+          <circle cx="15" cy="15" r="12" fill="#a85a3a"/>
+          <text x="15" y="19" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+          <text x="35" y="14" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">金泉が皮膚に保温膜を張る</text>
+          <text x="35" y="28" font-family="Noto Sans JP" font-size="10" fill="#555">海水の1.5倍の塩分+鉄分がコート</text>
+
+          <!-- ステップ2 -->
+          <circle cx="15" cy="65" r="12" fill="#5caa8a"/>
+          <text x="15" y="69" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+          <text x="35" y="64" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">銀泉のCO₂が皮膚から浸透</text>
+          <text x="35" y="78" font-family="Noto Sans JP" font-size="10" fill="#555">炭酸ガスが直接血管へ届く</text>
+
+          <!-- ステップ3 -->
+          <circle cx="15" cy="115" r="12" fill="#5caa8a"/>
+          <text x="15" y="119" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+          <text x="35" y="114" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">末梢血管が拡張、血流が増加</text>
+          <text x="35" y="128" font-family="Noto Sans JP" font-size="10" fill="#555">手足の先まで温かさが届く</text>
+
+          <!-- ステップ4 -->
+          <circle cx="15" cy="165" r="12" fill="#1a3a35"/>
+          <text x="15" y="169" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">4</text>
+          <text x="35" y="164" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">湯冷めしない身体が定着する</text>
+          <text x="35" y="178" font-family="Noto Sans JP" font-size="10" fill="#555">血管の反応性が日を追って改善</text>
+        </g>
+
+        <g stroke="#5caa8a" stroke-width="2" fill="none" marker-end="url(#arrow)">
+          <path d="M 245 60 Q 265 60 275 50"/>
+        </g>
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <polygon points="0,0 8,3 0,6" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">3つの湯がめぐりをつくる</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">金泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">保温の湯</small></div>
+        <div class="effect-desc">
+          鉄分と海水の1.5倍の塩分を含む茶褐色の湯。皮膚表面に薄いコーティングを作り、湯あがり後も体の芯がポカポカと続きます。冷え性・腰痛・関節痛・末梢循環障害に。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">銀泉(炭酸泉)<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">血流の湯</small></div>
+        <div class="effect-desc">
+          無色透明の炭酸泉。皮膚から吸収された二酸化炭素が毛細血管を拡張させ、血流量を物理的に増やします。日本の温泉のうち炭酸泉はわずか0.2%という希少な泉質。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">銀泉(ラジウム泉)<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;">代謝の湯</small></div>
+        <div class="effect-desc">
+          微量のラドンを含む放射能泉。湯気を吸い込むだけでも吸収され、新陳代謝を高めて自然治癒力を引き出します。高血圧・痛風・慢性疲労にも期待される泉質。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(2泊3日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、外湯「金の湯」で慣らし入浴</strong><br>
+          大阪・神戸から1時間弱で到着。チェックイン前に外湯「金の湯」で15分の慣らし入浴。茶褐色の湯に肩まで浸かり、まずは皮膚に塩のコーティングを覚えさせます。夕食後は宿の金泉で再度10分、湯冷めしにくい体感を確かめる日です。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>MAIN</small></div>
+        <div class="tl-content">
+          <strong>朝は銀泉、午後は金泉の「めぐり入浴」</strong><br>
+          朝風呂は外湯「銀の湯」で20分、炭酸泉の細かい気泡に身体を慣らして血管を拡張。午前中は温泉街を散歩、有馬グランドホテルや太閤の湯から泉源地巡りへ。午後は宿の金泉に20分浸かって熱を閉じ込め、夜は再度銀泉で仕上げ。「血流を増やしてから保温する」順番が、冷え対策の理にかなっています。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝の金泉で締めくくり、効果確認</strong><br>
+          チェックアウト前に金泉で最後の15分。手足の指先の温かさ、肩や腰の冷えの抜け感を確かめます。塩分膜が新しい衣服越しに数時間続くのが有馬の特徴。帰宅後しばらく「指先が冷えにくくなった」と気づく方が多いです。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      金泉は塩分濃度が高く、肌の角質を取りやすいので、1回15分・1日2〜3回が目安。湯あがり後は真水で軽くすすぐと過度な乾燥を防げます。銀泉(炭酸泉)はぬるめの設定が多く長湯しやすいですが、血管拡張で一時的に血圧が下がるため、立ちくらみに注意。入浴前後にコップ1杯の水分補給を必ず。妊娠中の方や心臓・血圧に持病のある方は、特に金泉の高濃度塩分に注意してかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>兵庫県神戸市北区有馬町</td></tr>
+        <tr><th>新神戸駅から(電車)</th><td>地下鉄北神線で谷上駅 → 神戸電鉄有馬線で有馬温泉駅まで約30分</td></tr>
+        <tr><th>三宮から(バス)</th><td>阪急バス・神姫バス「有馬エクスプレス号」で約45分。乗換なしで便利</td></tr>
+        <tr><th>大阪から</th><td>JR新大阪から高速バス「有馬エクスプレス」で直行約62分(1,200円)。または電車で約60分</td></tr>
+        <tr><th>東京から</th><td>新幹線「のぞみ」で新神戸駅まで約2時間50分 → 上記アクセス。合計約3時間30分</td></tr>
+        <tr><th>車</th><td>阪神高速北神戸線「有馬口IC」または「西宮山口南IC」から約3km</td></tr>
+        <tr><th>泉質</th><td>金泉:含鉄ナトリウム-塩化物強塩温泉(pH6.6)/ 銀泉:二酸化炭素泉・放射能泉</td></tr>
+        <tr><th>効能</th><td>冷え性・末梢循環障害・神経痛・関節痛・腰痛・慢性婦人病・疲労回復・高血圧</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      日本には約27,000の温泉源があるなかで、鉄泉は約1%、炭酸泉はわずか0.2%。
+      その極めて希少な2つが、同じ温泉地で同時に湧くのが有馬の最大の魅力です。
+      金泉が外側に保温膜を張り、銀泉が内側から末梢血管を広げる——
+      「熱を逃がさない」と「血を巡らせる」の両輪が、冷え性のような
+      長年つきまとう不調にこそ確かに効きます。
+      太閤秀吉が9度も足を運んだという有馬の湯で、指先まで温かさをめぐらせる週末を。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

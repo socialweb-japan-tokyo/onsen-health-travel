@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>黒川温泉で五感をゆるめストレスを抜く | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 熊本県 &gt; 黒川温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Sensory Slow Down</div>
+    <h1 class="hero-title">黒川温泉で<br>五感をゆるめストレスを抜く</h1>
+    <p class="hero-lead">
+      熊本県阿蘇、外輪山の山あいにひっそりとひらく30軒の宿の温泉街。
+      「街全体で一つの旅館」をコンセプトに、入湯手形で25か所の露天風呂を歩いて巡る。
+      高層の建物がない統一された景観と里山の音・香りに身を預けることで、
+      慢性的なストレス・睡眠の浅さ・心の疲れに「静かな効能」を返してくれる温泉地です。
+    </p>
+    <div class="hero-meta">熊本県阿蘇郡南小国町 / 硫黄泉・塩化物泉・単純温泉ほか多様</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">INNS</div>
+        <div class="fact-value">30<small>軒</small></div>
+        <div class="fact-unit">街=ひとつの旅館</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">BATHS</div>
+        <div class="fact-value">25<small>か所</small></div>
+        <div class="fact-unit">入湯手形で3湯</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">ストレス</div>
+        <div class="fact-unit">疲労回復・神経痛</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">週末プラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる黒川温泉</div>
+    <ul class="tldr-list">
+      <li>「黒川温泉一旅館」が地域哲学。30軒の宿と里山すべてを一つの旅館と捉え、道は廊下、木々は中庭</li>
+      <li>入湯手形(1,500円)で25か所の露天風呂から3か所を選べる。手形は地元小国杉の間伐材で作られる</li>
+      <li>ミシュラン・グリーンガイド・ジャポンで温泉地として二つ星評価。景観の力で受動的にストレスを抜く</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ黒川は「環境ごと」がストレスに効くのか</h2>
+    </div>
+    <p>ストレスを下げるのに必要なのは、特殊な化学成分よりも<strong>「日常の感覚入力を切り替えること」</strong>だと、ストレス生理学では一貫して示されています。視界がデジタル画面ばかり、耳に入るのは通知音と機械音、嗅覚は化学物質、触覚は硬い椅子と機械——交感神経が休まらない原因の多くは、五感が同じパターンで固まっていることにあります。</p>
+
+    <p>黒川温泉は、これに対する答えを<strong>「街全体の設計」</strong>で用意しています。高層建築を建てない取り決め、和の景観で統一された街並み、川と山に囲まれた音環境、湯気と木と土の匂い、浴衣で歩く感覚、地のものの味——五感に届く刺激が、日常とすべて入れ替わります。入湯手形で歩いて3か所の露天風呂を巡る「軽い運動 + 環境刺激 + 湯」の組み合わせが、コルチゾール(ストレスホルモン)を下げて副交感神経を立ち上げる。湯の成分そのものよりも、<strong>「黒川にいること」自体が薬</strong>なのです。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 五感が満たされるほどストレスが抜けていく —</div>
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="360" fill="#fafaf6"/>
+
+        <!-- 中心 -->
+        <g transform="translate(300, 180)">
+          <!-- 外側の補助五角形(目盛り) -->
+          <polygon points="0,-130 124,-40 76,105 -76,105 -124,-40" fill="none" stroke="#d8d3c0" stroke-width="0.8" stroke-dasharray="3,3"/>
+          <polygon points="0,-87 82,-27 51,70 -51,70 -82,-27" fill="none" stroke="#e8e3d0" stroke-width="0.5"/>
+          <polygon points="0,-43 41,-13 25,35 -25,35 -41,-13" fill="none" stroke="#e8e3d0" stroke-width="0.5"/>
+
+          <!-- 中心軸 -->
+          <line x1="0" y1="0" x2="0" y2="-130" stroke="#d8d3c0" stroke-width="0.5"/>
+          <line x1="0" y1="0" x2="124" y2="-40" stroke="#d8d3c0" stroke-width="0.5"/>
+          <line x1="0" y1="0" x2="76" y2="105" stroke="#d8d3c0" stroke-width="0.5"/>
+          <line x1="0" y1="0" x2="-76" y2="105" stroke="#d8d3c0" stroke-width="0.5"/>
+          <line x1="0" y1="0" x2="-124" y2="-40" stroke="#d8d3c0" stroke-width="0.5"/>
+
+          <!-- 入浴前の状態(小さい五角形・赤系) -->
+          <polygon points="0,-35 30,-10 18,28 -18,28 -30,-10" fill="#c44a3a" fill-opacity="0.15" stroke="#c44a3a" stroke-width="1.5"/>
+
+          <!-- 黒川滞在中の状態(大きい五角形・緑系) -->
+          <polygon points="0,-115 108,-35 66,92 -66,92 -108,-35" fill="#5caa8a" fill-opacity="0.25" stroke="#5caa8a" stroke-width="2"/>
+
+          <!-- 拡張を示す矢印 -->
+          <g stroke="#5caa8a" stroke-width="1" fill="none" stroke-dasharray="2,2">
+            <line x1="0" y1="-40" x2="0" y2="-110" marker-end="url(#arrowSmall)"/>
+            <line x1="32" y1="-12" x2="100" y2="-32" marker-end="url(#arrowSmall)"/>
+            <line x1="20" y1="30" x2="61" y2="86" marker-end="url(#arrowSmall)"/>
+            <line x1="-20" y1="30" x2="-61" y2="86" marker-end="url(#arrowSmall)"/>
+            <line x1="-32" y1="-12" x2="-100" y2="-32" marker-end="url(#arrowSmall)"/>
+          </g>
+
+          <!-- 五感ラベル -->
+          <!-- 視 (上) -->
+          <text x="0" y="-145" font-family="Noto Serif JP" font-size="14" fill="#1a3a35" text-anchor="middle" font-weight="500">視</text>
+          <text x="0" y="-160" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">里山の景観・湯あかり</text>
+
+          <!-- 聴 (右上) -->
+          <text x="138" y="-42" font-family="Noto Serif JP" font-size="14" fill="#1a3a35" text-anchor="middle" font-weight="500">聴</text>
+          <text x="155" y="-26" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">川のせせらぎ・虫の音</text>
+
+          <!-- 嗅 (右下) -->
+          <text x="85" y="118" font-family="Noto Serif JP" font-size="14" fill="#1a3a35" text-anchor="middle" font-weight="500">嗅</text>
+          <text x="105" y="135" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">湯気・木・土の香り</text>
+
+          <!-- 触 (左下) -->
+          <text x="-85" y="118" font-family="Noto Serif JP" font-size="14" fill="#1a3a35" text-anchor="middle" font-weight="500">触</text>
+          <text x="-105" y="135" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">露天の湯・浴衣</text>
+
+          <!-- 味 (左上) -->
+          <text x="-138" y="-42" font-family="Noto Serif JP" font-size="14" fill="#1a3a35" text-anchor="middle" font-weight="500">味</text>
+          <text x="-155" y="-26" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">地のもの・食べ歩き</text>
+        </g>
+
+        <!-- 凡例 -->
+        <g transform="translate(40, 320)">
+          <rect x="0" y="0" width="14" height="10" fill="#c44a3a" fill-opacity="0.3" stroke="#c44a3a" stroke-width="1"/>
+          <text x="22" y="9" font-family="Noto Sans JP" font-size="10" fill="#555">日常(都市)での五感入力</text>
+        </g>
+        <g transform="translate(330, 320)">
+          <rect x="0" y="0" width="14" height="10" fill="#5caa8a" fill-opacity="0.3" stroke="#5caa8a" stroke-width="1"/>
+          <text x="22" y="9" font-family="Noto Sans JP" font-size="10" fill="#555">黒川滞在中の五感入力</text>
+        </g>
+
+        <defs>
+          <marker id="arrowSmall" markerWidth="6" markerHeight="6" refX="5" refY="2" orient="auto">
+            <polygon points="0,0 5,2 0,4" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">3つの仕組みがストレスを抜く</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">入湯手形<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;25か所から3湯を選ぶ">25か所から3湯を選ぶ</small></div>
+        <div class="effect-desc">
+          地元小国杉・檜の間伐材で作られる手形は、3か所の露天風呂を巡れる仕組み。歩いて選ぶ「軽い意思決定+運動」が、デジタル疲労した思考を切り替えます。売上の1%は景観・水源保全に還元。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">里山の景観<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;統一された街並み">統一された街並み</small></div>
+        <div class="effect-desc">
+          高層建築を建てない取り決めで守られた、和の統一感ある街並み。視界に入るのは木と石と山と川だけ。ミシュラン・グリーンガイド・ジャポン二つ星の景観は、視覚から副交感神経に働きかけます。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">露天風呂の泉質<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;旅館ごとに異なる">旅館ごとに異なる</small></div>
+        <div class="effect-desc">
+          硫黄泉、塩化物泉、単純温泉など、各旅館が独自の泉源を持ちます。色も成分も違う湯を3か所巡れば、肌触りの違いそのものが感覚刺激のリセットに。神経痛・疲労回復にも効果。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、温泉街散策と1湯目の露天風呂</strong><br>
+          福岡から高速バスで約2時間45分、または熊本駅から横断バスで阿蘇の山あいへ。チェックイン後、まずは「風の舎」(旅館組合)で入湯手形を購入。15時頃から始まる夕暮れの時間に温泉街を浴衣で散歩し、最初の露天風呂(20分)へ。地のものを使った夕食のあとは、夜の「湯あかり」(竹灯籠のライトアップ)を眺めて宿で深く眠ります。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝の2湯+お昼前の3湯目で仕上げ</strong><br>
+          朝食前に2か所目の露天風呂(20分)で、川のせせらぎを聞きながらの朝湯。朝食のあと、温泉街で「だご汁」や小国ジャージーの牛乳プリンを食べ歩き。お昼前に3か所目の露天風呂を選んで仕上げの入浴。「考えごとが少ない一日」を過ごしたことを身体が覚えていて、帰宅後しばらく睡眠の質が変わる方が多いです。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      露天風呂巡りでは、1か所あたり15〜20分を目安に。3湯すべてを1日に詰め込むより、半日空けて2日に分けたほうが身体に優しい。冬は阿蘇高原のため気温が下がるので、湯冷め対策を必ず。露天風呂は原則撮影禁止、決まりを守って黒川の景観そのものを守ることに参加するイメージで。入湯手形は購入から6か月有効なので、無理に使い切らず楽しんで。心臓・血圧・呼吸器に持病のある方、妊娠中の方はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>熊本県阿蘇郡南小国町満願寺(阿蘇外輪山の山あい)</td></tr>
+        <tr><th>福岡から</th><td>博多バスターミナル → 黒川温泉直行の高速バスで約2時間45分。福岡空港からも乗車可能</td></tr>
+        <tr><th>熊本から</th><td>JR熊本駅前から九州横断観光バス(別府行き)で約3時間</td></tr>
+        <tr><th>大分・別府から</th><td>九州横断観光バスで約2時間30分(別府温泉とのはしご旅も可能)</td></tr>
+        <tr><th>東京から</th><td>飛行機で福岡空港または熊本空港まで約1時間40分 → 上記アクセス</td></tr>
+        <tr><th>車</th><td>大分自動車道「九重IC」から約40分、または日田ICから約60分。冬季はチェーン必須</td></tr>
+        <tr><th>泉質</th><td>硫黄泉(単純硫黄泉)・塩化物泉・単純温泉・硫酸塩泉など旅館ごとに異なる(計約8種)</td></tr>
+        <tr><th>効能</th><td>ストレス解消・疲労回復・神経痛・筋肉痛・冷え性・睡眠の質改善・美肌</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      黒川温泉は、強い成分や派手な刺激でストレスを「打ち消す」温泉ではありません。
+      高層建築を建てないという取り決めから生まれた統一された街並み、
+      入湯手形で歩いて巡る露天風呂、地元の杉材で作られる手形、
+      売上の一部を景観と水源に還元する仕組み——
+      <strong style="color:#d4ebe0">街全体の設計</strong>が、五感のひとつひとつを別の方向から満たしていく。
+      日常のパターンが解けていくこと、それ自体が黒川温泉の効能です。
+      週末1泊で、「黒川にいた」という時間そのものを身体に持ち帰る旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

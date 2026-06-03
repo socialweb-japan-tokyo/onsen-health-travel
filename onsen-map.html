@@ -377,7 +377,7 @@ pinGroups
         const hasArticle = !!publishedArticles[p.name];
         const opt = document.createElement('option');
         opt.value = p.id;
-        opt.textContent = (hasArticle ? '✓ ' : '') + p.name + ' — ' + p.effect;
+        option.textContent = `${onsen.name} — ${onsen.effect}`;
         onsenSelect.appendChild(opt);
       });
 

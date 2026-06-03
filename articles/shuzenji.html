@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>修善寺温泉で弘法大師の湯と文豪の足跡をたどる | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 静岡県 &gt; 修善寺温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Literary Heritage</div>
+    <h1 class="hero-title">修善寺温泉で<br>弘法大師の湯と文豪の足跡をたどる</h1>
+    <p class="hero-lead">
+      静岡県、伊豆半島中央部、桂川沿いの「伊豆の小京都」。
+      大同2年(807年)、弘法大師(空海)が独鈷で岩を打ったところに湯が湧いたという伝説の<strong>「独鈷の湯」</strong>を起源とし、
+      源範頼・源頼家の悲劇の舞台、夏目漱石「修善寺の大患」の地、岡本綺堂『修禅寺物語』の世界——
+      <strong>1,200年の時間が積もる湯</strong>を、文学と歴史とともに味わう旅をご紹介します。
+    </p>
+    <div class="hero-meta">静岡県伊豆市 / 単純温泉・含芒硝石弱食塩泉(源泉温度62℃)</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">ORIGIN</div>
+        <div class="fact-value">807<small>年</small></div>
+        <div class="fact-unit">弘法大師開湯</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">WRITERS</div>
+        <div class="fact-value">10<small>名+</small></div>
+        <div class="fact-unit">文豪の聖地</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">神経痛</div>
+        <div class="fact-unit">胃腸・リウマチ</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">文学散歩</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる修善寺温泉</div>
+    <ul class="tldr-list">
+      <li>大同2年(807年)弘法大師が開いた伊豆最古の温泉、日本百名湯のひとつ。約1,200年の歴史</li>
+      <li>源頼朝の弟・源範頼、頼朝の嫡男・源頼家(2代将軍)の幽閉と暗殺の舞台になった悲劇の地</li>
+      <li>夏目漱石・岡本綺堂・芥川龍之介・川端康成・尾崎紅葉・泉鏡花など10名超の文豪ゆかり</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ修善寺は1,200年「物語」を集めるのか</h2>
+    </div>
+    <p>これまでご紹介してきた温泉が「効能」や「成分」で語られるなら、修善寺は<strong>「物語が積もる温泉」</strong>です。桂川のせせらぎが流れる「伊豆の小京都」と称される温泉街は、湯の効能だけでなく、<strong>1,200年にわたって人の運命と文学が重なってきた</strong>場所。記事を読む前から、その時間の厚みが街並みに沁みているのが感じられます。</p>
+
+    <p>始まりは大同2年(807年)。<strong>弘法大師空海</strong>が桂川の中州で病を癒す少年を見て、独鈷(仏具)で岩を打つと湯が湧き出した——これが伊豆最古の温泉「独鈷の湯」の伝説。弘法大師による高野山開創(816年)よりも9年早く、ここで真言宗の修禅寺が開かれました。鎌倉時代には、修禅寺は<strong>源氏の悲劇の舞台</strong>となります。源頼朝の異母弟・源範頼が幽閉されて誅殺され、続いて2代将軍となった頼朝の嫡男・源頼家もここで暗殺。正岡子規は「<strong>此の里に悲しきものの二つあり 範頼の墓と頼家の墓と</strong>」と詠みました。明治44年(1911年)、岡本綺堂は頼家の悲劇を題材に戯曲『<strong>修禅寺物語</strong>』を発表し、明治座で初演されて新歌舞伎の代表作になります。さらに1910年、<strong>夏目漱石</strong>は菊屋旅館で胃潰瘍で死の淵を彷徨い、後に「<strong>修善寺の大患</strong>」と呼ばれる経験を『思ひ出す事など』として残しました。芥川龍之介、川端康成、泉鏡花、尾崎紅葉、田山花袋、井伏鱒二——名だたる作家が逗留し、修善寺を作中の舞台に書きました。修善寺温泉に泊まることは、湯に浸かりながら<strong>1,200年の文学と歴史の層</strong>に身を浸すことなのです。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 1,200年の時間が積もる修善寺の歴史軸 —</div>
+      <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="380" fill="#fafaf6"/>
+
+        <!-- メインの時間軸線 -->
+        <line x1="40" y1="200" x2="560" y2="200" stroke="#1a2a25" stroke-width="2"/>
+
+        <!-- 時間軸の目盛り(各世紀) -->
+        <g stroke="#1a2a25" stroke-width="1">
+          <line x1="60" y1="195" x2="60" y2="205"/>
+          <line x1="155" y1="195" x2="155" y2="205"/>
+          <line x1="290" y1="195" x2="290" y2="205"/>
+          <line x1="470" y1="195" x2="470" y2="205"/>
+          <line x1="540" y1="195" x2="540" y2="205"/>
+        </g>
+        <text x="60" y="225" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">800</text>
+        <text x="155" y="225" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">1200</text>
+        <text x="290" y="225" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">1600</text>
+        <text x="470" y="225" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">1900</text>
+        <text x="540" y="225" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">現在</text>
+
+        <!-- 上側:歴史 (古代〜中世) -->
+        <text x="40" y="35" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">歴史</text>
+
+        <!-- 807年 弘法大師 -->
+        <g>
+          <line x1="65" y1="195" x2="65" y2="80" stroke="#7a5a3a" stroke-width="1.5"/>
+          <circle cx="65" cy="80" r="14" fill="#c4a878" stroke="#3a2a1a" stroke-width="1.5"/>
+          <text x="65" y="84" font-family="Noto Serif JP" font-size="9" fill="#1a2a25" text-anchor="middle" font-weight="700">空海</text>
+          <text x="65" y="55" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle" font-weight="500">807年</text>
+          <text x="65" y="65" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">独鈷の湯</text>
+        </g>
+
+        <!-- 1193年頃 源範頼 -->
+        <g>
+          <line x1="145" y1="195" x2="145" y2="115" stroke="#7a5a3a" stroke-width="1.5"/>
+          <circle cx="145" cy="115" r="12" fill="#9a7a5a" stroke="#3a2a1a" stroke-width="1.5"/>
+          <text x="145" y="119" font-family="Noto Serif JP" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">範</text>
+          <text x="145" y="95" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle" font-weight="500">1193頃</text>
+          <text x="145" y="85" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">源範頼幽閉</text>
+        </g>
+
+        <!-- 1204年 源頼家 -->
+        <g>
+          <line x1="175" y1="195" x2="175" y2="155" stroke="#7a5a3a" stroke-width="1.5"/>
+          <circle cx="175" cy="155" r="12" fill="#7a5a3a" stroke="#3a2a1a" stroke-width="1.5"/>
+          <text x="175" y="159" font-family="Noto Serif JP" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">頼</text>
+          <text x="220" y="145" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle" font-weight="500">1204年</text>
+          <text x="220" y="135" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">源頼家暗殺</text>
+        </g>
+
+        <!-- 下側:文学 (近代) -->
+        <text x="40" y="370" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">文学</text>
+
+        <!-- 1910 漱石 -->
+        <g>
+          <line x1="478" y1="205" x2="478" y2="280" stroke="#5caa8a" stroke-width="1.5"/>
+          <circle cx="478" cy="280" r="14" fill="#5caa8a" stroke="#1a3a35" stroke-width="1.5"/>
+          <text x="478" y="284" font-family="Noto Serif JP" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">漱石</text>
+          <text x="478" y="305" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle" font-weight="500">1910</text>
+          <text x="478" y="315" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">修善寺の大患</text>
+          <text x="478" y="325" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">(菊屋旅館)</text>
+        </g>
+
+        <!-- 1911 綺堂 -->
+        <g>
+          <line x1="500" y1="205" x2="500" y2="245" stroke="#5caa8a" stroke-width="1.5"/>
+          <circle cx="500" cy="245" r="12" fill="#7ab89a" stroke="#1a3a35" stroke-width="1.5"/>
+          <text x="500" y="249" font-family="Noto Serif JP" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">綺堂</text>
+          <text x="540" y="240" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle" font-weight="500">1911</text>
+          <text x="540" y="250" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">修禅寺物語</text>
+        </g>
+
+        <!-- 1920s 芥川 -->
+        <g>
+          <line x1="510" y1="205" x2="510" y2="335" stroke="#5caa8a" stroke-width="1.5"/>
+          <circle cx="510" cy="335" r="11" fill="#9acab8" stroke="#1a3a35" stroke-width="1.5"/>
+          <text x="510" y="339" font-family="Noto Serif JP" font-size="8" fill="#fff" text-anchor="middle" font-weight="700">芥川</text>
+          <text x="380" y="343" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle" font-weight="500">1920年代</text>
+          <text x="380" y="353" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">芥川・川端・泉鏡花</text>
+        </g>
+
+        <!-- 凡例 -->
+        <g transform="translate(40, 50)">
+          <circle cx="0" cy="0" r="5" fill="#c4a878" stroke="#3a2a1a" stroke-width="1"/>
+          <text x="10" y="3" font-family="Noto Sans JP" font-size="10" fill="#555">仏教・歴史</text>
+          <circle cx="80" cy="0" r="5" fill="#5caa8a" stroke="#1a3a35" stroke-width="1"/>
+          <text x="90" y="3" font-family="Noto Sans JP" font-size="10" fill="#555">文学</text>
+        </g>
+
+        <!-- 1200年の総括 -->
+        <text x="300" y="180" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500" font-style="italic">1,200年の時間が積もる温泉</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">修善寺で出会う3つの時間</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">独鈷の湯<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;伊豆最古・1200年の起源">伊豆最古・1200年の起源</small></div>
+        <div class="effect-desc">
+          桂川の中州に湧き出る、修善寺の原点。807年に弘法大師が独鈷で岩を打ったという伝説の場所。現在は入浴施設としては使えませんが、すぐ近くで足湯が楽しめます。河原に湯気が立ちのぼる景観は今も変わりません。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">修禅寺と源氏の悲劇<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;範頼・頼家の墓・修禅寺物語">範頼・頼家の墓・修禅寺物語</small></div>
+        <div class="effect-desc">
+          807年弘法大師開基の修禅寺は、源範頼(頼朝の弟)と源頼家(2代将軍)が幽閉・暗殺された場所。岡本綺堂『修禅寺物語』の頼家ゆかりの古面が宝物館に。正岡子規も「悲しきもの二つあり」と詠みました。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">夏目漱石ゆかりの菊屋<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;「修善寺の大患」1910年">「修善寺の大患」1910年</small></div>
+        <div class="effect-desc">
+          1910年、漱石が胃潰瘍で死の淵を彷徨った菊屋旅館。後に『思ひ出す事など』で振り返り、近代文学の転換点となった出来事。生誕150年(2018)には地元有志「修善寺漱石の会」が句碑を建立しています。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、独鈷の湯と修禅寺、夜の竹林の小径</strong><br>
+          東京から東海道新幹線で三島駅→伊豆箱根鉄道「踊り子号」で修善寺駅まで、または特急「踊り子」で直行。修善寺駅からバスで温泉街へ。チェックイン後、温泉街中心を流れる<strong>桂川と独鈷の湯</strong>を眺めながら歩き、虎渓橋を渡って<strong>修禅寺</strong>へ参拝。源範頼・源頼家の墓と『修禅寺物語』ゆかりの古面を訪ねます。夕食後は<strong>竹林の小径</strong>を浴衣で散策、月の光に照らされた竹の揺らぎを楽しみます。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>漱石ゆかりの地と虹の郷で文学散歩</strong><br>
+          朝湯でゆっくり身体を温めたあと、<strong>菊屋旅館</strong>の界隈で漱石「修善寺の大患」の足跡を訪ねます。隣接する「修善寺漱石の会」の句碑も忘れずに。時間があれば「<strong>修善寺虹の郷</strong>」内の漱石庵で文豪の世界に浸るのもおすすめ。チェックアウト後は、伊豆ならではの<strong>海の幸の昼食</strong>を取って帰路へ。1200年の時間に身を浸した1泊2日が、しばらく心に残ります。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">文学散歩のポイント</div>
+      修禅寺の宝物館は時間限定の公開、岡本綺堂『修禅寺物語』の古面など貴重な文化財があります。事前に拝観時間を確認してから訪問を。独鈷の湯は史跡として保存されており、現在は入浴できません(近くに足湯あり)。竹林の小径は夜のライトアップが特に幻想的ですが、足元は石畳のため歩きやすい靴で。源泉温度62℃のため、宿の湯は適温に調整されています。心臓・血圧・呼吸器に持病のある方、妊娠中の方はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>静岡県伊豆市修善寺(伊豆半島中央部、桂川沿い)</td></tr>
+        <tr><th>東京から</th><td>東海道新幹線で三島駅まで約45分 → 伊豆箱根鉄道「駿豆線」で修善寺駅まで約35分 → バスで約10分。合計約2時間。特急「踊り子」は東京駅から直通で約2時間20分</td></tr>
+        <tr><th>名古屋から</th><td>新幹線で三島駅まで約1時間20分 → 上記アクセス</td></tr>
+        <tr><th>大阪から</th><td>新幹線で三島駅まで約2時間 → 上記アクセス</td></tr>
+        <tr><th>車</th><td>東名高速「沼津IC」から伊豆縦貫道経由で約30分</td></tr>
+        <tr><th>主要スポット</th><td>独鈷の湯(史跡) / 修禅寺(宝物館に頼家ゆかりの古面) / 虎渓橋 / 竹林の小径 / 指月殿 / 源範頼の墓 / 源頼家の墓 / 修善寺虹の郷(漱石庵)</td></tr>
+        <tr><th>泉質</th><td>単純温泉、含芒硝石弱食塩泉(源泉温度62℃)</td></tr>
+        <tr><th>効能</th><td>神経痛・筋肉痛・関節痛・胃腸病・リウマチ・冷え性・疲労回復</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      修善寺温泉は、湯の効能だけで語れる場所ではありません。
+      <strong style="color:#d4ebe0">弘法大師の独鈷</strong>から始まり、源範頼と源頼家の悲劇が刻まれ、
+      明治の漱石が病と向き合い、岡本綺堂が古面の伝説に物語を見出し、
+      芥川・川端・泉鏡花・尾崎紅葉らが言葉を残してきた——
+      1,200年の<strong style="color:#d4ebe0">時間の地層</strong>が、桂川の水面と湯気の立ちのぼる竹林の小径に積もっています。
+      ここで一泊することは、湯と一緒に「<strong style="color:#d4ebe0">物語</strong>」をいただく旅。
+      温泉のもうひとつの楽しみ方を、伊豆最古の小京都で味わってみてください。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

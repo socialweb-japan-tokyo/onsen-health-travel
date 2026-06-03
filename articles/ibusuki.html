@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>指宿温泉の天然砂むしで砂の重みと地熱をめぐらせる | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 鹿児島県 &gt; 指宿温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Geothermal Sand</div>
+    <h1 class="hero-title">指宿温泉で<br>砂の重みと地熱でめぐらせる</h1>
+    <p class="hero-lead">
+      鹿児島県、薩摩半島の最南端。海岸の地下から80℃の温泉が自然湧出し、波打ち際の砂を約55℃に温める「天然の砂むし温泉」。
+      浴衣を着て横たわり、温まった砂に全身を埋める——
+      この江戸時代から続く独特の入浴法が、慢性の腰痛・冷え性・むくみに対して短時間で確かな手応えを返します。1泊2日の週末プランをご紹介します。
+    </p>
+    <div class="hero-meta">鹿児島県指宿市 / ナトリウム-塩化物泉 + 天然砂むし</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">HEAT</div>
+        <div class="fact-value">55<small>℃</small></div>
+        <div class="fact-unit">砂の温度</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">TIME</div>
+        <div class="fact-value">10–15<small>分</small></div>
+        <div class="fact-unit">砂むし1回</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">腰痛</div>
+        <div class="fact-unit">冷え性・むくみ</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">週末プラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる指宿温泉</div>
+    <ul class="tldr-list">
+      <li>海岸の地下から80℃の温泉が自然湧出する、世界で唯一の天然砂むし温泉。江戸中期から300年以上の歴史</li>
+      <li>鹿児島大学医学部の研究で「効果は普通の温泉浴の3〜4倍」と実証された(1985年、田中信行教授)</li>
+      <li>砂の重みによる全身圧と55℃の温熱が同時に働き、わずか10〜15分で大量の発汗が起こる</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ砂むしは短時間で「3〜4倍」効くのか</h2>
+    </div>
+    <p>普通の温泉が「お湯に浸かる」だけなのに対し、指宿の砂むしは<strong>3つの作用が同時に身体にかかる</strong>独特の入浴法です。1985年に鹿児島大学医学部の田中信行教授らが行った研究では、砂むし温泉が普通の温泉浴の<strong>3〜4倍</strong>の効果を持つことが示されました。理由は、お湯では再現できない物理的な仕組みにあります。</p>
+
+    <p>第一に<strong>砂の重みによる全身の圧迫</strong>。重い砂に埋もれることで、お湯に浸かるよりはるかに強い圧力が下半身にかかり、ふくらはぎや腰に滞っていた血液とリンパが心臓へ押し戻されます。第二に<strong>55℃の温熱と遠赤外線</strong>。火山由来の黒い砂は粒子が大きく通気性があるため、低温やけどの心配なくじっくり深部体温を上げる。第三に<strong>地下から染み出す温泉成分</strong>。砂浜の地下に湧き出すナトリウム-塩化物泉が砂を湿らせ、ミネラルが汗とともに肌から出入りします。お湯では「外側だけ温める」のが、砂むしでは「押し込みながら温める」——これが慢性の腰痛・冷え性・むくみに短時間で効く理由です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 砂に埋もれて起こる3つの同時作用 —</div>
+      <svg viewBox="0 0 600 340" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="340" fill="#fafaf6"/>
+
+        <!-- 空・海の背景 -->
+        <rect x="0" y="0" width="600" height="80" fill="#cae3ec"/>
+        <text x="50" y="30" font-family="Noto Sans JP" font-size="10" fill="#5a8ca0">空</text>
+        <!-- 太陽 -->
+        <circle cx="500" cy="40" r="15" fill="#f0c878"/>
+
+        <!-- 海(左奥) -->
+        <rect x="0" y="80" width="180" height="40" fill="#9ac4d4"/>
+        <path d="M 0 100 Q 30 96 60 100 Q 90 104 120 100 Q 150 96 180 100" stroke="#7aaac0" stroke-width="1" fill="none"/>
+        <text x="50" y="110" font-family="Noto Sans JP" font-size="10" fill="#fff">海</text>
+
+        <!-- 砂浜表面(地表) -->
+        <path d="M 180 80 Q 240 100 320 110 Q 400 105 500 100 Q 550 100 600 110 L 600 130 L 180 120 Z" fill="#c8a878"/>
+
+        <!-- 砂層(身体の上にかかる砂) -->
+        <path d="M 200 110 Q 280 100 380 105 Q 460 110 540 115 L 540 165 L 200 175 Z" fill="#a88858" stroke="#7a5a3a" stroke-width="0.8"/>
+        <!-- 砂の粒子の質感 -->
+        <g fill="#5a3a2a">
+          <circle cx="240" cy="125" r="1.2"/>
+          <circle cx="280" cy="130" r="1.2"/>
+          <circle cx="320" cy="120" r="1.2"/>
+          <circle cx="360" cy="135" r="1.2"/>
+          <circle cx="400" cy="125" r="1.2"/>
+          <circle cx="440" cy="130" r="1.2"/>
+          <circle cx="480" cy="140" r="1.2"/>
+          <circle cx="260" cy="155" r="1.2"/>
+          <circle cx="340" cy="160" r="1.2"/>
+          <circle cx="420" cy="155" r="1.2"/>
+          <circle cx="500" cy="158" r="1.2"/>
+        </g>
+
+        <!-- 人体(横たわっている) -->
+        <!-- 頭 -->
+        <ellipse cx="200" cy="175" rx="22" ry="20" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1"/>
+        <!-- 顔の細部 -->
+        <circle cx="195" cy="172" r="1" fill="#1a2a25"/>
+        <circle cx="207" cy="172" r="1" fill="#1a2a25"/>
+        <path d="M 196 182 Q 200 184 204 182" stroke="#1a2a25" stroke-width="1" fill="none"/>
+        <!-- 身体(浴衣) -->
+        <path d="M 222 165 L 540 165 L 540 195 L 222 195 Z" fill="#e8d8c0" stroke="#1a2a25" stroke-width="1"/>
+        <!-- 浴衣の模様 -->
+        <line x1="380" y1="165" x2="380" y2="195" stroke="#a89878" stroke-width="0.5"/>
+
+        <!-- 砂むし範囲(身体を覆う砂) -->
+        <text x="370" y="100" font-family="Noto Serif JP" font-size="11" fill="#7a5a3a" text-anchor="middle" font-weight="500">温められた砂(約55℃)</text>
+
+        <!-- 地中の温泉源 -->
+        <rect x="0" y="195" width="600" height="80" fill="#5a3a2a"/>
+        <text x="50" y="230" font-family="Noto Sans JP" font-size="9" fill="#e8d8c0" text-anchor="start">地中(海岸地下)</text>
+        <!-- 温泉湧出口 -->
+        <g>
+          <ellipse cx="350" cy="245" rx="40" ry="6" fill="#5caa8a" opacity="0.7"/>
+          <text x="350" y="263" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle">湧出温泉(80℃)</text>
+        </g>
+
+        <!-- 温泉の蒸気/熱が上昇する矢印 -->
+        <g stroke="#c44a3a" stroke-width="2" fill="none">
+          <line x1="290" y1="245" x2="290" y2="170" marker-end="url(#arrowHeat)"/>
+          <line x1="350" y1="245" x2="350" y2="170" marker-end="url(#arrowHeat)"/>
+          <line x1="410" y1="245" x2="410" y2="170" marker-end="url(#arrowHeat)"/>
+        </g>
+
+        <!-- 砂の重み(下向き矢印) -->
+        <g stroke="#1a3a35" stroke-width="2" fill="none">
+          <line x1="270" y1="98" x2="270" y2="155" marker-end="url(#arrowDown)"/>
+          <line x1="370" y1="98" x2="370" y2="155" marker-end="url(#arrowDown)"/>
+          <line x1="470" y1="98" x2="470" y2="155" marker-end="url(#arrowDown)"/>
+        </g>
+
+        <!-- 説明ラベル -->
+        <!-- 上(砂の重み) -->
+        <g transform="translate(50, 130)">
+          <circle cx="0" cy="0" r="11" fill="#1a3a35"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+          <text x="18" y="0" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">砂の重み</text>
+          <text x="18" y="13" font-family="Noto Sans JP" font-size="9" fill="#555">全身に圧迫(↓)</text>
+        </g>
+
+        <!-- 中(温熱) -->
+        <g transform="translate(50, 215)">
+          <circle cx="0" cy="0" r="11" fill="#c44a3a"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+          <text x="18" y="0" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">地熱の温熱</text>
+          <text x="18" y="13" font-family="Noto Sans JP" font-size="9" fill="#555">55℃の砂+遠赤外線</text>
+        </g>
+
+        <!-- 下(温泉成分) -->
+        <g transform="translate(50, 290)">
+          <circle cx="0" cy="0" r="11" fill="#5caa8a"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="11" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+          <text x="18" y="0" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">温泉成分</text>
+          <text x="18" y="13" font-family="Noto Sans JP" font-size="9" fill="#555">塩化物泉が砂に染みる</text>
+        </g>
+
+        <!-- 結果 -->
+        <g transform="translate(420, 295)">
+          <text x="0" y="0" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" font-weight="500">→ 10〜15分で大量発汗</text>
+          <text x="0" y="14" font-family="Noto Sans JP" font-size="9" fill="#5caa8a">血流増 / むくみ排出 / 腰痛緩和</text>
+        </g>
+
+        <defs>
+          <marker id="arrowDown" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#1a3a35"/>
+          </marker>
+          <marker id="arrowHeat" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#c44a3a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">3つの作用が「3〜4倍」を生む</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">砂の圧迫<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;全身を押し戻すポンプ">全身を押し戻すポンプ</small></div>
+        <div class="effect-desc">
+          お湯の浮力ではなく、砂の重みが下半身を上から押し続ける。ふくらはぎ・太もも・腰に溜まった血液とリンパが心臓へ押し戻され、座り仕事のむくみと冷えに直接的に効きます。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">地熱と遠赤外線<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;55℃の砂で深部から">55℃の砂で深部から</small></div>
+        <div class="effect-desc">
+          地下から湧く80℃の温泉が砂を約55℃に保つ天然の構造。火山由来の黒砂は粒子が大きく通気性があり、低温やけどの心配なく、お湯では届かない深部体温まで上昇します。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">塩化物泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;砂に染みた温泉成分">砂に染みた温泉成分</small></div>
+        <div class="effect-desc">
+          砂浜全体に湧き出すナトリウム-塩化物泉が、砂を通して肌に届きます。砂むし後の内湯で温泉に浸かれば、塩分膜が肌をコーティングして湯冷めを長時間防ぎます。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、午後の砂むし体験と内湯</strong><br>
+          鹿児島中央駅から特急「指宿のたまて箱」で約1時間。チェックイン後、砂むし会館「砂楽」(指宿駅徒歩約20分)へ。浴衣に着替えて海岸へ出ると、「砂かけさん」が体型に合わせて砂をかけてくれます。<strong>10〜15分</strong>でじわっと大量の汗。砂を落として内湯のナトリウム塩化物泉で身体を流すと、ふらりとした爽快感。夕食は黒豚しゃぶしゃぶや鰹のたたきなど鹿児島のごちそうで。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝の砂むし or 観光、開聞岳と池田湖へ</strong><br>
+          時間があれば朝の砂むしをもう一度(2回目で効果がより安定)。または山川砂むし温泉「砂湯里」(伏目海岸)で開聞岳を眺めながらの絶景砂むしを体験。チェックアウト後は薩摩富士・開聞岳のドライブや池田湖、長崎鼻などへ。腰や肩の軽さを感じながら帰路へ。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      砂むしは1回10〜15分が目安。汗の量が多いため、前後にコップ1〜2杯の水分補給は必須。心拍数が上がる入浴法のため、心臓・血圧に持病のある方、高度の動脈硬化、貧血の方は事前に医師に相談を。糖尿病で末梢神経の感覚が落ちている方は温度を感じにくいため、砂かけさんに必ず伝えること。生理中・妊娠中の方は避けるか相談を。砂むし後は必ず内湯で身体を洗い流し、休憩室で30分以上身体を落ち着けてから次の行動に。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>鹿児島県指宿市(薩摩半島最南端、鹿児島湾沿い)</td></tr>
+        <tr><th>鹿児島中央駅から</th><td>JR指宿枕崎線「指宿のたまて箱」(観光特急)で指宿駅まで約50分、普通列車で約1時間20分</td></tr>
+        <tr><th>鹿児島空港から</th><td>空港リムジンバスで指宿温泉まで約1時間40分</td></tr>
+        <tr><th>東京から</th><td>飛行機で鹿児島空港まで約1時間50分 → 上記アクセス</td></tr>
+        <tr><th>主要施設</th><td>砂むし会館「砂楽」(指宿駅徒歩20分) / 山川砂むし温泉「砂湯里」(伏目海岸、開聞岳眺望)</td></tr>
+        <tr><th>砂むし料金</th><td>砂楽:大人1,100円(浴衣・タオル含む)、所要時間約60分</td></tr>
+        <tr><th>泉質</th><td>ナトリウム-塩化物泉(砂浜地下からの自然湧出温泉)</td></tr>
+        <tr><th>効能</th><td>腰痛・神経痛・リウマチ・肩こり・冷え性・関節炎・むくみ・疲労回復・美肌</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      日本の温泉文化のなかで、指宿の砂むしは<strong style="color:#d4ebe0">「お湯に入らない温泉」</strong>という特異な存在です。
+      海岸の地下から自然に湧き出す温泉が砂を温め、その砂の重みが身体を上から押し、
+      地熱が身体の中まで届く——
+      鹿児島大学の研究で「効果は普通の温泉の3〜4倍」と実証されたこの入浴法は、
+      座り仕事で固まった腰、冷えた手足、夕方むくむ脚といった
+      <strong style="color:#d4ebe0">現代人特有の重力性の不調</strong>に、わずか15分で答えを返してくれます。
+      世界で唯一の天然砂むし、週末1泊の鹿児島旅で。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

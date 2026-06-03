@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湯村温泉で98℃の噴泉で食と暮らしを楽しむ | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 兵庫県 &gt; 湯村温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Geothermal Kitchen</div>
+    <h1 class="hero-title">湯村温泉で<br>98℃の噴泉で食と暮らしを楽しむ</h1>
+    <p class="hero-lead">
+      兵庫県北部、春来川沿いの小さな温泉街。
+      毎分470Lの98℃の高温泉が地表に噴き出す元湯「荒湯」を中心に、
+      <strong>食材を蒸す、茹でる、飲む、入る</strong>——温泉が生活インフラそのものとして暮らしの中に溶け込んでいる、シリーズ随一の<strong>「食×温泉」</strong>の温泉地。
+      週末1泊で「温泉のある日常」を体験するプランをご紹介します。
+    </p>
+    <div class="hero-meta">兵庫県美方郡新温泉町 / ナトリウム-炭酸水素塩・塩化物泉(重曹を含む)</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">HEAT</div>
+        <div class="fact-value">98<small>℃</small></div>
+        <div class="fact-unit">日本一熱い源泉</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">SOURCES</div>
+        <div class="fact-value">60<small>か所+</small></div>
+        <div class="fact-unit">半径400mに集中</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">食×温泉</div>
+        <div class="fact-unit">神経痛・冷え性</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">週末プラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる湯村温泉</div>
+    <ul class="tldr-list">
+      <li>嘉祥元年(848年)、慈覚大師(円仁)が発見したとされる、約1,200年の歴史を持つ古湯</li>
+      <li>元湯「荒湯」は98℃の高温泉が毎分470L噴出、半径400mの小さな温泉街に60か所超の源泉</li>
+      <li>各家庭にも配湯される生活インフラ、たまご・野菜・豆腐を温泉で湯がく「湯がき文化」が日常</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ「料理する温泉」が文化になったのか</h2>
+    </div>
+    <p>これまでご紹介してきた温泉は、すべて「身体に効く」ものでした。湯村温泉が異彩を放つのは、温泉が<strong>「治療」より先に「生活道具」</strong>として根付いていることです。半径わずか400mの温泉街に60か所を超える源泉、その中心に毎分470Lの98℃の湯が湧き出す「<strong>荒湯</strong>」がある——この圧倒的な熱量と湯量が、約1,200年にわたって地域の暮らしそのものを作ってきました。</p>
+
+    <p>湯村の温泉は重曹(炭酸水素塩)を含んでおり、たまごや豆腐を茹でると<strong>表面が滑らかで仕上がりがプルプル</strong>になります。野菜のアクも抜けやすく、料理人なら垂涎の素材。荒湯のそばには「<strong>5つの湯つぼ</strong>」があり、地元では用途別に使い分けてきました——慈覚大師座像下の湯つぼは飲み湯や湯たんぽ用、なかの湯つぼは食材茹で用、というように。さらに温泉は各家庭にも配湯され、台所・浴室・暖房・洗濯のすべてに使われる。冬には側溝からも湯気が立ちのぼる街並みは、観光地ではなく「<strong>温泉のある日常</strong>」の風景です。地元では「ハレとケで言うケ(=日常)の温泉地」と呼ばれます。観光客はその日常に1泊だけお邪魔して、温泉を「使う」体験をするのが湯村流の楽しみ方です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 荒湯を中心とした「湯村のひと暮らし」 —</div>
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="360" fill="#fafaf6"/>
+
+        <!-- 空 -->
+        <rect x="0" y="0" width="600" height="50" fill="#e8eef0"/>
+
+        <!-- 湯けむり(中央から上に立ち上る) -->
+        <g stroke="#cfd5d2" stroke-width="1" fill="none" opacity="0.7">
+          <path d="M 290 100 Q 285 80 290 60 Q 295 40 290 20"/>
+          <path d="M 300 100 Q 305 80 300 60 Q 295 40 300 20"/>
+          <path d="M 310 100 Q 305 80 310 60 Q 315 40 310 20"/>
+          <path d="M 280 105 Q 275 90 280 75"/>
+          <path d="M 320 105 Q 325 90 320 75"/>
+        </g>
+
+        <!-- 中央:荒湯(温泉の元湯) -->
+        <g transform="translate(300, 150)">
+          <!-- 石組みの湯つぼ -->
+          <ellipse cx="0" cy="0" rx="45" ry="18" fill="#7a5a3a" stroke="#3a2a1a" stroke-width="2"/>
+          <ellipse cx="0" cy="-3" rx="38" ry="12" fill="#c4a878" opacity="0.8"/>
+          <!-- 湧出のボコボコ -->
+          <g fill="#fff" opacity="0.6">
+            <circle cx="-15" cy="-5" r="2"/>
+            <circle cx="0" cy="-6" r="2.5"/>
+            <circle cx="15" cy="-4" r="2"/>
+            <circle cx="-8" cy="-2" r="1.5"/>
+            <circle cx="10" cy="-3" r="1.5"/>
+          </g>
+          <text x="0" y="40" font-family="Noto Serif JP" font-size="13" fill="#1a3a35" text-anchor="middle" font-weight="500">荒湯(あらゆ)</text>
+          <text x="0" y="55" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="middle">98℃ / 毎分470L</text>
+        </g>
+
+        <!-- 左上:食材を湯がく(食) -->
+        <g transform="translate(80, 110)">
+          <!-- 籠 -->
+          <path d="M 30 20 L 60 20 L 55 50 L 35 50 Z" fill="#a88858" stroke="#3a2a1a" stroke-width="1.2"/>
+          <line x1="45" y1="0" x2="45" y2="20" stroke="#3a2a1a" stroke-width="1"/>
+          <!-- 中身:たまご -->
+          <ellipse cx="42" cy="32" rx="4" ry="5" fill="#fff" stroke="#888" stroke-width="0.5"/>
+          <ellipse cx="48" cy="35" rx="4" ry="5" fill="#fff" stroke="#888" stroke-width="0.5"/>
+          <ellipse cx="45" cy="42" rx="4" ry="5" fill="#fff" stroke="#888" stroke-width="0.5"/>
+          <text x="45" y="68" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">湯がき</text>
+          <text x="45" y="80" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">たまご・野菜・豆腐</text>
+        </g>
+        <!-- 矢印 左→中央 -->
+        <path d="M 140 150 Q 200 145 250 150" stroke="#c47a3a" stroke-width="1.5" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowYumura)"/>
+
+        <!-- 右上:飲泉(味わう) -->
+        <g transform="translate(440, 110)">
+          <!-- コーヒーカップ -->
+          <path d="M 30 30 L 70 30 L 65 60 L 35 60 Z" fill="#e8e3d0" stroke="#1a2a25" stroke-width="1.2"/>
+          <path d="M 70 38 Q 80 38 80 48 Q 80 58 70 58" stroke="#1a2a25" stroke-width="1.2" fill="none"/>
+          <rect x="36" y="38" width="28" height="20" fill="#5a3a1a"/>
+          <!-- 湯気 -->
+          <g stroke="#aaa" stroke-width="0.6" fill="none">
+            <path d="M 45 25 Q 43 18 45 12"/>
+            <path d="M 55 25 Q 57 18 55 12"/>
+          </g>
+          <text x="50" y="78" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">飲泉</text>
+          <text x="50" y="90" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">お茶・コーヒー</text>
+        </g>
+        <!-- 矢印 右→中央 -->
+        <path d="M 440 150 Q 400 145 360 150" stroke="#c47a3a" stroke-width="1.5" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowYumura)"/>
+
+        <!-- 左下:入浴(癒やす) -->
+        <g transform="translate(80, 250)">
+          <!-- 浴槽 -->
+          <rect x="20" y="10" width="80" height="40" rx="4" fill="#a8d8c8" stroke="#1a2a25" stroke-width="1.5"/>
+          <!-- 水面 -->
+          <line x1="20" y1="22" x2="100" y2="22" stroke="#7aaac0" stroke-width="1"/>
+          <!-- 湯気 -->
+          <g stroke="#aaa" stroke-width="0.6" fill="none">
+            <path d="M 40 8 Q 38 0 40 -8"/>
+            <path d="M 60 8 Q 62 0 60 -8"/>
+            <path d="M 80 8 Q 78 0 80 -8"/>
+          </g>
+          <text x="60" y="68" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">入浴</text>
+          <text x="60" y="80" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">旅館・足湯</text>
+        </g>
+        <!-- 矢印 中央→左下 -->
+        <path d="M 270 200 Q 220 220 180 245" stroke="#5caa8a" stroke-width="1.5" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowYumuraG)"/>
+
+        <!-- 右下:暮らし(家庭への配湯) -->
+        <g transform="translate(440, 250)">
+          <!-- 家のシルエット -->
+          <path d="M 50 0 L 80 25 L 80 60 L 20 60 L 20 25 Z" fill="#d8c8a8" stroke="#3a2a1a" stroke-width="1.2"/>
+          <!-- ドア -->
+          <rect x="42" y="40" width="16" height="20" fill="#7a5a3a"/>
+          <!-- 窓 -->
+          <rect x="28" y="35" width="10" height="10" fill="#a8c8d8"/>
+          <rect x="62" y="35" width="10" height="10" fill="#a8c8d8"/>
+          <!-- 湯気が屋根から -->
+          <g stroke="#cfd5d2" stroke-width="0.8" fill="none">
+            <path d="M 50 -5 Q 48 -12 50 -20"/>
+            <path d="M 55 -5 Q 57 -12 55 -20"/>
+          </g>
+          <text x="50" y="78" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">家庭配湯</text>
+          <text x="50" y="90" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">台所・浴室・暖房</text>
+        </g>
+        <!-- 矢印 中央→右下 -->
+        <path d="M 330 200 Q 380 220 420 245" stroke="#5caa8a" stroke-width="1.5" fill="none" stroke-dasharray="3,3" marker-end="url(#arrowYumuraG)"/>
+
+        <!-- 春来川 -->
+        <path d="M 0 320 Q 150 318 300 322 Q 450 326 600 322" stroke="#7aaac0" stroke-width="6" fill="none" opacity="0.5"/>
+        <text x="50" y="345" font-family="Noto Sans JP" font-size="10" fill="#5a8ca0">春来川</text>
+
+        <!-- 凡例 -->
+        <g transform="translate(200, 340)">
+          <line x1="0" y1="0" x2="14" y2="0" stroke="#c47a3a" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <text x="20" y="3" font-family="Noto Sans JP" font-size="9" fill="#555">食を作る/味わう</text>
+          <line x1="160" y1="0" x2="174" y2="0" stroke="#5caa8a" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <text x="180" y="3" font-family="Noto Sans JP" font-size="9" fill="#555">入浴・暮らし</text>
+        </g>
+
+        <defs>
+          <marker id="arrowYumura" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#c47a3a"/>
+          </marker>
+          <marker id="arrowYumuraG" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">湯村温泉「3つの楽しみ方」</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">湯がき体験<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;たまご・野菜・豆腐">たまご・野菜・豆腐</small></div>
+        <div class="effect-desc">
+          荒湯の「なかの湯つぼ」に網袋を吊るしてたまごを15分。重曹を含むため、たまごも野菜もアクが抜けてしっとり仕上がります。荒湯豆腐や温泉野菜も街のお店で買える、ここだけの食体験。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">飲泉とコーヒー<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;メタケイ酸入り98℃">メタケイ酸入り98℃</small></div>
+        <div class="effect-desc">
+          慈覚大師座像下の湯つぼでは温泉水が飲めます。胃の粘膜を保護するメタケイ酸を含み、98℃の湯はそのままお茶やコーヒーの抽出に使えます。街のお店でドリップパックも売られています。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">日本一長い足湯<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;春来川沿いに約7m">春来川沿いに約7m</small></div>
+        <div class="effect-desc">
+          春来川沿いの「ふれ愛の湯」は天然かけ流しで日本一長い足湯と言われています。神経痛・冷え性の効能を持つ重曹泉が、たまご待ちの15分にちょうど良い。誰でも無料で利用可能。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、荒湯で湯がき体験+但馬牛の夕食</strong><br>
+          JR香住駅または鳥取駅から路線バスで湯村温泉へ。チェックイン後、温泉街中心の<strong>荒湯</strong>へ。街のお店でネット付きの卵を購入し、「なかの湯つぼ」に吊るして15分待つ間に、隣の足湯でじっくり温まります。塩を振ってホクホクの茹で卵を一口。夕食は宿で<strong>但馬牛・松葉ガニ(冬)・ホタルイカ(春)</strong>などの旬の味。湯あがりに浴衣で街を歩くと、側溝から湯気が立ちのぼる夜景に出会えます。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝湯+温泉コーヒー+夢千代の里散策</strong><br>
+          朝湯でゆっくり身体を温めたら、慈覚大師座像下の湯つぼでコーヒーを淹れる体験。98℃の温泉でドリップすれば、ミネラル分が抽出されたまろやかな一杯に。ドラマ「夢千代日記」の舞台にもなった<strong>夢千代の像</strong>や、街並みをのんびり歩いて帰路に。山陰海岸ジオパーク公認ガイドの散策ツアーもおすすめ。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">湯がき・入浴のポイント</div>
+      <strong>荒湯は98℃の高温泉です。やけどに十分注意し、必ず網袋やネットを使って食材を入れてください。</strong>素手を浸けるのは絶対NG。子ども連れは目を離さず、湯つぼに近づきすぎないように。たまごは15分で固ゆで、12分で半熟。野菜は5〜10分が目安。温泉水は飲むと胃にやさしいですが、コップ半分〜1杯程度に。荒湯は地元の方々の生活の一部でもあるので、譲り合いと感謝の気持ちで利用してください。心臓・血圧・呼吸器に持病のある方、妊娠中の方の入浴・飲泉はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>兵庫県美方郡新温泉町湯(春来川沿い、鳥取県境近く)</td></tr>
+        <tr><th>大阪から</th><td>JR特急「はまかぜ」「こうのとり」+路線バスで約3時間30分</td></tr>
+        <tr><th>京都から</th><td>JR特急で香住駅または浜坂駅まで → 路線バスで合計約4時間</td></tr>
+        <tr><th>鳥取空港から</th><td>連絡バスまたはタクシーで約45分</td></tr>
+        <tr><th>東京から</th><td>新幹線で新大阪 → JR特急 → バスで合計約5〜6時間。または飛行機で鳥取/コウノトリ但馬空港経由</td></tr>
+        <tr><th>車</th><td>北近畿豊岡自動車道「八鹿氷ノ山IC」から国道9号で約60分</td></tr>
+        <tr><th>主要施設</th><td>荒湯(元湯・湯がきスポット) / 5つの湯つぼ / ふれ愛の湯(日本一長い足湯) / 各旅館の温泉</td></tr>
+        <tr><th>泉質</th><td>ナトリウム-炭酸水素塩・塩化物泉(重曹泉)、メタケイ酸含有、源泉温度98℃</td></tr>
+        <tr><th>効能</th><td>神経痛・筋肉痛・関節痛・冷え性・疲労回復・健康増進(浴用)/慢性消化器病・慢性便秘(飲泉)</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      湯村温泉は、温泉地を「特別な場所」ではなく<strong style="color:#d4ebe0">「日常」</strong>として体験できる、稀有な温泉地です。
+      湯量豊富な98℃の荒湯が街の中心に湧き、それを食材を蒸す道具にも、足湯にも、家庭の蛇口にも使う——
+      ここでは温泉が「治療」ではなく「<strong style="color:#d4ebe0">暮らしのインフラ</strong>」として1,200年生きています。
+      湯治の本気でもなく、リゾートでもなく、ただ温泉と一緒に1日を過ごすこと。
+      その「ケ(=日常)の温泉」を訪ねる旅は、シリーズで紹介した他の温泉とは違う、ささやかで豊かな時間を返してくれます。
+      週末1泊、但馬の海の幸とともに、温泉のある暮らしを覗きに行く旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

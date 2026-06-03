@@ -1,0 +1,8 @@
+# 効能旅(Kounou Tabi) - robots.txt
+# 全クローラーに全ページのクロールを許可
+
+User-agent: *
+Allow: /
+
+# サイトマップの場所
+Sitemap: https://socialweb-japan-tokyo.github.io/onsen-health-travel/sitemap.xml

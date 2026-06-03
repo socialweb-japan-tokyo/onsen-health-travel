@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>乳頭温泉郷の七湯をブナの森で巡る | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 秋田県 &gt; 乳頭温泉郷
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Hidden Yu-meguri</div>
+    <h1 class="hero-title">乳頭七湯を<br>ブナの森で巡る</h1>
+    <p class="hero-lead">
+      秋田県、十和田・八幡平国立公園の乳頭山麓に点在する7軒の一軒宿。
+      ブナの原生林に抱かれて湧き出す、白濁・透明・茶褐色——それぞれ異なる10種類以上の泉質を
+      「湯めぐり帖」で歩いて訪ねる、日本屈指の秘湯郷。
+      皮膚の悩みや婦人病、そして都会の刺激で疲れきった心と身体に、森と湯の時間をご紹介します。
+    </p>
+    <div class="hero-meta">秋田県仙北市田沢湖 / 7軒×10種類以上の泉質</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">INNS</div>
+        <div class="fact-value">7<small>軒</small></div>
+        <div class="fact-unit">一軒宿の温泉郷</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">SPRINGS</div>
+        <div class="fact-value">10<small>種類+</small></div>
+        <div class="fact-unit">独立した源泉群</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">皮膚病</div>
+        <div class="fact-unit">婦人病・湯治</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">2<small>泊</small>3<small>日</small></div>
+        <div class="fact-unit">湯めぐり</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる乳頭温泉郷</div>
+    <ul class="tldr-list">
+      <li>「乳頭温泉」という単一の温泉はなく、乳頭山の麓の7軒の一軒宿の総称。それぞれが独自の源泉を持つ</li>
+      <li>湯めぐり帖(宿泊者2,500円)で全7軒の湯に入れる。「七つの宿、七つの湯」として一体運営</li>
+      <li>江戸時代から続く湯治場。鶴の湯は秋田藩主の湯治場、黒湯は約350年の歴史で湯量随一</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">「秘湯」とは何か、なぜ身体に効くのか</h2>
+    </div>
+    <p>「秘湯」という言葉は、ただ「行きにくい」という意味ではありません。本来は、<strong>都市から物理的に隔てられた森や山の中で、湯と自然が長い時間をかけて一体になっている場所</strong>を指します。乳頭温泉郷は、田沢湖駅からバスで約50分、十和田・八幡平国立公園のブナ原生林に7軒の一軒宿が点在する、日本の「秘湯」の典型例です。</p>
+
+    <p>乳頭の独自性は、ひとつの場所に多様な源泉が同居しているのではなく、<strong>1軒の宿が1つの独立した源泉を持ち、それが7軒、ブナの森の中に点在している</strong>こと。鶴の湯の白濁硫黄泉、黒湯の硫黄泉、妙乃湯の4種の混合泉、蟹場のカルシウム-マグネシウム硫酸塩泉——歩いて湯めぐりをするだけで、性質のまったく違う湯と、それぞれを抱える森の景色を順に体験できます。皮膚と婦人病に効く湯治場として江戸時代から続いてきた背景もあり、「<strong>湯×森×時間の連続性</strong>」が一体となった、現代では稀有な体験です。2022年に経営危機に陥った孫六温泉を他の6軒が共同出資で支えたエピソードに象徴されるように、地域連帯そのものが、ここの空気を作っています。</p>
+
+    <div class="mech">
+      <div class="mech-title">— ブナの森に点在する七湯の個性 —</div>
+      <svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="380" fill="#fafaf6"/>
+
+        <!-- 乳頭山のシルエット -->
+        <path d="M 200 60 L 280 30 L 360 60 L 420 90 L 440 110 L 160 110 L 180 90 Z" fill="#4a5a4a" opacity="0.4"/>
+        <text x="300" y="50" font-family="Noto Serif JP" font-size="11" fill="#3a4a3a" text-anchor="middle" font-weight="500">乳頭山(1,478m)</text>
+
+        <!-- ブナの森のテクスチャ(背景の緑) -->
+        <rect x="0" y="110" width="600" height="240" fill="#dce5d0"/>
+
+        <!-- ブナの木のシンプルなマーク -->
+        <g fill="#8aa080">
+          <circle cx="60" cy="160" r="8"/>
+          <circle cx="100" cy="200" r="7"/>
+          <circle cx="40" cy="240" r="9"/>
+          <circle cx="80" cy="280" r="7"/>
+          <circle cx="120" cy="320" r="8"/>
+          <circle cx="540" cy="170" r="8"/>
+          <circle cx="500" cy="220" r="7"/>
+          <circle cx="560" cy="260" r="9"/>
+          <circle cx="520" cy="300" r="7"/>
+          <circle cx="480" cy="340" r="8"/>
+          <circle cx="170" cy="140" r="6"/>
+          <circle cx="430" cy="135" r="6"/>
+          <circle cx="290" cy="335" r="7"/>
+          <circle cx="350" cy="160" r="5"/>
+          <circle cx="240" cy="170" r="5"/>
+          <circle cx="180" cy="320" r="6"/>
+          <circle cx="380" cy="340" r="6"/>
+        </g>
+
+        <!-- 川 -->
+        <path d="M 0 240 Q 100 235 200 245 Q 300 250 400 245 Q 500 240 600 250" stroke="#7aaac0" stroke-width="3" fill="none" opacity="0.5"/>
+
+        <!-- 7宿のマーカーと特徴 -->
+        <!-- 鶴の湯 (左上) -->
+        <g transform="translate(140, 140)">
+          <circle cx="0" cy="0" r="12" fill="#f0e8d8" stroke="#1a2a25" stroke-width="1.5"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="10" fill="#1a2a25" text-anchor="middle" font-weight="700">鶴</text>
+          <text x="0" y="-18" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">鶴の湯</text>
+          <text x="0" y="22" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">白濁硫黄泉</text>
+          <text x="0" y="32" font-family="Noto Sans JP" font-size="8" fill="#888" text-anchor="middle">最古・茅葺き</text>
+        </g>
+
+        <!-- 妙乃湯 (右上) -->
+        <g transform="translate(280, 150)">
+          <circle cx="0" cy="0" r="12" fill="#e8d8b8" stroke="#1a2a25" stroke-width="1.5"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="10" fill="#1a2a25" text-anchor="middle" font-weight="700">妙</text>
+          <text x="0" y="-18" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">妙乃湯</text>
+          <text x="0" y="22" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">4種混合泉</text>
+          <text x="0" y="32" font-family="Noto Sans JP" font-size="8" fill="#888" text-anchor="middle">渓流・モダン和</text>
+        </g>
+
+        <!-- 蟹場 (右) -->
+        <g transform="translate(420, 160)">
+          <circle cx="0" cy="0" r="12" fill="#c8d8c8" stroke="#1a2a25" stroke-width="1.5"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="10" fill="#1a2a25" text-anchor="middle" font-weight="700">蟹</text>
+          <text x="0" y="-18" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">蟹場(がにば)</text>
+          <text x="0" y="22" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">硫酸塩泉</text>
+          <text x="0" y="32" font-family="Noto Sans JP" font-size="8" fill="#888" text-anchor="middle">原生林の露天</text>
+        </g>
+
+        <!-- 大釜 (中央左) -->
+        <g transform="translate(200, 220)">
+          <circle cx="0" cy="0" r="12" fill="#d8b8a8" stroke="#1a2a25" stroke-width="1.5"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="10" fill="#1a2a25" text-anchor="middle" font-weight="700">大</text>
+          <text x="0" y="-18" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">大釜</text>
+          <text x="0" y="22" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">含硫黄塩化物泉</text>
+          <text x="0" y="32" font-family="Noto Sans JP" font-size="8" fill="#888" text-anchor="middle">木造校舎移築</text>
+        </g>
+
+        <!-- 黒湯 (中央右) -->
+        <g transform="translate(370, 230)">
+          <circle cx="0" cy="0" r="12" fill="#7a6a4a" stroke="#1a2a25" stroke-width="1.5"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="10" fill="#fff" text-anchor="middle" font-weight="700">黒</text>
+          <text x="0" y="-18" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">黒湯</text>
+          <text x="0" y="22" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">硫黄泉(高湯量)</text>
+          <text x="0" y="32" font-family="Noto Sans JP" font-size="8" fill="#888" text-anchor="middle">350年・湯量随一</text>
+        </g>
+
+        <!-- 孫六 (右下) -->
+        <g transform="translate(480, 270)">
+          <circle cx="0" cy="0" r="12" fill="#c8c0a8" stroke="#1a2a25" stroke-width="1.5"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="10" fill="#1a2a25" text-anchor="middle" font-weight="700">孫</text>
+          <text x="0" y="-18" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">孫六</text>
+          <text x="0" y="22" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">ラジウム鉱泉</text>
+          <text x="0" y="32" font-family="Noto Sans JP" font-size="8" fill="#888" text-anchor="middle">山の薬湯</text>
+        </g>
+
+        <!-- 休暇村 (左下) -->
+        <g transform="translate(120, 300)">
+          <circle cx="0" cy="0" r="12" fill="#b8c8d8" stroke="#1a2a25" stroke-width="1.5"/>
+          <text x="0" y="4" font-family="Noto Serif JP" font-size="10" fill="#1a2a25" text-anchor="middle" font-weight="700">休</text>
+          <text x="0" y="-18" font-family="Noto Serif JP" font-size="10" fill="#1a3a35" text-anchor="middle" font-weight="500">休暇村</text>
+          <text x="0" y="22" font-family="Noto Sans JP" font-size="8" fill="#555" text-anchor="middle">2泉源(炭酸+硫黄)</text>
+          <text x="0" y="32" font-family="Noto Sans JP" font-size="8" fill="#888" text-anchor="middle">近代施設</text>
+        </g>
+
+        <!-- 湯めぐりの破線パス -->
+        <g stroke="#5caa8a" stroke-width="1.2" fill="none" stroke-dasharray="3,3" opacity="0.7">
+          <path d="M 152 145 Q 215 145 270 152"/>
+          <path d="M 290 155 Q 360 158 410 160"/>
+          <path d="M 415 170 Q 395 200 380 220"/>
+          <path d="M 360 235 Q 300 230 215 225"/>
+          <path d="M 195 230 Q 160 270 130 295"/>
+          <path d="M 380 240 Q 430 255 470 265"/>
+        </g>
+
+        <!-- 凡例 -->
+        <g transform="translate(40, 360)">
+          <line x1="0" y1="0" x2="14" y2="0" stroke="#5caa8a" stroke-width="1.5" stroke-dasharray="3,3"/>
+          <text x="20" y="3" font-family="Noto Sans JP" font-size="9" fill="#555">= 湯めぐり帖で歩いて巡るルート</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">「秘湯」が現代人に効く3つの理由</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">7軒×独自源泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;同じ郷で10種類以上の泉質">同じ郷で10種類以上の泉質</small></div>
+        <div class="effect-desc">
+          白濁の硫黄泉、無色透明の塩化物泉、ラジウム鉱泉、含鉄の温泉——歩いて湯めぐりするだけで、性質も色も香りも違う湯を体感できます。皮膚病・婦人病に古来効くとされる湯が揃います。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">ブナの原生林<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;十和田・八幡平国立公園">十和田・八幡平国立公園</small></div>
+        <div class="effect-desc">
+          7軒の宿は森の中に点在し、宿と宿の間は徒歩や巡回バスでの森歩き。木の香り、川の音、葉の影——森林浴の効果が湯めぐりの合間に自然と入ります。電波が届きにくい場所もあり、デジタル断ち。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">湯治の連続性<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;江戸時代から続く湯治文化">江戸時代から続く湯治文化</small></div>
+        <div class="effect-desc">
+          鶴の湯は秋田藩主の湯治場、黒湯は約350年の歴史。「7軒で一つの温泉郷」として地域連帯を続け、2022年の孫六温泉の経営危機を他の宿が共同出資で救った。空気そのものが「療養文化」。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(2泊3日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、拠点宿で慣らし入浴</strong><br>
+          秋田新幹線で田沢湖駅まで → 路線バスまたは羽後交通の「乳頭線」で約50分。鶴の湯・妙乃湯・黒湯などの中から拠点宿を1軒選んでチェックイン。フロントで湯めぐり帖(2,500円)を購入。まずは宿の湯で15〜20分の慣らし入浴、夕食は山菜・きりたんぽ鍋など秋田のごちそうを。夜はぐっすり眠れる森の静けさ。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>YU-MEGURI</small></div>
+        <div class="tl-content">
+          <strong>湯めぐり帖で4〜5軒を歩いて巡る</strong><br>
+          朝食後、湯めぐり開始。<strong>白濁の鶴の湯 → ラジウムの孫六 → 硫黄の黒湯 → 渓流沿いの妙乃湯</strong>のように、性質の違う湯を順番に。各宿で15〜20分浸かり、宿と宿の間はブナの森を歩く。巡回バス「湯めぐり号」も併用すると無理なく回れます。昼食は途中の宿でいただくか、お弁当を持参。1日4軒が無理のないペース。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>残った湯と仕上げの朝湯</strong><br>
+          朝風呂は拠点宿でゆっくり。チェックアウト後、まだ訪れていない宿があれば最後に立ち寄り。たとえば茅葺きの鶴の湯本陣の佇まいや、木造校舎の大釜温泉のレトロ感を写真に残して帰路へ。下山後に田沢湖をひと巡りすると、湯あがりの身体に湖の風が心地よく届きます。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      湯めぐりでは、1日に多くの湯に入りすぎると湯あたり(めまい・倦怠感)を起こしやすくなります。1日4軒、各15〜20分が目安。湯と湯の間に30分以上の休憩と水分補給(コップ1〜2杯)を必ず。冬季(11月〜4月)は雪深く、孫六温泉などは営業期間が限られます。<strong>孫六温泉・黒湯温泉は冬期休業(11月中旬〜4月中旬頃)</strong>のため、雪見湯めぐりは事前確認を。鶴の湯の本陣は予約が取りにくいので早めの計画を。心臓・血圧・呼吸器に持病のある方、妊娠中の方はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>秋田県仙北市田沢湖(乳頭山麓、十和田・八幡平国立公園内)</td></tr>
+        <tr><th>東京から</th><td>秋田新幹線「こまち」で田沢湖駅まで約2時間50分 → 路線バス(羽後交通)で約45〜50分</td></tr>
+        <tr><th>盛岡から(車)</th><td>盛岡IC → 田沢湖経由で約90分。冬季はスタッドレス必須</td></tr>
+        <tr><th>仙台から</th><td>新幹線で盛岡経由、田沢湖駅まで合計約2時間 → バスで50分</td></tr>
+        <tr><th>湯めぐり</th><td>湯めぐり帖(宿泊者限定 2,500円):7軒すべて入浴可。湯めぐり号(巡回バス、有料)で宿間移動可</td></tr>
+        <tr><th>営業期間</th><td>鶴の湯・妙乃湯・蟹場・大釜・休暇村:通年営業 / 黒湯・孫六:4月中旬〜11月中旬</td></tr>
+        <tr><th>泉質</th><td>白濁硫黄泉・硫黄泉・カルシウム・マグネシウム硫酸塩泉・含硫黄ナトリウム塩化物泉・単純温泉・ラジウム鉱泉ほか計10種類以上</td></tr>
+        <tr><th>効能</th><td>慢性皮膚病・慢性婦人病・神経痛・筋肉痛・冷え性・疲労回復・病後回復期・健康増進</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      乳頭温泉郷は、ひとつの温泉地ではなく<strong style="color:#d4ebe0">「7軒の宿が森の中で寄り添ってできた一つの郷」</strong>です。
+      鶴の湯の白濁、黒湯の濃い硫黄、妙乃湯の渓流、孫六の山の薬湯——
+      源泉も建物も雰囲気もすべて違う宿を、ブナの森の道で歩いて結ぶ。
+      湯と森の間に身を置いていると、湯治とは「治す」より<strong style="color:#d4ebe0">「日常から離れ続けること」</strong>に意味があると分かってきます。
+      2022年に孫六温泉を他の宿が共同出資で支えた地域連帯の物語も、ここの空気を作る一部です。
+      週末2泊、田沢湖の山中に7つの湯と森の時間を訪ねる旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

@@ -379,7 +379,7 @@ pinGroups
       <div class="tt-pref">${d.pref}</div>
       <div class="tt-effect">${d.effect}</div>
       <div class="tt-desc">${d.desc}</div>
-      <div class="tt-status ${isPublished ? '' : 'pending'}">${isPublished ? '✓ 記事公開済み — クリックで該当カードへ' : '記事作成中 — クリックで該当カードへ'}</div>`;
+      ${isPublished ? '' : '<div class="tt-status pending">記事作成中 — クリックで該当カードへ</div>'}`;
     tooltip.style.display = 'block';
     tooltip.style.left = (event.clientX + 16) + 'px';
     tooltip.style.top = (event.clientY - 12) + 'px';

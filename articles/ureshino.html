@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>嬉野温泉で美肌の湯と温泉湯豆腐とお茶を味わう | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 佐賀県 &gt; 嬉野温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Beauty & Tea</div>
+    <h1 class="hero-title">嬉野温泉で<br>美肌の湯と温泉湯豆腐とお茶を味わう</h1>
+    <p class="hero-lead">
+      佐賀県嬉野市、嬉野川沿いの温泉街。
+      重曹をたっぷり含むナトリウム炭酸水素塩泉は<strong>「日本三大美肌の湯」</strong>のひとつ。
+      同じ湯で煮る豆腐がとろけて名物「温泉湯豆腐」になり、500年以上の歴史を持つ「うれしの茶」が街を彩る——
+      <strong>同じ重曹が、肌・豆腐・お茶の三位一体で「美」と「味」を作る</strong>稀有な温泉地。
+      週末1泊2日のごほうび旅プランをご紹介します。
+    </p>
+    <div class="hero-meta">佐賀県嬉野市 / ナトリウム-炭酸水素塩・塩化物泉(重曹泉)</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">TYPE</div>
+        <div class="fact-value">重曹泉</div>
+        <div class="fact-unit">日本三大美肌</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">TEA</div>
+        <div class="fact-value">580<small>年+</small></div>
+        <div class="fact-unit">うれしの茶</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">美肌×食</div>
+        <div class="fact-unit">三位一体</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">ごほうび旅</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる嬉野温泉</div>
+    <ul class="tldr-list">
+      <li>和銅6年(713年)の「肥前国風土記」に記された約1,300年の歴史。神功皇后伝承から地名の由来</li>
+      <li>島根・斐乃上、栃木・喜連川と並ぶ「日本三大美肌の湯」。源泉温度85℃、源泉17か所のとろみのある湯</li>
+      <li>重曹がもたらす「美の三位一体」:肌のすべすべ・湯豆腐のとろみ・うれしの茶のまろやかさ</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ重曹が「肌」と「豆腐」と「お茶」を変えるのか</h2>
+    </div>
+    <p>嬉野温泉の本質は、湯の<strong>「重曹(炭酸水素ナトリウム)」</strong>という、たったひとつの成分が3方向に作用することにあります。重曹は、家庭の掃除や料理にも使われる、たんぱく質や脂質を分解・乳化する性質を持つアルカリ性の物質。嬉野では、この同じ重曹が<strong>「肌」「豆腐」「お茶」</strong>の3つを別々の角度から美しくする、稀有な化学反応の舞台になっています。</p>
+
+    <p>まず<strong>肌</strong>。重曹泉に浸かると、皮膚の表面の余分な皮脂と古い角質が乳化されて静かに洗い流され、湯あがりの肌は「一皮むけたよう」につるつるすべすべに。日本三大美肌の湯のひとつ(嬉野・喜連川・斐乃上)に選ばれる所以です。次に<strong>豆腐</strong>。同じ重曹を含んだ温泉水で豆腐を煮ると、大豆たんぱくの表面が少し溶け出し、豆腐がふんわりとろけて湯に白濁が広がる——これが嬉野名物「<strong>温泉湯豆腐</strong>」。豆腐は固体のまま味わうのではなく、湯と一緒に飲むスープのような食感に変わります。そして<strong>お茶</strong>。1440年に中国から伝わった釜炒り茶の製法に始まる「うれしの茶」は約580年の歴史を持ち、ビタミンC・カテキン(美肌成分)・カフェインが豊富。重曹を含む嬉野の水で淹れると、お茶の渋みが穏やかになり、まろやかな味わいに。<strong>外から肌、内からお茶、食卓から湯豆腐</strong>——同じ温泉水がもたらす美の三位一体は、嬉野でしか体験できません。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 重曹泉が「肌」「豆腐」「お茶」を変える —</div>
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="360" fill="#fafaf6"/>
+
+        <!-- 中央:嬉野の温泉水(重曹+水) -->
+        <g transform="translate(300, 175)">
+          <!-- 大きな円(温泉水) -->
+          <circle cx="0" cy="0" r="60" fill="#cae3ec" stroke="#5caa8a" stroke-width="2"/>
+          <!-- 重曹分子の表現(NaHCO3) -->
+          <g>
+            <circle cx="-20" cy="-15" r="8" fill="#f0c878"/>
+            <text x="-20" y="-12" font-family="Noto Serif JP" font-size="9" fill="#1a2a25" text-anchor="middle" font-weight="700">Na</text>
+            <circle cx="0" cy="0" r="10" fill="#5caa8a"/>
+            <text x="0" y="3" font-family="Noto Serif JP" font-size="9" fill="#fff" text-anchor="middle" font-weight="700">HCO₃</text>
+            <circle cx="20" cy="15" r="8" fill="#f0c878"/>
+            <text x="20" y="18" font-family="Noto Serif JP" font-size="9" fill="#1a2a25" text-anchor="middle" font-weight="700">Na</text>
+            <!-- 結合線 -->
+            <line x1="-15" y1="-12" x2="-5" y2="-3" stroke="#1a2a25" stroke-width="0.5" stroke-dasharray="2,2"/>
+            <line x1="5" y1="3" x2="15" y2="12" stroke="#1a2a25" stroke-width="0.5" stroke-dasharray="2,2"/>
+          </g>
+          <!-- 中央ラベル -->
+          <text x="0" y="35" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" text-anchor="middle" font-weight="500">嬉野の重曹泉</text>
+          <text x="0" y="48" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">炭酸水素ナトリウム</text>
+        </g>
+
+        <!-- 左上:肌(美肌) -->
+        <g transform="translate(110, 110)">
+          <!-- 顔のシルエット -->
+          <ellipse cx="0" cy="0" rx="32" ry="38" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1.2"/>
+          <!-- 目 -->
+          <ellipse cx="-10" cy="-5" rx="2" ry="1.5" fill="#1a2a25"/>
+          <ellipse cx="10" cy="-5" rx="2" ry="1.5" fill="#1a2a25"/>
+          <!-- 口 -->
+          <path d="M -6 12 Q 0 16 6 12" stroke="#1a2a25" stroke-width="1" fill="none"/>
+          <!-- 光彩(つるつる感) -->
+          <g fill="#fff" opacity="0.7">
+            <ellipse cx="-15" cy="-15" rx="6" ry="3" transform="rotate(-30, -15, -15)"/>
+            <ellipse cx="15" cy="-15" rx="6" ry="3" transform="rotate(30, 15, -15)"/>
+          </g>
+          <text x="0" y="58" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" text-anchor="middle" font-weight="500">肌</text>
+          <text x="0" y="72" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">皮脂・角質を乳化</text>
+          <text x="0" y="83" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">つるつるすべすべ</text>
+        </g>
+        <!-- 矢印:中央→肌 -->
+        <g stroke="#5caa8a" stroke-width="2" fill="none">
+          <path d="M 245 140 Q 200 130 155 120" marker-end="url(#arrowU)"/>
+        </g>
+
+        <!-- 右上:湯豆腐(食) -->
+        <g transform="translate(490, 110)">
+          <!-- 鍋 -->
+          <path d="M -35 -5 L 35 -5 L 30 25 L -30 25 Z" fill="#3a2a1a" stroke="#1a2a25" stroke-width="1.2"/>
+          <!-- 鍋の中身(白濁の湯) -->
+          <rect x="-32" y="-5" width="64" height="15" fill="#e8f0e8"/>
+          <!-- 豆腐(白い四角、少し溶けている) -->
+          <g fill="#fff" stroke="#cfd5cf" stroke-width="0.5">
+            <rect x="-20" y="-5" width="12" height="10" rx="1"/>
+            <rect x="-5" y="-3" width="12" height="10" rx="2"/>
+            <rect x="10" y="-5" width="12" height="10" rx="1"/>
+          </g>
+          <!-- 湯気 -->
+          <g stroke="#aaa" stroke-width="0.8" fill="none">
+            <path d="M -15 -15 Q -13 -25 -15 -35"/>
+            <path d="M 0 -15 Q 2 -25 0 -38"/>
+            <path d="M 15 -15 Q 13 -25 15 -35"/>
+          </g>
+          <text x="0" y="55" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" text-anchor="middle" font-weight="500">湯豆腐</text>
+          <text x="0" y="70" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">大豆たんぱくが溶ける</text>
+          <text x="0" y="81" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">とろける食感</text>
+        </g>
+        <!-- 矢印:中央→湯豆腐 -->
+        <g stroke="#5caa8a" stroke-width="2" fill="none">
+          <path d="M 355 140 Q 410 130 450 120" marker-end="url(#arrowU)"/>
+        </g>
+
+        <!-- 下:お茶 -->
+        <g transform="translate(300, 290)">
+          <!-- 湯のみ -->
+          <path d="M -25 -5 L 25 -5 L 22 25 L -22 25 Z" fill="#5a3a2a" stroke="#1a2a25" stroke-width="1.2"/>
+          <!-- お茶 -->
+          <rect x="-23" y="-5" width="46" height="10" fill="#9ab07a"/>
+          <!-- 葉のアイコン -->
+          <ellipse cx="0" cy="0" rx="4" ry="2" fill="#5a8a4a" transform="rotate(20, 0, 0)"/>
+          <!-- 湯気 -->
+          <g stroke="#aaa" stroke-width="0.8" fill="none">
+            <path d="M -10 -10 Q -8 -20 -10 -28"/>
+            <path d="M 5 -12 Q 7 -22 5 -32"/>
+          </g>
+          <text x="0" y="55" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" text-anchor="middle" font-weight="500">うれしの茶</text>
+          <text x="0" y="69" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">釜炒り茶・1440年〜</text>
+          <text x="0" y="80" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">カテキン・ビタミンC</text>
+        </g>
+        <!-- 矢印:中央→お茶 -->
+        <g stroke="#5caa8a" stroke-width="2" fill="none">
+          <path d="M 300 240 L 300 265" marker-end="url(#arrowU)"/>
+        </g>
+
+        <!-- 上部タイトル -->
+        <text x="300" y="35" font-family="Noto Serif JP" font-size="13" fill="#1a3a35" text-anchor="middle" font-weight="500" font-style="italic">同じ重曹が「美」と「味」の三方向に作用</text>
+
+        <defs>
+          <marker id="arrowU" markerWidth="8" markerHeight="8" refX="6" refY="2.5" orient="auto">
+            <polygon points="0,0 6,2.5 0,5" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">三方向から「美」を作る3つの体験</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">三大美肌の湯<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;シーボルトの湯・各旅館">シーボルトの湯・各旅館</small></div>
+        <div class="effect-desc">
+          重曹を含むナトリウム-炭酸水素塩・塩化物泉が皮脂と古い角質を乳化し、湯上がりは「一皮むけたよう」につるつるすべすべに。江戸時代にシーボルトも訪れた歴史を持ち、公衆浴場「シーボルトの湯」(2010年オープン)で誰でも体験できます。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">温泉湯豆腐<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;発祥は宗庵よこ長">発祥は宗庵よこ長</small></div>
+        <div class="effect-desc">
+          温泉水で豆腐を煮ると、重曹が大豆たんぱくの表面を分解し、豆腐がふんわり溶けて湯が白濁。固体ではなくスープに近い独特の食感で、嬉野でしか味わえない郷土料理。野菜や鶏肉と一緒に鍋仕立てで楽しめます。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">うれしの茶<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;1440年〜の釜炒り茶">1440年〜の釜炒り茶</small></div>
+        <div class="effect-desc">
+          中国伝来の釜炒り製法、約580年の歴史を持つ嬉野茶。あっさりとした独特の香ばしさが特徴で、ビタミンC・カテキン(美肌成分)・カフェインが豊富。お茶の体験施設「チャオシル」で淹れ方や歴史を学べます。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、温泉湯豆腐の昼食と足湯巡り</strong><br>
+          福岡空港から高速バスまたはJRで武雄温泉駅まで約1時間、そこからJRバスで約30分で嬉野温泉へ。チェックイン前に、発祥のお店「<strong>宗庵よこ長</strong>」で名物の<strong>温泉湯豆腐</strong>の昼食を。鍋に入った豆腐が湯にとろけていく様子を眺めながら、嬉野茶を一杯。午後は温泉街を浴衣で歩き、<strong>湯宿広場の足湯・シーボルトの足湯・湯っつら広場の足湯</strong>を巡ります。<strong>豊玉姫神社</strong>には美肌の神様「なまず様」が祀られていて、お参りすれば肌の願掛けに。夕方は宿の風呂と懐石料理。夜は街のあかりまつり(冬季)や芸妓さんのお座敷芸も楽しめます。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>シーボルトの湯+お茶体験+お土産</strong><br>
+          朝湯で肌を整えてから、公衆浴場<strong>「シーボルトの湯」</strong>で本場の重曹泉を1日券で堪能(地元の方と一緒に入る感覚も楽しい)。チェックアウト後は<strong>お茶の体験施設「チャオシル」</strong>で嬉野茶の淹れ方を体験。釜炒り茶の独特な香りと味わいの違いに驚くはず。お土産には<strong>うれしの茶・温泉湯豆腐セット・お茶石鹸</strong>がおすすめ。佐賀牛のステーキで遅めの昼食をとってから帰路に。「翌朝も肌がつるつるしている」感覚は、嬉野ならではのお土産です。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴と湯豆腐のポイント</div>
+      重曹泉は肌に優しい泉質ですが、<strong>湯上がりに身体を石鹸でゴシゴシ洗うと保湿成分まで落ちてしまう</strong>ため、軽く流す程度に。1回15〜20分、1日2〜3回が目安。温泉湯豆腐は重曹の作用で胃腸が刺激されることがあるため、食べ過ぎは禁物。妊娠中の方は重曹泉の飲泉は控えめに。シーボルトの湯は混雑時の入場制限があるので、朝早めの訪問がおすすめ。「あったかまつり」期間(1月下旬〜2月中旬)は灯籠ライトアップで街が混み合うので、宿は早めの予約を。心臓・血圧・呼吸器に持病のある方、妊娠中の方はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>佐賀県嬉野市嬉野町(嬉野川沿い、長崎街道沿いの温泉街)</td></tr>
+        <tr><th>福岡から</th><td>福岡空港・博多駅から西鉄高速バス「九州号」で嬉野温泉まで直行約1時間50分。または西九州新幹線「かもめ」で嬉野温泉駅まで博多駅から約50分</td></tr>
+        <tr><th>長崎から</th><td>西九州新幹線「かもめ」で嬉野温泉駅まで約20分</td></tr>
+        <tr><th>東京・大阪から</th><td>飛行機で福岡または長崎空港まで → 上記アクセス</td></tr>
+        <tr><th>車</th><td>長崎自動車道「嬉野IC」から温泉街まで約5分</td></tr>
+        <tr><th>主要施設</th><td>シーボルトの湯(公衆浴場、2010年オープン) / 元湯 / 各旅館の風呂 / 豊玉姫神社(美肌の神様) / チャオシル(お茶体験施設) / 宗庵よこ長(温泉湯豆腐発祥)</td></tr>
+        <tr><th>泉質</th><td>ナトリウム-炭酸水素塩・塩化物泉(重曹泉)、源泉温度85〜95℃、源泉数約17か所</td></tr>
+        <tr><th>効能</th><td>美肌・神経痛・筋肉痛・関節炎・冷え性・疲労回復・皮膚乾燥症</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      嬉野温泉は、湯につかるだけでは語りきれません。
+      重曹(炭酸水素ナトリウム)というひとつの成分が、<strong style="color:#d4ebe0">肌をつるつるにし、豆腐をとろけさせ、お茶のまろやかさを引き出す</strong>——
+      外からの美肌、食卓の名物、内側からの美容が、同じ温泉水を起点に重なる稀有な温泉地です。
+      江戸時代の長崎街道の宿場町としての面影、シーボルトが訪れた歴史、約580年続くうれしの茶の文化、
+      「あなうれしや」が地名になった<strong style="color:#d4ebe0">「うれしい」</strong>気持ち——
+      週末1泊で「美」と「味」の三位一体を訪ねる旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

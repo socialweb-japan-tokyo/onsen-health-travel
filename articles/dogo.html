@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>道後温泉のアルカリ性単純温泉で慢性のこわばりを養生する | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 愛媛県 &gt; 道後温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Slow Restoration</div>
+    <h1 class="hero-title">道後温泉で<br>慢性のこわばりを養生する</h1>
+    <p class="hero-lead">
+      愛媛県松山市、3000年の歴史をもつ日本最古の名湯。
+      pH9.1のなめらかなアルカリ性単純温泉が、加齢や病後で固くなった関節と神経を、低めの温度でじっくりと解いていく。
+      慢性的な関節痛・神経痛・病後の倦怠感に悩む方に向けた、2泊3日の養生プランをご紹介します。
+    </p>
+    <div class="hero-meta">愛媛県松山市 / アルカリ性単純温泉</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">PH</div>
+        <div class="fact-value">9.1</div>
+        <div class="fact-unit">アルカリ性</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">TEMP</div>
+        <div class="fact-value">42<small>℃</small></div>
+        <div class="fact-unit">源泉42〜51℃</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">関節痛</div>
+        <div class="fact-unit">神経痛・病後回復</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">2<small>泊</small>3<small>日</small></div>
+        <div class="fact-unit">養生プラン</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる道後温泉</div>
+    <ul class="tldr-list">
+      <li>pH9.1のアルカリ性単純温泉。3000年つづく日本最古の湯は、刺激が少なく長湯ができる「養生型」</li>
+      <li>源泉の温度が低めで、1回20分・1日3〜4回の入浴が可能。慢性的なこわばりにじっくり効く</li>
+      <li>厚生労働省指定の適応症に「病後回復期」「自律神経不安定症」が明記された、数少ない温泉</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ道後の湯が慢性のこわばりに効くのか</h2>
+    </div>
+    <p>道後温泉のpH9.1は、肌(pH4.5〜6.0)よりはるかにアルカリ寄り。下呂温泉と同じくアルカリ性単純温泉の系統ですが、決定的に違うのは<strong>源泉温度の低さ</strong>です。源泉は42〜51℃と、温泉としては低めの帯。だからこそ加水せずに100%源泉かけ流しが成立し、長湯で身体への負担も少ない湯になります。</p>
+
+    <p>慢性的な関節痛や神経痛は、急性の筋肉痛と違って「短時間で強い湯」が効くわけではありません。むしろ、ぬるめの湯にゆっくり浸かって関節周囲の血流をじわじわ高め、固まった滑液をほぐすほうが理にかなっています。道後の湯が古来「<strong>養生の湯</strong>」と呼ばれてきたのは、まさにこの低温×アルカリ性×長湯の組み合わせが、慢性のこわばりに対する答えだったからです。</p>
+
+    <div class="mech">
+      <div class="mech-title">— アルカリ性低温泉が関節に届くまで —</div>
+      <svg viewBox="0 0 600 280" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="280" fill="#fafaf6"/>
+
+        <!-- 関節の断面図 -->
+        <g transform="translate(40,30)">
+          <!-- 表皮 -->
+          <rect x="0" y="0" width="200" height="20" fill="#f4d4b8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="14" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">表皮</text>
+          <!-- 真皮+血管 -->
+          <rect x="0" y="20" width="200" height="25" fill="#f0c0a8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="-30" y="36" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">真皮</text>
+          <path d="M 10 35 Q 50 30 90 38 Q 130 33 170 35 Q 190 36 200 33" stroke="#aa3a3a" stroke-width="2" fill="none"/>
+
+          <!-- 関節構造 -->
+          <text x="-30" y="100" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="end">関節</text>
+          <!-- 骨1(上) -->
+          <path d="M 30 55 L 70 55 L 75 75 Q 100 85 125 75 L 130 55 L 170 55 L 170 95 L 30 95 Z" fill="#e8dcc8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="50" y="72" font-family="Noto Sans JP" font-size="8" fill="#555">骨</text>
+          <!-- 関節腔(滑液) -->
+          <ellipse cx="100" cy="105" rx="55" ry="8" fill="#c0d8e8" stroke="#5caa8a" stroke-width="1" opacity="0.7"/>
+          <text x="100" y="108" font-family="Noto Sans JP" font-size="8" fill="#1a3a35" text-anchor="middle">滑液</text>
+          <!-- 骨2(下) -->
+          <path d="M 30 115 L 70 115 L 75 135 Q 100 145 125 135 L 130 115 L 170 115 L 170 155 L 30 155 Z" fill="#e8dcc8" stroke="#1a2a25" stroke-width="1"/>
+          <text x="50" y="135" font-family="Noto Sans JP" font-size="8" fill="#555">骨</text>
+          <!-- こわばりマーク(関節周囲) -->
+          <g stroke="#c47a3a" stroke-width="1.2" fill="none">
+            <path d="M 25 80 Q 22 90 25 100"/>
+            <path d="M 175 80 Q 178 90 175 100"/>
+            <path d="M 25 110 Q 22 120 25 130"/>
+            <path d="M 175 110 Q 178 120 175 130"/>
+          </g>
+          <text x="100" y="175" font-family="Noto Sans JP" font-size="9" fill="#c47a3a" text-anchor="middle">) ( = 関節周囲のこわばり</text>
+        </g>
+
+        <!-- 説明ステップ -->
+        <g transform="translate(280,30)">
+          <!-- ステップ1 -->
+          <circle cx="15" cy="15" r="12" fill="#5caa8a"/>
+          <text x="15" y="19" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">1</text>
+          <text x="35" y="14" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">ぬるめの湯にゆっくり浸かる</text>
+          <text x="35" y="28" font-family="Noto Sans JP" font-size="10" fill="#555">42℃×20分で心臓負担が少ない</text>
+
+          <!-- ステップ2 -->
+          <circle cx="15" cy="65" r="12" fill="#5caa8a"/>
+          <text x="15" y="69" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">2</text>
+          <text x="35" y="64" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">アルカリで肌がなめらかに</text>
+          <text x="35" y="78" font-family="Noto Sans JP" font-size="10" fill="#555">pH9.1で角質と老廃物が落ちる</text>
+
+          <!-- ステップ3 -->
+          <circle cx="15" cy="115" r="12" fill="#5caa8a"/>
+          <text x="15" y="119" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">3</text>
+          <text x="35" y="114" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">血流が関節までじわじわ届く</text>
+          <text x="35" y="128" font-family="Noto Sans JP" font-size="10" fill="#555">静水圧と温熱で滑液の循環が改善</text>
+
+          <!-- ステップ4 -->
+          <circle cx="15" cy="165" r="12" fill="#1a3a35"/>
+          <text x="15" y="169" font-family="Noto Serif JP" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">4</text>
+          <text x="35" y="164" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" font-weight="500">関節と神経のこわばりがほどける</text>
+          <text x="35" y="178" font-family="Noto Sans JP" font-size="10" fill="#555">日を重ねるほど可動域が広がる</text>
+        </g>
+
+        <g stroke="#5caa8a" stroke-width="2" fill="none" marker-end="url(#arrow)">
+          <path d="M 245 60 Q 265 60 275 50"/>
+        </g>
+        <defs>
+          <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+            <polygon points="0,0 8,3 0,6" fill="#5caa8a"/>
+          </marker>
+        </defs>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">3つの作用が「養生」をかたちにする</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">低温長湯</div>
+        <div class="effect-desc">
+          源泉42〜51℃という温泉としては低めの帯が、加水不要で長湯を可能にします。1回20分を1日3〜4回。心臓や血圧への負担が少なく、高齢の方や病後の方にも適した入浴法です。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">弱アルカリ作用</div>
+        <div class="effect-desc">
+          pH9.1のアルカリ性が肌の角質と老廃物をやさしく乳化分解。湯あがりはすべすべになり、「美人の湯」と呼ばれます。刺激が少なく、敏感肌や乾燥肌の方にも安心です。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">静水圧+温熱</div>
+        <div class="effect-desc">
+          全身浴の水圧と低温の温熱がじっくり持続することで、関節周囲の血流が高まり、滑液の循環を促します。慢性関節リウマチ・五十肩・神経痛・病後回復期に効果が期待されます。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(2泊3日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、慣らし入浴と道後温泉本館へ</strong><br>
+          松山空港から30分ほどで到着。チェックイン後、まずは旅館の湯に15分の慣らし入浴。夕食後に道後温泉本館へ。明治27年築の国重要文化財で、ぬるめの「神の湯」に20分ゆっくり浸かります。長湯が許される湯であることを身体で覚える日です。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>MAIN</small></div>
+        <div class="tl-content">
+          <strong>朝湯・昼湯・夕湯の3回入浴と散歩</strong><br>
+          道後の正攻法は「1日3回の入浴」。朝風呂20分で身体を起こし、午前中は道後公園や石手寺を散策。午後にもう一度20分、夕食後にも仕上げの20分。「温める→歩く→温める」を繰り返すと、3日目の朝には関節の可動域に変化を感じる方が多くいます。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝湯で仕上げ、効果確認</strong><br>
+          チェックアウト前の朝湯でしめくくり。肩や腰、膝の動かしやすさを確認します。道後の養生効果は、帰宅後1週間ほどでじわじわと深まる遅効性タイプ。湯あがりの軽さを身体に覚えさせて帰路に。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント</div>
+      ぬるめのお湯とはいえ、1回20分・1日3〜4回を上限に。長湯がしやすいぶん、無自覚な脱水を起こしやすいので、入浴前後にコップ1杯の水を必ず飲むこと。空腹時・食後すぐ(1時間以内)・飲酒後の入浴は避ける。急性の発熱・炎症がある時期、心臓・血圧・呼吸器に持病のある方、妊娠中の方はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>愛媛県松山市道後湯之町</td></tr>
+        <tr><th>松山空港から</th><td>リムジンバスで道後温泉駅まで約40分。市内中心部経由で乗換なし</td></tr>
+        <tr><th>JR松山駅から</th><td>伊予鉄道市内電車(路面電車)で道後温泉駅まで約25分</td></tr>
+        <tr><th>東京から</th><td>飛行機で松山空港まで約1時間30分 → リムジンバスで約40分。合計約2時間30分</td></tr>
+        <tr><th>大阪から</th><td>新幹線+JR特急で松山駅まで約3時間 → 市内電車で約25分。または飛行機で約1時間</td></tr>
+        <tr><th>車</th><td>松山自動車道「松山IC」から市街経由で約30分</td></tr>
+        <tr><th>泉質</th><td>アルカリ性単純温泉(pH9.1)、100%源泉かけ流し</td></tr>
+        <tr><th>効能</th><td>慢性的な関節痛・神経痛・五十肩・腰痛・冷え性・自律神経不安定症・病後回復期・疲労回復</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      道後温泉は、3000年のあいだ日本人が「養生」と呼んできたものを、いまも変わらずに体現している温泉です。
+      pH9.1のアルカリ性がやさしく肌をなめらかにし、42℃台の低めの源泉が長湯を許し、
+      静水圧と温熱がじっくりと関節まで届く——強い刺激で短期に「効かせる」のではなく、
+      時間をかけて身体に染み込ませるのが道後流。
+      慢性的な関節痛や神経痛、病後の倦怠感のように、急いで治そうとすると遠ざかってしまう不調にこそ、
+      2泊3日の道後の養生は確かな手応えを返してくれます。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

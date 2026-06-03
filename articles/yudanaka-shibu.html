@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湯田中渋温泉郷で人と猿が湯に憩う谷を歩く | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 長野県 &gt; 湯田中渋温泉郷
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Snow Monkey Valley</div>
+    <h1 class="hero-title">湯田中渋温泉郷で<br>人と猿が湯に憩う谷を歩く</h1>
+    <p class="hero-lead">
+      長野県、志賀高原の麓、横湯川と夜間瀬川が流れる谷。
+      <strong>世界で唯一、野生のニホンザルが温泉に入る</strong>地獄谷野猿公苑と、
+      江戸時代の石畳の温泉街に9つの共同浴場が並ぶ渋温泉が、わずか2.5kmの距離に共存。
+      人と猿が同じ温泉の湯気を分け合う、地球上に他にない谷の体験を、1泊2日でご紹介します。
+    </p>
+    <div class="hero-meta">長野県下高井郡山ノ内町 / 渋温泉:単純硫黄泉・含食塩硫化水素泉ほか9種</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">BATHS</div>
+        <div class="fact-value">9<small>外湯</small></div>
+        <div class="fact-unit">渋温泉の九湯</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">MONKEY</div>
+        <div class="fact-value">世界唯一</div>
+        <div class="fact-unit">温泉に入る野生猿</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">外湯×観賞</div>
+        <div class="fact-unit">神経痛・冷え性</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">1<small>泊</small>2<small>日</small></div>
+        <div class="fact-unit">谷の散策</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる湯田中渋温泉郷</div>
+    <ul class="tldr-list">
+      <li>横湯川・夜間瀬川流域に点在する9つの温泉地の総称。江戸時代から続く湯治場の街並み</li>
+      <li>渋温泉に宿泊すると9つの外湯すべてに無料で入浴可。「九湯巡り」で苦(九)労を流す</li>
+      <li>地獄谷野猿公苑は1970年米「LIFE」誌の表紙、1998年長野五輪で世界に知られた「スノーモンキー」の聖地</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜここでは「人と猿」が同じ温泉を分け合うのか</h2>
+    </div>
+    <p>湯田中渋温泉郷の独自性は、湯の効能や成分ではなく、<strong>「温泉に対する人と動物の関係性」</strong>そのものにあります。横湯川の谷には、わずか2.5kmの距離をへだてて、ふたつの「温泉文化」が共存しています。下流に位置するのが、江戸時代から続く渋温泉。地元住民が大切に守ってきた<strong>9つの外湯(共同浴場)</strong>が石畳の路地に並び、宿泊客は宿で借りた鍵で<strong>「九湯巡り」</strong>を楽しめる(すべての外湯にスタンプを押すと「苦=九」を流すご利益が授かるとされています)。上流に位置するのが、噴泉が絶えず噴煙を上げることから名付けられた<strong>地獄谷</strong>。1964年に開設された「地獄谷野猿公苑」では、野生のニホンザルが冬季に天然温泉に浸かる、世界でここだけの光景が見られます。</p>
+
+    <p>ニホンザルが温泉に入る習性は、<strong>地球上で湯田中渋温泉郷の地獄谷にしか確認されていません</strong>。志賀高原の麓、寒冷な雪山に住むサルたちが、雪を頭にかぶりながら温泉に肩まで浸かって暖を取る——その姿は1970年に米「LIFE」誌の表紙を飾り、1998年の長野冬季オリンピックで世界中に報道されました。動物園と違い、ヒトとニホンザルを<strong>隔てる柵がない</strong>のも特徴で、観察者と猿は同じ空間に身を置きます。「人だけが温泉に癒される」のではなく、<strong>「動物も同じ理由で温泉を選ぶ」</strong>という事実が、この谷でだけ目の前で確かめられる。湯と寒さと生き物の関係を、人類が自分以外の視点から見つめ直せる、地球上で稀有な場所です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 横湯川渓谷:同じ谷で人と猿が湯に憩う —</div>
+      <svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="360" fill="#fafaf6"/>
+
+        <!-- 空 -->
+        <rect x="0" y="0" width="600" height="80" fill="#e8eef0"/>
+        <!-- 雪雲 -->
+        <g fill="#fff" opacity="0.85">
+          <ellipse cx="120" cy="30" rx="40" ry="10"/>
+          <ellipse cx="350" cy="40" rx="35" ry="9"/>
+          <ellipse cx="500" cy="25" rx="40" ry="11"/>
+        </g>
+
+        <!-- 山(志賀高原方面、両側) -->
+        <path d="M 0 80 L 80 50 L 160 70 L 240 45 L 320 65 L 400 40 L 480 60 L 560 35 L 600 50 L 600 200 L 0 200 Z" fill="#9ab0a0" stroke="#3a4a3a" stroke-width="0.5"/>
+        <!-- 雪をかぶった山 -->
+        <path d="M 80 50 L 100 65 L 120 60 L 160 70 L 80 50 Z" fill="#fff" opacity="0.6"/>
+        <path d="M 240 45 L 260 60 L 280 55 L 320 65 L 240 45 Z" fill="#fff" opacity="0.6"/>
+        <path d="M 400 40 L 420 55 L 440 50 L 480 60 L 400 40 Z" fill="#fff" opacity="0.6"/>
+
+        <!-- 横湯川(谷の底を流れる) -->
+        <path d="M 50 240 Q 100 235 150 240 Q 200 245 250 240 Q 300 235 350 240 Q 400 245 450 240 Q 500 235 550 240" stroke="#7aaac0" stroke-width="6" fill="none"/>
+        <text x="300" y="225" font-family="Noto Serif JP" font-size="10" fill="#5a8ca0" text-anchor="middle" font-style="italic">横湯川渓谷(志賀高原から日本海へ)</text>
+
+        <!-- 雪の積もった地面 -->
+        <path d="M 0 240 L 0 280 L 600 280 L 600 240 Q 550 245 500 240 Q 450 235 400 240 Q 350 245 300 240 Q 250 235 200 240 Q 150 245 100 240 Q 50 235 0 240 Z" fill="#fff" opacity="0.7"/>
+
+        <!-- 左:渋温泉(石畳の街並み+9つの外湯) -->
+        <g transform="translate(80, 290)">
+          <!-- 街並みの屋根群 -->
+          <g fill="#7a5a3a" stroke="#3a2a1a" stroke-width="0.8">
+            <path d="M 0 0 L 20 -25 L 40 0 Z"/>
+            <path d="M 30 0 L 50 -30 L 70 0 Z"/>
+            <path d="M 60 0 L 80 -22 L 100 0 Z"/>
+          </g>
+          <!-- 石畳 -->
+          <rect x="-5" y="0" width="115" height="8" fill="#9a8a7a"/>
+          <g stroke="#5a4a3a" stroke-width="0.4">
+            <line x1="20" y1="0" x2="20" y2="8"/>
+            <line x1="45" y1="0" x2="45" y2="8"/>
+            <line x1="70" y1="0" x2="70" y2="8"/>
+            <line x1="95" y1="0" x2="95" y2="8"/>
+          </g>
+          <!-- 9つの外湯マーカー(密集表現) -->
+          <g fill="#5caa8a" stroke="#1a2a25" stroke-width="0.8">
+            <circle cx="15" cy="20" r="4"/>
+            <circle cx="30" cy="22" r="4"/>
+            <circle cx="45" cy="20" r="4"/>
+            <circle cx="60" cy="22" r="4"/>
+            <circle cx="75" cy="20" r="4"/>
+            <circle cx="90" cy="22" r="4"/>
+            <circle cx="22" cy="32" r="4"/>
+            <circle cx="52" cy="32" r="4"/>
+            <circle cx="82" cy="32" r="4"/>
+          </g>
+          <text x="50" y="-45" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" text-anchor="middle" font-weight="500">渋温泉</text>
+          <text x="50" y="55" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">9つの外湯+石畳</text>
+          <text x="50" y="65" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">江戸時代から</text>
+          <!-- 湯気 -->
+          <g stroke="#cfd5d2" stroke-width="0.8" fill="none">
+            <path d="M 20 -30 Q 18 -42 20 -52"/>
+            <path d="M 50 -36 Q 52 -48 50 -58"/>
+            <path d="M 80 -28 Q 78 -42 80 -52"/>
+          </g>
+        </g>
+
+        <!-- 距離2.5kmの表示 -->
+        <g>
+          <line x1="200" y1="320" x2="430" y2="320" stroke="#1a2a25" stroke-width="1"/>
+          <line x1="200" y1="316" x2="200" y2="324" stroke="#1a2a25" stroke-width="1"/>
+          <line x1="430" y1="316" x2="430" y2="324" stroke="#1a2a25" stroke-width="1"/>
+          <text x="315" y="335" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">約2.5km(徒歩30分+バス15分)</text>
+        </g>
+
+        <!-- 右:地獄谷野猿公苑(温泉に入るサル) -->
+        <g transform="translate(450, 290)">
+          <!-- 岩(温泉の周り) -->
+          <path d="M -5 0 L 80 0 L 70 -15 L 0 -15 Z" fill="#7a6a5a" stroke="#3a2a1a" stroke-width="0.8"/>
+          <!-- 温泉(浴槽) -->
+          <ellipse cx="38" cy="-3" rx="32" ry="8" fill="#7aaac0" opacity="0.85"/>
+          <!-- 湯気 -->
+          <g stroke="#cfd5d2" stroke-width="0.8" fill="none">
+            <path d="M 20 -15 Q 18 -25 20 -35"/>
+            <path d="M 38 -15 Q 40 -28 38 -40"/>
+            <path d="M 56 -15 Q 54 -25 56 -35"/>
+          </g>
+          <!-- ニホンザル -->
+          <g>
+            <!-- サル1 -->
+            <circle cx="20" cy="-3" r="5" fill="#a88858" stroke="#3a2a1a" stroke-width="0.5"/>
+            <circle cx="18" cy="-5" r="0.8" fill="#1a2a25"/>
+            <circle cx="22" cy="-5" r="0.8" fill="#1a2a25"/>
+            <!-- 顔の赤み -->
+            <ellipse cx="20" cy="-2" rx="2.5" ry="1.5" fill="#d4a898" opacity="0.6"/>
+            <!-- 雪 -->
+            <circle cx="20" cy="-9" r="1.5" fill="#fff"/>
+          </g>
+          <g>
+            <!-- サル2 -->
+            <circle cx="38" cy="-2" r="5" fill="#a88858" stroke="#3a2a1a" stroke-width="0.5"/>
+            <circle cx="36" cy="-4" r="0.8" fill="#1a2a25"/>
+            <circle cx="40" cy="-4" r="0.8" fill="#1a2a25"/>
+            <ellipse cx="38" cy="-1" rx="2.5" ry="1.5" fill="#d4a898" opacity="0.6"/>
+            <circle cx="38" cy="-8" r="1.8" fill="#fff"/>
+          </g>
+          <g>
+            <!-- サル3 -->
+            <circle cx="56" cy="-3" r="5" fill="#a88858" stroke="#3a2a1a" stroke-width="0.5"/>
+            <circle cx="54" cy="-5" r="0.8" fill="#1a2a25"/>
+            <circle cx="58" cy="-5" r="0.8" fill="#1a2a25"/>
+            <ellipse cx="56" cy="-2" rx="2.5" ry="1.5" fill="#d4a898" opacity="0.6"/>
+            <circle cx="56" cy="-9" r="1.5" fill="#fff"/>
+          </g>
+          <text x="38" y="-45" font-family="Noto Serif JP" font-size="12" fill="#1a3a35" text-anchor="middle" font-weight="500">地獄谷野猿公苑</text>
+          <text x="38" y="20" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">スノーモンキー</text>
+          <text x="38" y="30" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">世界唯一の光景</text>
+        </g>
+
+        <!-- 共通の温泉源(地下) -->
+        <text x="300" y="170" font-family="Noto Sans JP" font-size="10" fill="#c47a3a" text-anchor="middle" font-style="italic">↑ 同じ地下源泉が湯田中渋温泉郷一帯を養う ↑</text>
+
+        <!-- 凡例 -->
+        <g transform="translate(40, 50)">
+          <circle cx="0" cy="0" r="4" fill="#5caa8a" stroke="#1a2a25" stroke-width="0.5"/>
+          <text x="10" y="3" font-family="Noto Sans JP" font-size="9" fill="#555">人の温泉(外湯)</text>
+          <circle cx="120" cy="0" r="4" fill="#a88858" stroke="#3a2a1a" stroke-width="0.5"/>
+          <text x="130" y="3" font-family="Noto Sans JP" font-size="9" fill="#555">猿の温泉(野猿公苑)</text>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">谷で出会う3つの世界</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">渋温泉の九湯巡り<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;石畳の路地に9つの外湯">石畳の路地に9つの外湯</small></div>
+        <div class="effect-desc">
+          江戸時代の街並みを残す石畳の温泉街に、地元住民が守ってきた9つの公共浴場が並びます。宿泊客は宿で借りる鍵で6:00〜22:00まで自由に出入り可。すべて源泉かけ流し、神経痛・筋肉痛・冷え性に。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">地獄谷野猿公苑<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;世界唯一・1964年開設">世界唯一・1964年開設</small></div>
+        <div class="effect-desc">
+          噴泉が絶えず噴煙を上げる地獄谷で、野生のニホンザルが温泉に浸かる世界唯一の光景。1970年米「LIFE」誌表紙、1998年長野五輪で世界に広まりました。柵がなく、サルと同じ空間で観察できます。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">石畳の温泉街<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;『千と千尋』のモデル">『千と千尋』のモデル</small></div>
+        <div class="effect-desc">
+          渋温泉の中心にある木造4階建ての旅館「金具屋」は、映画『千と千尋の神隠し』湯屋のモデルと言われる文化財。レトロな射的、温泉饅頭の食べ歩き、浴衣で石畳を歩く昔ながらの温泉街の風情。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">おすすめ滞在プラン(1泊2日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、渋温泉に泊まり「九湯巡り」</strong><br>
+          東京から北陸新幹線で長野駅まで約1時間30分、長野電鉄に乗り換え湯田中駅まで約45分、バスかタクシーで温泉街へ。チェックイン後、宿で<strong>九湯巡りの鍵+巡浴手拭い</strong>を借りて、浴衣で石畳の路地へ。一番湯〜九番湯まで点在する外湯を1日で4〜5軒巡るのが現実的。各湯に手拭いを当ててスタンプを押し、最後に高薬師和庵まで参拝。途中で<strong>温泉饅頭・射的・蕎麦</strong>などの食べ歩きを挟みつつ。夜は『千と千尋』モデルの金具屋の絢爛な灯りに見送られて宿へ。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>MONKEYS</small></div>
+        <div class="tl-content">
+          <strong>朝の地獄谷野猿公苑+残りの九湯</strong><br>
+          朝食後、シャトルバスまたは徒歩で<strong>地獄谷野猿公苑</strong>へ(駐車場から徒歩30分ほどの森の道を歩く)。<strong>冬季はスノーモンキーが温泉に浸かる本番</strong>、夏は岩場で休む姿が観察できます。ヒトと猿を隔てる柵がないので、お互いの距離感に気をつけて静かに観察を。お昼前に温泉街に戻って、まだ訪ねていない外湯で仕上げの入浴。チェックアウトのあと長野市街地で善光寺参拝、または志賀高原方面に足を延ばして帰路に。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">野猿公苑訪問のマナー</div>
+      <strong>地獄谷野猿公苑は動物園ではなく、野生のニホンザルの群れの中に観察者が入る場所です。</strong>サルに触らない、目を合わせて威嚇しない、食べ物を見せない・与えない、フラッシュ撮影しない——お互いの距離を保つことが安全のために必須です。冬季(12〜3月)はスノーモンキーが温泉に入る確率が高いですが、雪が深いため防寒・防滑の装備を。野猿公苑までの道は雪道です。九湯巡りでは、外湯は地元の方の生活の場でもあるので、洗髪・水しぶき・大声は控えめに、必ず宿で鍵を返却すること。源泉温度が高めなので、長湯は禁物、1回15分が目安。心臓・血圧・呼吸器に持病のある方、妊娠中の方はかかりつけ医に相談を。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>長野県下高井郡山ノ内町(志賀高原の麓、横湯川・夜間瀬川流域)</td></tr>
+        <tr><th>東京から</th><td>北陸新幹線で長野駅まで約1時間30分 → 長野電鉄で湯田中駅まで約45分 → バス・タクシーで温泉街まで約10〜15分</td></tr>
+        <tr><th>長野駅から</th><td>長野電鉄特急「ゆけむり」で湯田中駅まで約45分、または直行バス「スノーモンキー号」で野猿公苑入口へ約45分</td></tr>
+        <tr><th>名古屋・大阪から</th><td>新幹線で東京経由、長野駅へ。合計約4〜5時間</td></tr>
+        <tr><th>車</th><td>上信越自動車道「信州中野IC」から渋温泉まで約20分</td></tr>
+        <tr><th>主要スポット</th><td>渋温泉九湯巡り(一番湯〜九番湯+高薬師和庵) / 地獄谷野猿公苑 / 金具屋(『千と千尋』モデル) / 志賀高原 / 善光寺(長野市内)</td></tr>
+        <tr><th>温泉郷の範囲</th><td>湯田中・新湯田中・星川・穂波・安代・渋・上林・地獄谷・角間ほか9地区</td></tr>
+        <tr><th>泉質</th><td>渋温泉:単純硫黄泉・含食塩硫化水素泉ほか地区ごとに異なる、源泉温度50〜90℃</td></tr>
+        <tr><th>効能</th><td>神経痛・筋肉痛・関節痛・冷え性・慢性皮膚病・婦人病・疲労回復</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      湯田中渋温泉郷は、人だけが温泉に癒される場所ではありません。
+      <strong style="color:#d4ebe0">志賀高原の麓のひとつの谷に、人と野生のニホンザルが</strong>同じ温泉の湯気を分け合う、
+      地球上に他にない景観が広がっています。
+      渋温泉の石畳の路地に並ぶ9つの外湯、宿で借りた鍵で苦(九)労を流す「九湯巡り」、
+      2.5km上流の地獄谷で雪をかぶって湯に浸かるサルたち——
+      文化と自然がこれほど近くで同居する温泉地はめずらしい。
+      週末1泊、温泉のもうひとつの主役に出会いに、信州の谷へ足を運んでみてください。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

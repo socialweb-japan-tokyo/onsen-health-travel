@@ -146,6 +146,33 @@
 .search-field select:disabled{background:#f0efea;color:#aaa;cursor:not-allowed}
 .search-reset{font-family:'Noto Sans JP',sans-serif;font-size:11px;letter-spacing:1px;padding:9px 18px;background:#1a3a35;color:#fff;border:none;border-radius:4px;cursor:pointer;transition:background .15s}
 .search-reset:hover{background:#2d5a4a}
+/* === 効能フィルター === */
+.effect-search{margin-bottom:0.8rem}
+.effect-search .search-row{align-items:center}
+.effect-hint{font-size:11px;color:#888;letter-spacing:0.5px;margin-top:4px;font-weight:300}
+.effect-status{display:none;align-items:center;gap:8px;font-size:11px;color:#5aaa85;letter-spacing:1px;margin-left:4px;font-weight:500}
+.effect-status.visible{display:inline-flex}
+.effect-status::before{content:'';display:inline-block;width:8px;height:8px;background:#5caa8a;border-radius:50%;animation:pulse-dot 1.8s ease-in-out infinite}
+@keyframes pulse-dot{0%,100%{opacity:1}50%{opacity:0.4}}
+
+/* === 効能マッチピン（緑グロー、控えめ） === */
+.pin.matched circle:not(.ripple){
+  fill:#5caa8a !important;
+  stroke:#1a3a35 !important;
+  stroke-width:2.2;
+  r:7;
+  filter:drop-shadow(0 0 5px rgba(92,170,138,0.65));
+}
+.pin.matched:hover circle:not(.ripple){r:8.5}
+
+/* === 効能非マッチピン（グレーアウト） === */
+.pin.dimmed circle:not(.ripple){
+  fill:#d8d5d0 !important;
+  stroke:#bbb !important;
+  opacity:0.35;
+}
+.pin.dimmed:hover circle:not(.ripple){opacity:0.7}
+
 /* === ハイライト演出（波紋 + グロー + ラベル） === */
 
 /* ハイライトされたピン本体（グロー＋鼓動） */
@@ -199,6 +226,32 @@
  <div class="map-section" id="map-section">
   <div class="map-inner">
     <div class="section-head"><span>Onsen Map</span></div>
+
+    <!-- 効能フィルター -->
+    <div class="onsen-search effect-search">
+      <div class="search-row">
+        <label class="search-field" style="flex:2">
+          <span class="search-label">効能で絞り込む</span>
+          <select id="effect-select">
+            <option value="">-- すべての温泉を表示 --</option>
+            <option value="skin">美肌・スキンケア</option>
+            <option value="muscle">筋肉痛・関節痛・神経痛</option>
+            <option value="fatigue">疲労回復・全身ケア</option>
+            <option value="circulation">冷え性・血流改善</option>
+            <option value="chronic-skin">慢性皮膚病（アトピー・湿疹）</option>
+            <option value="women">婦人病</option>
+            <option value="autonomic">自律神経・不眠・ストレス</option>
+            <option value="digestive">胃腸・消化器</option>
+            <option value="heart">循環器・心臓・高血圧</option>
+            <option value="respiratory">呼吸器（喘息・気管支炎）</option>
+            <option value="back">腰痛・骨折・打撲</option>
+            <option value="touji">湯治・慢性疾患</option>
+          </select>
+        </label>
+        <span id="effect-status" class="effect-status"></span>
+      </div>
+      <div class="effect-hint">該当のピンが強調され、それ以外は薄く表示されます</div>
+    </div>
 
     <!-- 温泉検索フォーム ← section-head の外に出す -->
     <div class="onsen-search">
@@ -347,7 +400,134 @@ pinGroups
       card.classList.add('flash');
     }
   });
-     // === 温泉検索（都道府県 → 温泉） ===
+     // === 効能フィルター ===
+(function() {
+  // 効能カテゴリーの定義
+  // keywords: 既存の pin.effect 文字列にマッチさせるキーワード
+  // extras:   キーワードで拾えないが該当する温泉を明示的に追加（記事で詳しく扱った温泉）
+  const EFFECT_FILTERS = {
+    "skin": {
+      label: "美肌・スキンケア",
+      keywords: ["美肌"],
+      extras: ["草津温泉", "道後温泉", "登別温泉"]
+    },
+    "muscle": {
+      label: "筋肉痛・関節痛・神経痛",
+      keywords: ["筋肉", "関節", "神経痛", "リウマチ"],
+      extras: []
+    },
+    "fatigue": {
+      label: "疲労回復・全身ケア",
+      keywords: ["疲労"],
+      extras: []
+    },
+    "circulation": {
+      label: "冷え性・血流改善",
+      keywords: ["冷え"],
+      extras: ["長湯温泉", "有馬温泉"]
+    },
+    "chronic-skin": {
+      label: "慢性皮膚病",
+      keywords: ["皮膚病", "皮膚疾患"],
+      extras: ["草津温泉", "玉川温泉", "十勝川温泉"]
+    },
+    "women": {
+      label: "婦人病",
+      keywords: ["婦人病"],
+      extras: []
+    },
+    "autonomic": {
+      label: "自律神経・不眠・ストレス",
+      keywords: [],
+      extras: ["別府温泉", "黒川温泉", "由布院温泉"]
+    },
+    "digestive": {
+      label: "胃腸・消化器",
+      keywords: ["消化器", "胃腸"],
+      extras: ["長湯温泉", "湯村温泉", "酸ヶ湯温泉", "野沢温泉", "修善寺温泉", "万座温泉"]
+    },
+    "heart": {
+      label: "循環器・心臓・高血圧",
+      keywords: ["心臓", "高血圧"],
+      extras: []
+    },
+    "respiratory": {
+      label: "呼吸器（喘息・気管支炎）",
+      keywords: [],
+      extras: ["万座温泉"]
+    },
+    "back": {
+      label: "腰痛・骨折・打撲",
+      keywords: ["腰痛", "骨折", "打撲"],
+      extras: ["玉川温泉"]
+    },
+    "touji": {
+      label: "湯治・慢性疾患",
+      keywords: ["慢性疾患", "がん"],
+      extras: ["玉川温泉", "酸ヶ湯温泉", "乳頭温泉郷", "万座温泉"]
+    }
+  };
+
+  const effectSelect = document.getElementById('effect-select');
+  const effectStatus = document.getElementById('effect-status');
+
+  function clearEffectFilter() {
+    document.querySelectorAll('.pin').forEach(el => {
+      el.classList.remove('matched', 'dimmed');
+    });
+    effectStatus.classList.remove('visible');
+    effectStatus.textContent = '';
+  }
+
+  function applyEffectFilter(filterKey) {
+    if (!filterKey || !EFFECT_FILTERS[filterKey]) {
+      clearEffectFilter();
+      return;
+    }
+
+    const filter = EFFECT_FILTERS[filterKey];
+    const extraSet = new Set(filter.extras || []);
+    const keywords = filter.keywords || [];
+    let matchCount = 0;
+
+    d3.selectAll('.pin').each(function(d) {
+      if (!d) return;
+      const pinEffect = d.effect || '';
+      const pinName = d.name || '';
+
+      const matchesKeyword = keywords.some(k => pinEffect.includes(k));
+      const matchesExtra = extraSet.has(pinName);
+
+      if (matchesKeyword || matchesExtra) {
+        this.classList.add('matched');
+        this.classList.remove('dimmed');
+        matchCount++;
+      } else {
+        this.classList.add('dimmed');
+        this.classList.remove('matched');
+      }
+    });
+
+    effectStatus.textContent = `${filter.label} : ${matchCount}軒`;
+    effectStatus.classList.add('visible');
+  }
+
+  // 効能セレクトの変更を監視
+  effectSelect.addEventListener('change', () => {
+    applyEffectFilter(effectSelect.value);
+  });
+
+  // 既存のリセットボタンと連動（効能フィルターもクリア）
+  const resetBtn = document.getElementById('search-reset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      effectSelect.value = '';
+      clearEffectFilter();
+    });
+  }
+})();
+
+// === 温泉検索（都道府県 → 温泉） ===
 (function() {
   const prefSelect  = document.getElementById('pref-select');
   const onsenSelect = document.getElementById('onsen-select');

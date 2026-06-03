@@ -369,6 +369,11 @@ pinGroups
       onsenSelect.disabled = true;
       return;
     }
+      // ★ 先頭にプレースホルダーを追加
+    const placeholder = document.createElement('option');
+    placeholder.value = '';
+    placeholder.textContent = '-- 温泉を選択 --';
+    onsenSelect.appendChild(placeholder);
 
    // 該当県の温泉でセレクトを埋める
 const onsensInPref = pins.filter(p => p.pref === pref);

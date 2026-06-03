@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>玉川温泉で湯治の時間をとり身体を立て直す | 効能旅(Kounou Tabi)</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --primary: #1a3a35;
+    --primary-light: #2d5a4a;
+    --accent: #5caa8a;
+    --accent-pale: #d4ebe0;
+    --bg: #f5f4f0;
+    --paper: #fff;
+    --ink: #1a2a25;
+    --ink-soft: #555;
+    --muted: #999;
+    --line: #e8e5e0;
+    --warn: #c47a3a;
+  }
+  body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.85; font-weight: 400; }
+  .header { background: #fff; border-bottom: 1px solid var(--line); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 56px; position: sticky; top: 0; z-index: 50; }
+  .logo { font-family: 'Noto Serif JP', serif; font-size: 15px; letter-spacing: 3px; color: var(--primary); font-weight: 400; text-decoration: none; }
+  .breadcrumb { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .breadcrumb a { color: var(--accent); text-decoration: none; }
+  .article { max-width: 760px; margin: 0 auto; padding: 3rem 1.5rem 4rem; }
+  .hero { text-align: center; margin-bottom: 3rem; padding-bottom: 2.5rem; border-bottom: 1px solid var(--line); }
+  .hero-cat { display: inline-block; font-size: 10px; letter-spacing: 4px; color: var(--accent); text-transform: uppercase; margin-bottom: 1rem; padding: 4px 12px; border: 1px solid var(--accent); border-radius: 2px; }
+  .hero-title { font-family: 'Noto Serif JP', serif; font-size: 30px; color: var(--primary); font-weight: 500; letter-spacing: 2px; margin-bottom: 1rem; line-height: 1.5; }
+  .hero-lead { font-size: 14px; color: var(--ink-soft); max-width: 580px; margin: 0 auto; line-height: 1.9; }
+  .hero-meta { margin-top: 1.5rem; font-size: 11px; color: var(--muted); letter-spacing: 1px; }
+  .facts { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; margin-bottom: 3rem; overflow: hidden; }
+  .facts-head { background: var(--primary); color: #fff; padding: 14px 20px; font-size: 12px; letter-spacing: 3px; font-weight: 500; }
+  .facts-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+  .fact { padding: 20px 16px; text-align: center; border-right: 1px solid var(--line); }
+  .fact:last-child { border-right: none; }
+  .fact-label { font-size: 10px; color: var(--muted); letter-spacing: 2px; margin-bottom: 8px; }
+  .fact-value { font-family: 'Noto Serif JP', serif; font-size: 22px; color: var(--primary); font-weight: 500; line-height: 1.2; }
+  .fact-unit { font-size: 11px; color: var(--ink-soft); margin-top: 4px; }
+  @media (max-width: 600px) { .facts-grid { grid-template-columns: repeat(2, 1fr); } .fact:nth-child(2) { border-right: none; } .fact:nth-child(1), .fact:nth-child(2) { border-bottom: 1px solid var(--line); } }
+  .tldr { background: var(--accent-pale); border-left: 4px solid var(--accent); padding: 20px 24px; margin-bottom: 3rem; border-radius: 0 4px 4px 0; }
+  .tldr-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 12px; font-weight: 500; }
+  .tldr-list { list-style: none; padding: 0; }
+  .tldr-list li { font-size: 13px; color: var(--ink); padding: 4px 0 4px 24px; position: relative; line-height: 1.7; }
+  .tldr-list li::before { content: '♨'; position: absolute; left: 0; color: var(--accent); font-size: 14px; }
+  .section { margin-bottom: 3.5rem; }
+  .section-head { margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 2px solid var(--primary); display: flex; align-items: baseline; gap: 12px; }
+  .section-num { font-family: 'Noto Serif JP', serif; font-size: 12px; color: var(--accent); letter-spacing: 2px; }
+  .section-title { font-family: 'Noto Serif JP', serif; font-size: 20px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .section p { font-size: 14px; line-height: 1.95; color: var(--ink); margin-bottom: 1rem; }
+  .mech { background: var(--paper); border: 1px solid var(--line); padding: 28px; border-radius: 4px; margin-top: 1.5rem; }
+  .mech-title { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); letter-spacing: 2px; margin-bottom: 1rem; text-align: center; }
+  .mech svg { width: 100%; height: auto; max-width: 600px; display: block; margin: 0 auto; }
+  .effects { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 1.5rem; }
+  @media (max-width: 600px) { .effects { grid-template-columns: 1fr; } }
+  .effect-card { background: var(--paper); border: 1px solid var(--line); padding: 20px; border-radius: 4px; }
+  .effect-num { font-family: 'Noto Serif JP', serif; font-size: 32px; color: var(--accent); font-weight: 300; line-height: 1; margin-bottom: 8px; }
+  .effect-title { font-family: 'Noto Serif JP', serif; font-size: 15px; color: var(--primary); font-weight: 500; margin-bottom: 8px; letter-spacing: 1px; }
+  .effect-desc { font-size: 12px; color: var(--ink-soft); line-height: 1.7; }
+  .timeline { background: var(--paper); border: 1px solid var(--line); padding: 24px; border-radius: 4px; }
+  .tl-row { display: grid; grid-template-columns: 100px 1fr; gap: 16px; padding: 14px 0; border-bottom: 1px dashed var(--line); }
+  .tl-row:last-child { border-bottom: none; }
+  .tl-day { font-family: 'Noto Serif JP', serif; font-size: 14px; color: var(--primary); font-weight: 500; letter-spacing: 1px; }
+  .tl-day small { display: block; font-size: 10px; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; letter-spacing: 2px; margin-top: 2px; }
+  .tl-content { font-size: 13px; color: var(--ink); line-height: 1.8; }
+  .tl-content strong { color: var(--primary); font-weight: 500; }
+  .access { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; overflow: hidden; }
+  .access table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .access th, .access td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--line); }
+  .access th { background: #fafaf6; color: var(--primary); font-family: 'Noto Serif JP', serif; font-weight: 500; width: 130px; letter-spacing: 1px; }
+  .access tr:last-child th, .access tr:last-child td { border-bottom: none; }
+  .caution { background: #fef6ec; border: 1px solid var(--warn); border-radius: 4px; padding: 16px 20px; margin: 1.5rem 0; font-size: 12px; color: #8b5a2b; line-height: 1.8; }
+  .caution-title { font-family: 'Noto Serif JP', serif; font-weight: 500; color: var(--warn); margin-bottom: 6px; letter-spacing: 1px; }
+  .conclusion { background: var(--primary); color: #f0f7f5; padding: 32px 28px; border-radius: 4px; margin-top: 2rem; }
+  .conclusion-title { font-family: 'Noto Serif JP', serif; font-size: 16px; color: var(--accent); letter-spacing: 2px; margin-bottom: 12px; }
+  .conclusion p { font-size: 13px; line-height: 1.95; color: #d4ebe0; }
+  .article-foot { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--line); font-size: 11px; color: var(--muted); letter-spacing: 1px; display: flex; justify-content: space-between; align-items: center; }
+  .back-link { color: var(--accent); text-decoration: none; font-size: 12px; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="../index.html" class="logo">効能旅(Kounou Tabi)</a>
+  <div class="breadcrumb">
+    <a href="../onsen-map.html">マップ</a> &gt; 秋田県 &gt; 玉川温泉
+  </div>
+</header>
+
+<article class="article">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-cat">Long Therapeutic Stay</div>
+    <h1 class="hero-title">玉川温泉で<br>湯治の時間で身体を立て直す</h1>
+    <p class="hero-lead">
+      秋田県仙北市、八幡平の標高740m。1ヶ所からの湧出量9,000L/分、pH1.13という日本一の強酸性泉。
+      「治す」のではなく身体の力を引き出す——昔ながらの湯治文化を、現代まで守り続ける数少ない温泉地です。
+      慢性的な不調、長引く疲れ、リウマチや皮膚疾患などに、3泊4日からの湯治入門プランをご紹介します。
+    </p>
+    <div class="hero-meta">秋田県仙北市 / 含放射能-酸性-含鉄(II)-アルミニウム-塩化物泉</div>
+  </div>
+
+  <!-- QUICK FACTS -->
+  <div class="facts">
+    <div class="facts-head">BASIC DATA / 基本データ</div>
+    <div class="facts-grid">
+      <div class="fact">
+        <div class="fact-label">PH</div>
+        <div class="fact-value">1.13</div>
+        <div class="fact-unit">日本一の強酸性</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">OUTPUT</div>
+        <div class="fact-value">9,000<small>L/分</small></div>
+        <div class="fact-unit">単一泉源 日本一</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">EFFECT</div>
+        <div class="fact-value">慢性疾患</div>
+        <div class="fact-unit">皮膚病・リウマチ</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">STAY</div>
+        <div class="fact-value">3<small>泊</small>4<small>日〜</small></div>
+        <div class="fact-unit">湯治入門〜21日</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TL;DR -->
+  <div class="tldr">
+    <div class="tldr-title">3分でわかる玉川温泉</div>
+    <ul class="tldr-list">
+      <li>大噴(おおぶき)と呼ばれる湧出口から、源泉温度98℃の強酸性泉が毎分9,000L噴き出る</li>
+      <li>玉川温泉と台湾・北投温泉だけにある「北投石」(特別天然記念物)が微量のラジウムを放出</li>
+      <li>湯治には伝統的に「三回り21日」の時間軸。3泊4日からの長期滞在で「身体を慣らす」温泉</li>
+    </ul>
+  </div>
+
+  <!-- MECHANISM -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— MECHANISM 01</span>
+      <h2 class="section-title">なぜ玉川には「時間」が必要なのか</h2>
+    </div>
+    <p>1泊2日のレジャー型温泉が普及した現代において、玉川温泉は<strong>「短期では効果が出にくい」と公言する数少ない温泉地</strong>です。これは商売の都合ではなく、強酸性とラジウムを含む湯への身体の反応に、伝統的に「三回り(21日)」と呼ばれる段階があると経験的に語り継がれてきたためです。</p>
+
+    <p>玉川では、入浴・岩盤浴・飲泉(10倍希釈)に加えて、高地の気候刺激や同じ宿で過ごす湯治客同士の精神的支え合いまでを含む<strong>5つの療法</strong>を「総合作用」と呼んでいます。pH1.13は釘が1日でボロボロになるほどの強酸性で、いきなり長湯すれば身体はびっくりして「湯あたり」(だるさ・微熱・湿疹)を起こします。だからこそ、源泉50%や弱酸性湯から始め、徐々に源泉100%や箱蒸しに進む段階的な入り方が必要。<strong>「治す」ではなく、身体に時間をかけて湯を覚えさせる</strong>のが玉川流です。</p>
+
+    <div class="mech">
+      <div class="mech-title">— 湯治「三回り21日」の身体反応 —</div>
+      <svg viewBox="0 0 600 320" xmlns="http://www.w3.org/2000/svg">
+        <rect width="600" height="320" fill="#fafaf6"/>
+
+        <!-- 軸 -->
+        <line x1="60" y1="240" x2="560" y2="240" stroke="#1a2a25" stroke-width="1.5"/>
+        <line x1="60" y1="40" x2="60" y2="240" stroke="#1a2a25" stroke-width="1.5"/>
+
+        <!-- Y軸ラベル -->
+        <text x="50" y="55" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="end">良好</text>
+        <text x="50" y="145" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="end">基準</text>
+        <text x="50" y="235" font-family="Noto Sans JP" font-size="10" fill="#555" text-anchor="end">不調</text>
+        <text x="30" y="145" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500" transform="rotate(-90, 30, 145)">体感</text>
+
+        <!-- 基準線 -->
+        <line x1="60" y1="145" x2="560" y2="145" stroke="#d8d3c0" stroke-width="0.8" stroke-dasharray="3,3"/>
+
+        <!-- 三回りのフェーズ区切り -->
+        <line x1="200" y1="50" x2="200" y2="240" stroke="#e0d8c8" stroke-width="0.8" stroke-dasharray="2,3"/>
+        <line x1="340" y1="50" x2="340" y2="240" stroke="#e0d8c8" stroke-width="0.8" stroke-dasharray="2,3"/>
+        <line x1="480" y1="50" x2="480" y2="240" stroke="#e0d8c8" stroke-width="0.8" stroke-dasharray="2,3"/>
+
+        <!-- フェーズラベル -->
+        <text x="130" y="60" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">一回り目</text>
+        <text x="130" y="74" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="middle">慣らし・反応</text>
+        <text x="270" y="60" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">二回り目</text>
+        <text x="270" y="74" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="middle">安定</text>
+        <text x="410" y="60" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">三回り目</text>
+        <text x="410" y="74" font-family="Noto Sans JP" font-size="9" fill="#777" text-anchor="middle">効果定着</text>
+        <text x="520" y="60" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">帰宅後</text>
+
+        <!-- X軸ラベル -->
+        <text x="60" y="258" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">0日</text>
+        <text x="200" y="258" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">7日</text>
+        <text x="340" y="258" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">14日</text>
+        <text x="480" y="258" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">21日</text>
+        <text x="560" y="258" font-family="Noto Sans JP" font-size="9" fill="#555" text-anchor="middle">28日</text>
+        <text x="310" y="285" font-family="Noto Serif JP" font-size="11" fill="#1a3a35" text-anchor="middle" font-weight="500">滞在日数</text>
+
+        <!-- 体感曲線 -->
+        <path d="M 60 145 Q 90 150 110 180 Q 130 195 150 200 Q 170 195 200 175 L 220 155 Q 260 130 290 115 L 340 105 Q 380 95 410 90 L 480 85 Q 520 90 560 95" 
+              stroke="#5caa8a" stroke-width="2.5" fill="none"/>
+
+        <!-- 湯あたり期マーカー -->
+        <g>
+          <circle cx="150" cy="200" r="6" fill="#c47a3a" stroke="#fff" stroke-width="2"/>
+          <text x="150" y="225" font-family="Noto Sans JP" font-size="9" fill="#c47a3a" text-anchor="middle">湯あたり期</text>
+          <text x="150" y="237" font-family="Noto Sans JP" font-size="8" fill="#999" text-anchor="middle">3〜5日目</text>
+        </g>
+
+        <!-- 安定期マーカー -->
+        <g>
+          <circle cx="290" cy="115" r="6" fill="#5caa8a" stroke="#fff" stroke-width="2"/>
+          <text x="290" y="100" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle">体力回復</text>
+        </g>
+
+        <!-- 定着期マーカー -->
+        <g>
+          <circle cx="450" cy="87" r="6" fill="#1a3a35" stroke="#fff" stroke-width="2"/>
+          <text x="450" y="105" font-family="Noto Sans JP" font-size="9" fill="#1a3a35" text-anchor="middle">手応え実感</text>
+        </g>
+
+        <!-- 3泊4日入門ライン -->
+        <rect x="60" y="262" width="80" height="3" fill="#c47a3a" opacity="0.6"/>
+        <text x="100" y="305" font-family="Noto Sans JP" font-size="10" fill="#c47a3a" text-anchor="middle">3泊4日(湯治入門)</text>
+
+        <text x="40" y="60" font-family="Noto Sans JP" font-size="9" fill="#5caa8a" text-anchor="middle" transform="rotate(-90, 40, 60)">━ 体感の変化</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- THREE EFFECTS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— EFFECTS 02</span>
+      <h2 class="section-title">玉川「3つの湯治法」の使い分け</h2>
+    </div>
+    <div class="effects">
+      <div class="effect-card">
+        <div class="effect-num">01</div>
+        <div class="effect-title">入浴<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;11種類の浴槽を段階的に">11種類の浴槽を段階的に</small></div>
+        <div class="effect-desc">
+          源泉50%・100%・ぬる湯・打たせ湯・寝湯・箱蒸し・弱酸性湯など、段階的に強さを変える設計。初日は弱酸性湯から、慣れたら源泉100%へ。リウマチ・神経痛・皮膚病に。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">02</div>
+        <div class="effect-title">岩盤浴<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;御影石+地熱+北投石">御影石+地熱+北投石</small></div>
+        <div class="effect-desc">
+          屋内岩盤浴は20年分の源泉成分が染みこんだ御影石を使用。地熱で温められた岩盤に横たわり、深部体温をゆっくり上げる。ゴザを敷いて長時間横になる、玉川流の代表的湯治法。
+        </div>
+      </div>
+      <div class="effect-card">
+        <div class="effect-num">03</div>
+        <div class="effect-title">飲泉<small style="font-size:10px;color:#999;display:block;font-family:'Noto Sans JP';letter-spacing:0;10倍希釈・浴場内のみ">10倍希釈・浴場内のみ</small></div>
+        <div class="effect-desc">
+          原液は強酸性で飲めないため、10倍希釈にして浴場内のみで飲用可能。胃酸過多症・慢性下痢症・慢性胃炎・慢性肝炎・糖尿病・鉄欠乏性貧血などに効果が掲示されています。
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STAY PLAN -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— PLAN 03</span>
+      <h2 class="section-title">湯治入門プラン(3泊4日)</h2>
+    </div>
+    <div class="timeline">
+      <div class="tl-row">
+        <div class="tl-day">DAY 1<small>ARRIVAL</small></div>
+        <div class="tl-content">
+          <strong>到着、弱酸性湯で身体を慣らす</strong><br>
+          秋田新幹線で田沢湖駅まで → 路線バスで70〜80分で標高740mの玉川温泉へ。湯治相談室(看護師常駐)で体調を伝え、入浴計画を相談。初日は弱酸性湯で10分の慣らし入浴のみ。地獄地帯の遊歩道を散策し、大噴の蒸気を遠目に眺めるくらいに留めます。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 2<small>STEP 1</small></div>
+        <div class="tl-content">
+          <strong>源泉50%+屋内岩盤浴の導入</strong><br>
+          朝湯は再び弱酸性湯で目覚めを整え、午前中に源泉50%の浴槽に10分。昼食後に屋内岩盤浴へ、ゴザを敷いて30分横たわる。午後に箱蒸しを5〜10分。夕方は寝湯でリラックス。「身体が湯を覚える」段階。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 3<small>STEP 2</small></div>
+        <div class="tl-content">
+          <strong>源泉100%への段階的移行</strong><br>
+          ようやく源泉100%に5〜10分の挑戦。湯から上がったら必ず真水で全身を流す。岩盤浴は朝夕の2回、計1時間。同じ宿の湯治客同士でゆっくり話す時間も、玉川公式が認める「精神的ケア」のひとつ。3日目から微熱・だるさ(湯あたり)が出る方もいますが、これは身体が反応している証拠。
+        </div>
+      </div>
+      <div class="tl-row">
+        <div class="tl-day">DAY 4<small>FINISH</small></div>
+        <div class="tl-content">
+          <strong>朝湯で締めて、次の湯治を計画</strong><br>
+          チェックアウト前の朝湯は弱酸性湯か源泉50%で軽めに。3泊4日は「一回り(7日)」の半分。本格的な手応えは2回目、3回目の滞在で深まります。年に2〜3回、季節を変えて来る湯治客が多いのが玉川。帰宅後の不調や反応も、湯治相談室に連絡できる体制です。
+        </div>
+      </div>
+    </div>
+
+    <div class="caution">
+      <div class="caution-title">入浴のポイント・湯治の心得</div>
+      <strong>玉川温泉は、医療の代替ではなく、医療と並行する「補助」として理解してください。</strong>持病や治療中の方は、訪問前に必ず主治医に相談を。pH1.13の強酸性は刺激が極めて強く、源泉100%の入浴は5〜10分を厳守。入浴後は必ず真水で全身をすすぐ。湯あたり(微熱・倦怠感・湿疹)は反応の一部ですが、強く出たら入浴を1〜2日休む。心臓・血圧・呼吸器に持病のある方、高度の貧血、悪性腫瘍の治療中の方、妊娠中の方は、本館の湯治相談室に相談のうえ、無理のない入浴計画を。本館は冬期(12月〜4月中旬)休館、姉妹館の新玉川温泉は通年営業。
+    </div>
+  </section>
+
+  <!-- ACCESS -->
+  <section class="section">
+    <div class="section-head">
+      <span class="section-num">— ACCESS 04</span>
+      <h2 class="section-title">アクセス情報</h2>
+    </div>
+    <div class="access">
+      <table>
+        <tr><th>所在地</th><td>秋田県仙北市田沢湖玉川渋黒沢(八幡平、標高約740m)</td></tr>
+        <tr><th>東京から</th><td>秋田新幹線「こまち」で田沢湖駅まで約2時間50分 → 路線バス(八幡平頂上行き)で約70〜80分</td></tr>
+        <tr><th>盛岡から(車)</th><td>盛岡IC → 田沢湖経由で約100分。冬季はチェーン必須</td></tr>
+        <tr><th>仙台から</th><td>新幹線で盛岡経由、田沢湖駅まで合計約2時間 → バスで80分</td></tr>
+        <tr><th>営業期間</th><td>本館:4月中旬〜11月中旬(冬期休館) / 新玉川温泉(姉妹館):通年営業</td></tr>
+        <tr><th>宿泊形態</th><td>旅館部(食事付き)と自炊部(キッチン共用、最大21泊可能、湯治向き)</td></tr>
+        <tr><th>泉質</th><td>含放射能-酸性-含鉄(II)-アルミニウム-塩化物泉(pH1.13、源泉温度98℃)</td></tr>
+        <tr><th>効能</th><td>慢性皮膚病・リウマチ・神経痛・慢性消化器病・痔疾・冷え性・病後回復・健康増進など(浴用)/胃酸過多症・慢性下痢症・慢性胃炎ほか(飲泉)</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- CONCLUSION -->
+  <div class="conclusion">
+    <div class="conclusion-title">— まとめ</div>
+    <p>
+      玉川温泉が他の温泉と一線を画すのは、強酸性の数字でも湧出量でもなく、
+      <strong style="color:#d4ebe0">「短時間では効かない」と正直に告げる姿勢</strong>です。
+      1泊2日のレジャーではなく、3泊4日の入門、7日の一回り、21日の三回りという伝統的な時間軸。
+      入浴・岩盤浴・飲泉・気候・人とのふれあいまでを総合作用と捉える文化。
+      慢性的な不調と長く付き合っている方にとって、玉川は「治療を変わってくれる場所」ではなく、
+      身体の力をゆっくりと取り戻すための「土台」をくれる場所です。
+      まずは3泊4日、医療や日常から少し距離をとり、湯と岩と山に身体を預けてみる旅へ。
+    </p>
+  </div>
+
+  <div class="article-foot">
+    <a href="../onsen-map.html" class="back-link">← 温泉マップへ戻る</a>
+  </div>
+
+</article>
+
+</body>
+</html>

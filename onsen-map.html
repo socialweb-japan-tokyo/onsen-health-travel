@@ -189,24 +189,40 @@
     background:#fff;border:1px solid var(--line);border-radius:12px;
     padding:.6rem;box-shadow:0 10px 36px rgba(20,50,41,.07);
   }
-  #map{width:100%;display:block}
+  #map{width:100%;display:block;touch-action:none;cursor:grab}
+  #map:active{cursor:grabbing}
+  .map-hint-zoom{font-size:11px;color:var(--muted)}
+  /* 表示をリセット（全国へ戻す）ボタン */
+  .map-frame{position:relative}
+  .map-reset-view{
+    position:absolute;top:14px;right:14px;z-index:5;
+    display:none;align-items:center;gap:6px;
+    font-family:inherit;font-size:11px;letter-spacing:.06em;
+    padding:8px 13px;border:1px solid var(--line);border-radius:8px;
+    background:rgba(255,255,255,.92);color:var(--moss-deep);cursor:pointer;
+    box-shadow:0 4px 14px rgba(20,50,41,.12);transition:background .15s,transform .1s;
+  }
+  .map-reset-view.visible{display:inline-flex}
+  .map-reset-view:hover{background:#fff}
+  .map-reset-view:active{transform:translateY(1px)}
+  .map-reset-view svg{width:13px;height:13px}
   .prefecture{fill:#f1ede2;stroke:#cfc6b2;stroke-width:.6;stroke-linejoin:round;transition:fill .2s}
 
   /* ピン */
   .pin{cursor:pointer}
   .pin circle{transition:r .15s}
-  .pin:hover circle:not(.ripple){r:7.5}
-  .pin.has-article circle:not(.ripple){fill:var(--moss-deep);stroke:var(--accent-soft);stroke-width:2}
-  .pin.no-article circle:not(.ripple){fill:#c3bca9;stroke:#a59e8a;stroke-width:1.5}
+  .pin:hover circle:not(.ripple):not(.pin-hit-area){r:7.5}
+  .pin.has-article circle:not(.ripple):not(.pin-hit-area){fill:var(--moss-deep);stroke:var(--accent-soft);stroke-width:2}
+  .pin.no-article circle:not(.ripple):not(.pin-hit-area){fill:#c3bca9;stroke:#a59e8a;stroke-width:1.5}
 
   /* 効能マッチ / 非マッチ */
-  .pin.matched circle:not(.ripple){fill:var(--jade)!important;stroke:var(--moss-deep)!important;stroke-width:2.2;r:7;filter:drop-shadow(0 0 5px rgba(95,156,132,.7))}
-  .pin.matched:hover circle:not(.ripple){r:8.5}
-  .pin.dimmed circle:not(.ripple){fill:#ded8c8!important;stroke:#cfc6b2!important;opacity:.35}
-  .pin.dimmed:hover circle:not(.ripple){opacity:.7}
+  .pin.matched circle:not(.ripple):not(.pin-hit-area){fill:var(--jade)!important;stroke:var(--moss-deep)!important;stroke-width:2.2;r:7;filter:drop-shadow(0 0 5px rgba(95,156,132,.7))}
+  .pin.matched:hover circle:not(.ripple):not(.pin-hit-area){r:8.5}
+  .pin.dimmed circle:not(.ripple):not(.pin-hit-area){fill:#ded8c8!important;stroke:#cfc6b2!important;opacity:.35}
+  .pin.dimmed:hover circle:not(.ripple):not(.pin-hit-area){opacity:.7}
 
   /* 選択ハイライト */
-  .pin.highlight circle:not(.ripple){r:10;fill:var(--accent)!important;stroke:#fff!important;stroke-width:3;animation:glow-pulse 1.2s ease-in-out infinite}
+  .pin.highlight circle:not(.ripple):not(.pin-hit-area){r:10;fill:var(--accent)!important;stroke:#fff!important;stroke-width:3;animation:glow-pulse 1.2s ease-in-out infinite}
   @keyframes glow-pulse{0%,100%{r:10;filter:drop-shadow(0 0 8px rgba(201,116,58,.7))}50%{r:13;filter:drop-shadow(0 0 18px rgba(201,116,58,1)) drop-shadow(0 0 30px rgba(201,116,58,.55))}}
   .ripple{fill:none;stroke:var(--accent);stroke-width:2;opacity:0;animation:ripple-anim 1.6s ease-out infinite;pointer-events:none}
   .ripple-2{animation-delay:.5s}.ripple-3{animation-delay:1s}
@@ -313,11 +329,11 @@
   /* ===== ピンの可タップ領域・モバイル ===== */
   @media(max-width:768px){
     .map-section{padding-left:.4rem;padding-right:.4rem}
-    .pin.no-article circle:not(.ripple){r:8;stroke-width:2}
-    .pin.has-article circle:not(.ripple){r:11;stroke-width:2.5}
-    .pin:hover circle:not(.ripple),.pin:active circle:not(.ripple){r:13}
-    .pin.matched circle:not(.ripple){r:13;stroke-width:3}
-    .pin.dimmed circle:not(.ripple){r:7}
+    .pin.no-article circle:not(.ripple):not(.pin-hit-area){r:8;stroke-width:2}
+    .pin.has-article circle:not(.ripple):not(.pin-hit-area){r:11;stroke-width:2.5}
+    .pin:hover circle:not(.ripple):not(.pin-hit-area),.pin:active circle:not(.ripple):not(.pin-hit-area){r:13}
+    .pin.matched circle:not(.ripple):not(.pin-hit-area){r:13;stroke-width:3}
+    .pin.dimmed circle:not(.ripple):not(.pin-hit-area){r:7}
     .popover{width:min(280px,calc(100vw - 32px))}
   }
 
@@ -434,8 +450,12 @@
       </div>
     </div>
 
-    <div class="map-hint">地図の<b>濃い緑のピン</b>は記事あり。タップで湯をひらき、<b>記事を読む</b>で別タブへ。</div>
+    <div class="map-hint">地図の<b>濃い緑のピン</b>は記事あり。タップで湯をひらき、<b>記事を読む</b>で別タブへ。<br><span class="map-hint-zoom">ピンが近いときは、ピンチまたはダブルタップで拡大できます。</span></div>
     <div class="map-frame">
+      <button type="button" class="map-reset-view" id="map-reset-view" aria-label="地図を全国表示に戻す">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 1 0 9-9 9 9 0 0 0-6.36 2.64L3 8"/><path d="M3 4v4h4"/></svg>
+        全体表示に戻す
+      </button>
       <svg id="map" viewBox="0 0 860 900"></svg>
     </div>
   </div>
@@ -448,7 +468,7 @@
 <section class="articles-section" id="articles-section">
   <div class="section-head">
     <span class="en">Articles</span>
-    <span class="ja">各温泉の効能</span>
+    <span class="ja">効能の読みもの</span>
     <span class="note">一湯ごとの泉質・入り方・土地の物語。カードは別タブで開きます。</span>
   </div>
   <div class="grid" id="articles-grid"></div>
@@ -548,6 +568,51 @@ const projection = d3.geoMercator()
   .translate([W/2, H/2]);
 const path = d3.geoPath().projection(projection);
 
+// === ズーム/パン（ピンチ・ダブルタップ・ホイール対応） ===
+// 既存の「都道府県セレクトで自動ズーム」もこの zoom 経由に統一する
+const zoom = d3.zoom()
+  .scaleExtent([1, 9])
+  .translateExtent([[0, 0], [W, H]])
+  .on('zoom', (event) => {
+    const t = event.transform;
+    mapGroup.attr('transform', t);
+    // ズームしてもピン本体・タップ領域の見た目サイズを一定に保つ（拡大で小さくなるのを防ぐ）
+    const inv = 1 / t.k;
+    mapGroup.selectAll('.pin').attr('transform', d => {
+      const [x, y] = projection([d.lng, d.lat]);
+      return `translate(${x},${y}) scale(${inv})`;
+    });
+    // ズーム中は吹き出しを閉じる（位置ずれ防止）
+    if (typeof closePopover === 'function') closePopover();
+    // 拡大中だけ「全体表示に戻す」ボタンを出す
+    const rv = document.getElementById('map-reset-view');
+    if (rv) rv.classList.toggle('visible', t.k > 1.05);
+  });
+
+svg.call(zoom)
+  .on('dblclick.zoom', null); // ダブルタップ/ダブルクリックは独自処理（下）に任せる
+
+// ダブルタップ / ダブルクリックでその地点を拡大
+svg.on('dblclick', (event) => {
+  const [mx, my] = d3.pointer(event, svg.node());
+  svg.transition().duration(500).call(zoom.scaleBy, 2, [mx, my]);
+});
+
+// プログラムからのズーム（都道府県セレクト用）
+function applyZoomTransform(tx, ty, scale, dur = 750) {
+  svg.transition().duration(dur)
+    .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(scale));
+}
+
+// 「全体表示に戻す」ボタン
+(function(){
+  const rv = document.getElementById('map-reset-view');
+  if (rv) rv.addEventListener('click', () => {
+    if (typeof resetZoom === 'function') resetZoom();
+    rv.classList.remove('visible');
+  });
+})();
+
 mapGroup.selectAll('.prefecture')
   .data(geojson.features)
   .enter().append('path')
@@ -567,11 +632,10 @@ pinGroups.append('circle')
   .attr('r', 5)
   .attr('stroke-width', 1.8);
 
-// タップ領域を広げる透明 rect
-pinGroups.append('rect')
+// タップ領域を広げる透明な円（rect より誤タップしにくい）
+pinGroups.append('circle')
   .attr('class', 'pin-hit-area')
-  .attr('x', -18).attr('y', -18)
-  .attr('width', 36).attr('height', 36)
+  .attr('r', 22)
   .attr('fill', 'transparent');
 
 // === クリックで開く吹き出しポップオーバー ===
@@ -666,9 +730,9 @@ function zoomToPrefecture(prefName) {
   const w = (maxX - minX) || 100;
   const h = (maxY - minY) || 100;
 
-  // 余白を確保してスケールを計算(最大5倍まで)
-  const padding = 100;
-  const scale = Math.min((W - padding * 2) / w, (H - padding * 2) / h, 5);
+  // 余白を確保してスケールを計算(最大7倍まで → 密集ピンの間隔を広げる)
+  const padding = 110;
+  const scale = Math.min((W - padding * 2) / w, (H - padding * 2) / h, 7);
 
   // 中心位置を計算
   const cx = (minX + maxX) / 2;
@@ -678,16 +742,12 @@ function zoomToPrefecture(prefName) {
   const tx = W / 2 - cx * scale;
   const ty = H / 2 - cy * scale;
 
-  // アニメーションで滑らかにズーム
-  mapGroup.transition()
-    .duration(750)
-    .attr('transform', `translate(${tx},${ty}) scale(${scale})`);
+  // d3.zoom 経由でズーム（ピンチ操作と状態を共有）
+  applyZoomTransform(tx, ty, scale);
 }
 
 function resetZoom() {
-  mapGroup.transition()
-    .duration(750)
-    .attr('transform', 'translate(0,0) scale(1)');
+  svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
 }
 
      // === 効能フィルター ===
